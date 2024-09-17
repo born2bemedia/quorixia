@@ -115,7 +115,7 @@
           display: none;
           &:checked + label {
             svg {
-              rect {
+              circle {
                 &:last-child {
                   opacity: 1;
                 }
@@ -133,10 +133,10 @@
           line-height: 1.2;
           text-align: left;
           svg {
-            width: rem(20);
-            height: rem(20);
+            width: rem(14);
+            height: rem(14);
             margin-top: -5px;
-            rect {
+            circle {
               &:last-child {
                 opacity: 0;
               }
