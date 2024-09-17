@@ -13,7 +13,7 @@ import ButtonArrow from "@/icons/ButtonArrow";
 export default function SignUp() {
   const [thanksPopupShow, setThanksPopupShow] = useState(false);
   const router = useRouter();
-  const { setCurrentUser } = useAuth();
+  const { fetchCurrentUser } = useAuth();
 
   const initialValues = {
     name: "",
@@ -45,36 +45,21 @@ export default function SignUp() {
 
   const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
     try {
-      const response = await axios.post("/api/auth/sign-up", {
-        email: values.email,
-        password: values.password,
-        name: values.name,
-        phone: values.phone,
+      const response = await axios.post("/api/auth/sign-up", values, {
+        headers: { "Content-Type": "application/json" },
       });
 
-      if (response.status === 200) {
-        const { token, user_email, user_nicename, user_display_name } =
-          response.data;
-
-        const user = {
-          email: user_email,
-          nicename: user_nicename,
-          displayName: user_display_name,
-          billing: {
-            first_name: values.name,
-            phone: values.phone,
-          },
-        };
-
-        setThanksPopupShow(true);
-        setTimeout(() => {
-          setThanksPopupShow(false);
-          localStorage.setItem("jwt", token);
-          localStorage.setItem("user", JSON.stringify(user));
-          setCurrentUser(user);
-          router.push("/dashboard");
-        }, 3000);
+      if (!response.data.jwt) {
+        throw new Error("JWT not found");
       }
+
+      setThanksPopupShow(true);
+      setTimeout(() => {
+        setThanksPopupShow(false);
+        localStorage.setItem("jwt", response.data.jwt);
+        fetchCurrentUser();
+        router.push("/dashboard");
+      }, 3000);
     } catch (error) {
       console.error("Registration failed", error.response.data);
       setFieldError("email", "An account with this email already exists");
@@ -88,9 +73,7 @@ export default function SignUp() {
       <section className="log-in">
         <div className="_container">
           <h1>Join Quorixia today</h1>
-          <h2>
-          
-          </h2>
+          <h2></h2>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -103,15 +86,9 @@ export default function SignUp() {
                     type="text"
                     name="name"
                     placeholder="Name"
-                    className={
-                      touched.name && errors.name ? "invalid" : ""
-                    }
+                    className={touched.name && errors.name ? "invalid" : ""}
                   />
-                  <ErrorMessage
-                    name="name"
-                    component="div"
-                    className="error"
-                  />
+                  <ErrorMessage name="name" component="div" className="error" />
                 </div>
                 <div>
                   <Field
@@ -139,7 +116,7 @@ export default function SignUp() {
                     className="error"
                   />
                 </div>
-                
+
                 <div>
                   <Field
                     type="password"
