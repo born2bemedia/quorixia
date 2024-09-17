@@ -1,7 +1,5 @@
 "use client";
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import axios from "axios";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
 
@@ -9,86 +7,47 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
+const apiKey = process.env.REST_API_KEY;
+const apiUrl = process.env.NEXT_PUBLIC_REST_API_URL;
+
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [jwt, setJwt] = useState(null);
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const fetchCurrentUser = async () => {
-    if (typeof window !== "undefined") {
-      const storedJwt = localStorage.getItem("jwt");
-      const storedRefreshToken = localStorage.getItem("refreshToken");
-      const user = localStorage.getItem("user");
-      if (storedJwt && user) {
-        try {
-          const decodedUser = JSON.parse(user);
-          setCurrentUser(decodedUser);
-          setJwt(storedJwt);
-        } catch (error) {
-          console.error("Failed to fetch current user", error);
-          localStorage.removeItem("jwt");
-          localStorage.removeItem("refreshToken");
-          localStorage.removeItem("user");
-          setCurrentUser(null);
-        }
-      }
-    }
-  };
-
-  const refreshToken = async () => {
-    if (typeof window !== "undefined") {
-      const storedRefreshToken = localStorage.getItem("refreshToken");
-      if (!storedRefreshToken) {
-        console.error("No refresh token available");
-        return;
-      }
-
-      try {
-        const response = await axios.post("/api/auth/refresh-token", {
-          refreshToken: storedRefreshToken,
-        });
-
-        if (response.status === 200) {
-          const { token, refreshToken } = response.data;
-          localStorage.setItem("jwt", token);
-          localStorage.setItem("refreshToken", refreshToken);
-          setJwt(token);
-          return token;
-        } else {
-          console.error("Failed to refresh token");
-        }
-      } catch (error) {
-        console.error("Error refreshing token", error);
-      }
-    }
-    return null;
-  };
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchCurrentUser();
   }, []);
 
-  useEffect(() => {
-    console.log("Current route:", pathname);
-    if (pathname === "/dashboard") {
-      // Perform any action needed when navigating to the dashboard
+  const fetchCurrentUser = () => {
+    setLoading(true);
+    const jwt = localStorage.getItem("jwt");
+    if (jwt) {
+      fetch(`${apiUrl}users/me`, {
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setCurrentUser(data);
+        })
+        .catch((error) => console.error("Failed to fetch user", error))
+        .finally(() => setLoading(false));
+    } else {
+      setLoading(false);
     }
-  }, [pathname]);
+  };
 
-  useEffect(() => {
-    // Set an interval to refresh the token periodically
-    const interval = setInterval(() => {
-      refreshToken();
-    }, 15 * 60 * 1000); // Refresh every 15 minutes
-
-    return () => clearInterval(interval); // Clear interval on component unmount
-  }, []);
+  const value = {
+    currentUser,
+    setCurrentUser,
+    fetchCurrentUser, // Expose fetchCurrentUser for manual calls
+    loading,
+  };
 
   return (
-    <AuthContext.Provider
-      value={{ currentUser, fetchCurrentUser, setCurrentUser, refreshToken }}
-    >
+    <AuthContext.Provider value={value}>
+      {/*!loading ? children : <div className="loading">Loading...</div>*/}
       {children}
     </AuthContext.Provider>
   );

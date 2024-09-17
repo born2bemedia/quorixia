@@ -11,7 +11,7 @@ import ButtonArrow from "@/icons/ButtonArrow";
 
 export default function SignIn() {
   const router = useRouter();
-  const { setCurrentUser, currentUser } = useAuth();
+  const { fetchCurrentUser, currentUser } = useAuth();
 
   useEffect(() => {
     if (currentUser) {
@@ -31,39 +31,40 @@ export default function SignIn() {
     password: Yup.string().required("Password is required"),
   });
 
-  const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
+  const handleSubmit = async (
+    values,
+    { setSubmitting, setFieldError, setErrors }
+  ) => {
     try {
-      const response = await axios.post("/api/auth/log-in", {
-        email: values.email,
-        password: values.password,
+      const response = await fetch(`/api/auth/log-in`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
       });
-      if (response.status === 200) {
-        const { token, user_email, user_nicename, user_display_name, billing } =
-          response.data;
-        const user = {
-          email: user_email,
-          nicename: user_nicename,
-          displayName: user_display_name,
-          billing, // Include billing data
-        };
-        console.log(user);
-        localStorage.setItem("jwt", token);
-        localStorage.setItem("user", JSON.stringify(user));
-        setCurrentUser(user);
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Login failed");
+      }
+
+      if (data.user.jwt) {
+        localStorage.setItem("jwt", data.user.jwt);
+        fetchCurrentUser();
+        console.log("logged in");
         router.push("/dashboard");
+      } else {
+        throw new Error("JWT not found");
       }
     } catch (error) {
-      console.error("Login failed", error.response.data);
-      setFieldError("email", "Invalid email or password");
-    } finally {
-      setSubmitting(false);
+      setErrors({ submit: error.message || "An unexpected error occurred" });
     }
   };
 
   return (
     <section className="log-in">
       <div className="_container">
-        <h1>Welcome to Spectrum Consults!</h1>
+        <h1>Welcome to Quorixia!</h1>
         <h2>Please enter your username and password to access your account.</h2>
         <Formik
           initialValues={initialValues}

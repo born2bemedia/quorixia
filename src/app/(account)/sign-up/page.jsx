@@ -87,10 +87,10 @@ export default function SignUp() {
     <>
       <section className="log-in">
         <div className="_container">
-          <h1>Join Spectrum Consults today</h1>
+          <h1>Join Quorixia today</h1>
           <h2>
           Sign up now to become a valued community member and unlock exclusive features. Please fill out the <br/>
-          form below with your information to create your account and start your journey with Spectrum Consults. <br/>
+          form below with your information to create your account and start your journey with Quorixia. <br/>
           Join us and take advantage of the unique benefits and opportunities we offer our members.
           </h2>
           <Formik
@@ -240,7 +240,7 @@ export default function SignUp() {
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    <span>Join Spectrum Consults</span>
+                    <span>Join Quorixia</span>
                     <ButtonArrow />
                   </button>
                 </div>
