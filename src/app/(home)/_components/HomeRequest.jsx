@@ -14,7 +14,7 @@ const HomeRequest = () => {
             employment opportunities, Quorixia is here to support you at every
             stage of your career. Let’s work together to achieve your goals.
           </p>
-          
+          <ConnectForm />
         </div>
       </div>
     </section>
