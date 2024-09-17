@@ -18,7 +18,7 @@ const HomeSolutionBlack = () => {
             the unique challenges you face.
           </p>
           <h4 className="fadeInUp">Featured HR Services</h4>
-          <ul>
+          <ul className="fadeInUp">
             <li>
               <b>Contract Negotiation:</b> We help you navigate and secure the
               best terms for your employment agreements.

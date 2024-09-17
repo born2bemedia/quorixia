@@ -19,7 +19,7 @@ const HomeSolutionWhite = () => {
             provide everything you need to stay one step ahead.
           </p>
           <h4 className="fadeInUp">Featured Employment Services</h4>
-          <ul>
+          <ul className="fadeInUp">
             <li>
               <b>CV Building:</b> Custom resumes designed to showcase your
               skills and achievements.
