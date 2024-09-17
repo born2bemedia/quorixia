@@ -95,9 +95,9 @@ a {
   @media (max-width: rem(1375)) {
     max-width: $md1 + px;
   }
-  @media (min-width: rem(1600)) {
+  /*@media (min-width: rem(1600)) {
     max-width: $maxWidth;
-  }
+  }*/
 }
 
 .site {
