@@ -1,0 +1,204 @@
+@import "mixin";
+
+header {
+  padding: 25px 0;
+  position: relative;
+  z-index: 999;
+  margin-bottom: -88px;
+
+  &.menu-opened {
+    .header-row {
+      .header-right {
+        > div {
+          &.head-account {
+            a {
+              color: #fff;
+            }
+            > span {
+              background: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > a {
+      display: flex;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      @media (max-width: rem(992)) {
+        gap: 20px;
+      }
+
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        @media (max-width: rem(992)) {
+          gap: 30px;
+        }
+        &.head-account {
+          display: flex;
+          gap: rem(20);
+          align-items: center;
+
+          a {
+            color: #1e1e1e;
+            font-size: rem(16);
+            font-weight: 600;
+            line-height: 1.2;
+            text-align: right;
+          }
+          span {
+            display: block;
+            width: rem(1);
+            height: rem(20);
+            background: #1e1e1e;
+          }
+        }
+
+        .menu-btn {
+          display: flex;
+          cursor: pointer;
+          width: rem(35);
+          svg {
+            width: rem(35);
+            height: rem(30);
+          }
+        }
+
+        .cart-icon {
+          position: relative;
+          display: flex;
+          img {
+            position: relative;
+            z-index: 1;
+            width: rem(30);
+            height: rem(30);
+          }
+          &.not-empty {
+            &:before {
+              content: "";
+              display: block;
+              width: rem(7);
+              height: rem(7);
+              background: #ff5353;
+              border-radius: 50%;
+              position: absolute;
+              right: -2px;
+              bottom: -2px;
+              z-index: 2;
+            }
+          }
+        }
+
+        > span {
+          font-size: rem(16);
+          font-weight: 500;
+          line-height: 1.2;
+          text-align: left;
+          color: #161616;
+        }
+      }
+
+      .soc {
+        gap: 10px;
+        @media (max-width: rem(992)) {
+          display: none;
+        }
+        a {
+          display: flex;
+          img {
+            width: rem(25);
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu-wrap {
+  position: fixed;
+  z-index: 998;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000cc;
+  padding-top: 200px;
+  transition: all 0.5s;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  @media (max-width: rem(992)) {
+    padding-top: 100px;
+  }
+  &.opened {
+    left: 0;
+    opacity: 1;
+    pointer-events: all;
+  }
+  .head-account {
+    display: none;
+    justify-content: center;
+    margin-bottom: 50px;
+    gap: 20px;
+    @media (max-width: rem(992)) {
+      display: flex;
+    }
+  }
+  nav {
+    display: flex;
+    gap: 150px;
+    @media (max-width: rem(992)) {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      @media (max-width: rem(992)) {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+      }
+      a {
+        color: #fff;
+        font-size: rem(36);
+        font-weight: 800;
+        line-height: 1;
+        text-align: left;
+        text-transform: uppercase;
+        &:hover {
+          color: #a225ee;
+        }
+        @media (max-width: rem(992)) {
+          font-size: rem(24);
+          text-align: center;
+        }
+      }
+    }
+  }
+  .main-button {
+    width: rem(90);
+    height: rem(25);
+    font-size: rem(12);
+    display: none;
+    @media (max-width: rem(992)) {
+      display: flex;
+      margin: 0 auto 30px auto;
+    }
+  }
+}
