@@ -233,3 +233,74 @@ a {
     }
   }
 }
+
+.home-reviews {
+  padding: rem(120) 0;
+  background-image: url(/images/home/homeReviews.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-color: #1e1e1e;
+  @media (max-width: rem(992)) {
+    background-position: top;
+    padding: rem(70) 0;
+  }
+
+  .slider {
+    .slide {
+      display: flex;
+      gap: rem(95);
+      align-items: center;
+      padding-left: rem(100);
+      @media (max-width: rem(992)) {
+        padding-left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: rem(120);
+        gap: rem(50);
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: rem(50) rem(40);
+        width: rem(285);
+        background: #a225ee;
+        h3 {
+          color: #fff;
+          font-size: rem(32);
+          font-weight: 600;
+          line-height: 1.2x;
+          text-align: left;
+          margin: 0;
+        }
+        h4 {
+          color: #fff;
+          font-size: rem(16);
+          font-weight: 600;
+          line-height: 1.2x;
+          text-align: left;
+          margin: rem(20) 0 rem(30) 0;
+        }
+        .buttons {
+          display: flex;
+          gap: rem(25);
+        }
+      }
+      .right {
+        width: calc(100% - rem(380));
+        @media (max-width: rem(992)) {
+          width: 100%;
+        }
+        p {
+          color: #fff;
+          font-size: rem(24);
+          font-weight: 400;
+          line-height: 1.2;
+          text-align: left;
+          margin: rem(20) 0 rem(30) 0;
+        }
+      }
+    }
+  }
+}

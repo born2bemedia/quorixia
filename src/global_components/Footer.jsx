@@ -38,7 +38,7 @@ const Footer = () => {
           <div>
             <h3>Solutions</h3>
             <div>
-              <Link href="#">HR</Link>
+              <Link href="/hr">HR</Link>
               <Link href="#">Employment</Link>
               <Link href="#">Pricing</Link>
             </div>

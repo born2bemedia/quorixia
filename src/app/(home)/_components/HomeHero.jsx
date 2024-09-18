@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const HomeHero = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  {/*const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -12,16 +12,11 @@ const HomeHero = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, []);*/}
 
   return (
     <section className="home-hero">
       <div className="home-hero__body">
-        {isMobile ? (
-          <Image src={"/images/home/heroMob.webp"} width={415} height={455} />
-        ) : (
-          <Image src={"/images/home/hero.webp"} width={1275} height={455} />
-        )}
         <h2 className="fadeInUp">Redefine Your Career</h2>
         <h1 className="fadeInUp">
           Shape <br />
