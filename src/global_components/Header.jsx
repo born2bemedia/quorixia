@@ -76,22 +76,7 @@ const Header = () => {
       </header>
       <div className={`menu-wrap ${menuOpened ? "opened" : ""}`}>
         <div className="_container">
-          <div className="head-account">
-            {currentUser ? (
-              <Link className="white-button" href="/dashboard">
-                Account
-              </Link>
-            ) : (
-              <>
-                <Link href="/log-in">
-                  Log in
-                </Link>
-                <Link href="/sign-up">
-                  Sign up
-                </Link>
-              </>
-            )}
-          </div>
+         
           <nav>
             <div className="left-col">
               <Link href="/">Home</Link>
