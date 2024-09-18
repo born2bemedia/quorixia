@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="_container">
           <div className="info">
             <Link href="/">
-              <img src="/images/logo.svg" alt="logo" />
+              <img src="/images/logo_white.svg" alt="logo" />
             </Link>
             <p>
               Personalised HR and employment solutions designed to <br />

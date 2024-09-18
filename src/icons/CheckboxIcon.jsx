@@ -14,7 +14,7 @@ const CheckboxIcon = () => {
         cy="7"
         r="6.5"
         fill="#D9D9D9"
-        fill-opacity="0.05"
+        fillOpacity="0.05"
         stroke="#3E3E3E"
       />
       <circle cx="7" cy="7" r="3" fill="#A225EE" />

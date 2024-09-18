@@ -33,7 +33,7 @@ const Header = () => {
               {!menuOpened ? (
                 <img src="/images/logo.svg" alt="logo" />
               ) : (
-                <img src="/images/logo.svg" alt="logo" />
+                <img src="/images/logo_white.svg" alt="logo" />
               )}
             </Link>
 

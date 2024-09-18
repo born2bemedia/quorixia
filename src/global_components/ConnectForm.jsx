@@ -487,7 +487,7 @@ const ConnectForm = () => {
                   className={touched.terms && errors.terms ? "invalid" : ""}
                   id="terms"
                 />
-                <label for="terms">
+                <label htmlFor="terms">
                   <CheckboxIcon />
                   <span>
                     I have read and agree to the{" "}
