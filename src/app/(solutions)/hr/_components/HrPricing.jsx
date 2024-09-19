@@ -26,9 +26,9 @@ const HrPricing = () => {
           </div>
           <Image
             className="fadeInUp"
-            src={"/images/home/homeSecond.png"}
-            width={445}
-            height={320}
+            src={"/images/hr/pricing.png"}
+            width={475}
+            height={270}
           />
         </div>
       </div>

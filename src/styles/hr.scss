@@ -6,6 +6,9 @@
   align-items: center;
   position: relative;
   padding: rem(150) 0;
+  @media (max-width: rem(992)) {
+    padding: rem(120) 0 rem(60) 0;
+  }
   &::before {
     position: absolute;
     content: "";
@@ -16,41 +19,73 @@
   }
   &__body {
     position: relative;
-    margin-right: calc((100vw - 1110px) / 2);
+    //padding-right: calc((100vw - 1110px) / 2);
     width: 100%;
-    &:after {
-      position: absolute;
-      content: "";
-      z-index: 0;
-      right: -50px;
-      bottom: -50px;
-      height: rem(220);
-      background: #a225ee;
-      width: rem(445);
-      @media (max-width: rem(992)) {
-        display: none;
-      }
-    }
+    display: flex;
+
     > div {
+      &:first-child {
+        width: 42%;
+        position: relative;
+        z-index: 1;
+        padding: 0;
+      }
+      &:nth-child(2) {
+        width: 58%;
+        position: relative;
+        z-index: 1;
+        padding: 0;
+        padding-right: calc((100vw - 1110px) / 2);
+        > div {
+          width: 100%;
+          left: 0;
+          top: 0;
+          position: relative;
+          height: rem(455);
+          z-index: 1;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-image: url(/images/hr/hero.webp);
+        }
+        &:after {
+          position: absolute;
+          content: "";
+          z-index: 0;
+          right: calc(((100vw - 1110px) / 2) - 50px);
+          bottom: -50px;
+          height: rem(220);
+          background: #a225ee;
+          width: rem(445);
+          @media (max-width: rem(992)) {
+            display: none;
+          }
+        }
+      }
+      &:last-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
       position: relative;
       z-index: 1;
       padding-left: calc((100vw - 1110px) / 2);
       padding-right: rem(16);
-
+      height: rem(455);
       width: 100%;
-      padding-top: rem(132);
-      padding-bottom: rem(132);
-      background-size: cover;
-      background-position: top right;
-      background-repeat: no-repeat;
-      background-image: url(/images/home/hero.webp);
+
       @media (max-width: rem(992)) {
         padding-left: rem(16);
         padding-right: rem(16);
         padding-top: rem(100);
         padding-bottom: rem(100);
         margin: 0 rem(16) 0 0;
-        background-image: url(/images/home/heroMob.webp);
+        background-image: url(/images/hr/hero.webp);
+        background-size: cover;
+        background-position: center;
       }
     }
     h2 {
@@ -110,6 +145,9 @@
   padding: rem(100) 0;
   background: #f2f2f2;
   position: relative;
+  @media (max-width: rem(992)) {
+    padding: rem(70) 0;
+  }
   &::before {
     content: "";
     width: 30%;
@@ -122,6 +160,7 @@
     @media (max-width: rem(992)) {
       height: rem(200);
       width: 100%;
+      display: none;
     }
   }
   &__body {
@@ -136,7 +175,7 @@
       gap: rem(40);
     }
     > div {
-      width: calc(100% - rem(505));
+      width: calc(100% - rem(525));
       @media (max-width: rem(992)) {
         width: 100%;
       }
@@ -178,6 +217,7 @@
       @media (max-width: rem(992)) {
         width: 100%;
         height: auto;
+        display: none;
       }
     }
   }
@@ -436,6 +476,7 @@
   padding: rem(100) 0;
   @media (max-width: rem(992)) {
     padding: rem(70) 0;
+    background: #a225ee;
   }
   &__body {
     display: flex;
@@ -447,7 +488,7 @@
       width: 70%;
       padding: rem(60) rem(90);
       @media (max-width: rem(992)) {
-        padding: rem(40) rem(20);
+        padding: 0;
         width: 100%;
       }
       h2 {
@@ -468,10 +509,13 @@
     }
     .right {
       width: 30%;
-      background: #1e1e1e;
+      background-image: url(/images/hr/approach.webp);
+      background-size: cover;
+      background-position: center;
       @media (max-width: rem(992)) {
         width: 100%;
         height: rem(250);
+        display: none;
       }
     }
   }
@@ -480,9 +524,12 @@
 .hr-expertise {
   padding: rem(100) 0;
   position: relative;
+
   @media (max-width: rem(992)) {
     padding: rem(70) 0;
+    background: #1e1e1e;
   }
+
   &:before {
     content: "";
     z-index: 0;
@@ -492,19 +539,24 @@
     position: absolute;
     left: 0;
     top: 0;
+
     @media (max-width: rem(992)) {
-        height: rem(1110);
+      height: rem(1110);
+      display: none;
     }
   }
+
   &__top {
     display: flex;
     position: relative;
     align-items: flex-start;
     z-index: 1;
     gap: rem(30);
+
     @media (max-width: rem(992)) {
       flex-direction: column;
     }
+
     h2 {
       color: #fff;
       font-size: rem(48);
@@ -513,10 +565,13 @@
       text-align: left;
       margin: 0;
       width: 53%;
+
       @media (max-width: rem(992)) {
         width: 100%;
+        font-size: rem(32);
       }
     }
+
     p {
       color: #fff;
       font-size: rem(16);
@@ -525,19 +580,23 @@
       text-align: left;
       margin: 0;
       width: 47%;
+
       @media (max-width: rem(992)) {
         width: 100%;
       }
     }
   }
+
   &__body {
     margin: rem(50) 0;
     display: flex;
     flex-wrap: wrap;
     gap: rem(30);
+
     @media (max-width: rem(992)) {
-      gap: rem(20);
+      display: none; // Hide the flex layout on mobile
     }
+
     > div {
       background: #a225ee;
       display: flex;
@@ -546,18 +605,22 @@
       padding: rem(30);
       gap: rem(25);
       width: calc(33.33% - rem(20));
+
       @media (max-width: rem(992)) {
         width: 100%;
       }
+
       &:first-child,
       &:nth-child(2),
       &:nth-child(3) {
         background: #ffffff;
+
         h3,
         p {
           color: #1e1e1e;
         }
       }
+
       h3 {
         color: #ffffff;
         font-size: rem(24);
@@ -566,6 +629,7 @@
         text-align: left;
         margin: 0;
       }
+
       p {
         color: #fff;
         font-size: rem(14);
@@ -576,9 +640,69 @@
       }
     }
   }
+
+  &__swiper {
+    margin: rem(50) 0;
+    @media (min-width: rem(992)) {
+      display: none; // Hide the swiper on desktop
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hr-expertise__slide{
+      display: flex;
+      flex-direction: column;
+      gap:rem(20);
+    }
+
+    .hr-expertise__item {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: rem(30);
+      gap: rem(15);
+      h3 {
+        color: #1e1e1e;
+        font-size: rem(22);
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0;
+      }
+
+      p {
+        color: #1e1e1e;
+        font-size: rem(13);
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0;
+      }
+    }
+  }
+
+  .arrows{
+    display: flex;
+    justify-content: center;
+    gap:rem(30);
+    margin-bottom: rem(30);
+  }
+
   .buttons-wrap {
+    @media (max-width: rem(992)) {
+      display: flex;
+      justify-content: center;
+    }
     a {
       color: #1e1e1e;
+      @media (max-width: rem(992)) {
+        color: #fff;
+      }
     }
   }
 }

@@ -6,6 +6,8 @@ const HrHero = () => {
   return (
     <section className="hr-hero">
       <div className="hr-hero__body">
+        <div></div>
+        <div><div></div></div>
         <div>
           <h1 className="fadeInUp">
             Transforming Your Professional Path <br />
