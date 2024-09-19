@@ -6,7 +6,7 @@ import ButtonArrow from "@/icons/ButtonArrow";
 import React from "react";
 import Link from "next/link";
 
-const HomeReviews = () => {
+const HomeReviews = ({ reviews }) => {
   return (
     <section className="home-reviews">
       <div className="_container">
@@ -22,78 +22,34 @@ const HomeReviews = () => {
             effect="slide" // Use 'slide' effect to avoid opacity 0
             className="slider"
           >
-            <SwiperSlide>
-              <div className="slide">
-                <div className="left fadeInUp">
-                  <h3>Sarah K.</h3>
-                  <h4>Marketing Executive</h4>
-                  <div className="buttons">
-                    <img src="/images/home/prev.svg" className="prev-button" />
-                    <img src="/images/home/next.svg" className="next-button" />
+            {reviews.map((review, index) => (
+              <SwiperSlide key={index}>
+                <div className="slide">
+                  <div className="left fadeInUp">
+                    <h3>{review.name}</h3>
+                    <h4>{review.title}</h4>
+                    <div className="buttons">
+                      <img
+                        src="/images/home/prev.svg"
+                        className="prev-button"
+                      />
+                      <img
+                        src="/images/home/next.svg"
+                        className="next-button"
+                      />
+                    </div>
+                  </div>
+                  <div className="right fadeInUp">
+                    <img src="/images/home/quote.svg" />
+                    <p>{review.quote}</p>
+                    <Link href={review.link} className="main-button">
+                      <span>Read More Success Stories</span>
+                      <ButtonArrow />
+                    </Link>
                   </div>
                 </div>
-                <div className="right fadeInUp">
-                  <img src="/images/home/quote.svg" />
-                  <p>
-                    “Quorixia gave me the tools and confidence I needed to take
-                    the next step in my career. Their team was with me every
-                    step of the way.”
-                  </p>
-                  <Link href="#" className="main-button">
-                    <span>Read More Success Stories</span>
-                    <ButtonArrow />
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="slide">
-                <div className="left fadeInUp">
-                  <h3>John D.</h3>
-                  <h4>IT Specialist</h4>
-                  <div className="buttons">
-                    <img src="/images/home/prev.svg" className="prev-button" />
-                    <img src="/images/home/next.svg" className="next-button" />
-                  </div>
-                </div>
-                <div className="right fadeInUp">
-                  <img src="/images/home/quote.svg" />
-                  <p>
-                    “I never knew HR could be so personalised and effective.
-                    Quorixia changed the way I approach my career.”
-                  </p>
-                  <Link href="#" className="main-button">
-                    <span>Read More Success Stories</span>
-                    <ButtonArrow />
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="slide">
-                <div className="left fadeInUp">
-                  <h3>Emma R.</h3>
-                  <h4>Project Manager</h4>
-                  <div className="buttons">
-                    <img src="/images/home/prev.svg" className="prev-button" />
-                    <img src="/images/home/next.svg" className="next-button" />
-                  </div>
-                </div>
-                <div className="right fadeInUp">
-                  <img src="/images/home/quote.svg" />
-                  <p>
-                    “With Quorixia’s help, I secured a new role within weeks.
-                    Their approach is truly groundbreaking.”
-                  </p>
-                  <Link href="#" className="main-button">
-                    <span>Read More Success Stories</span>
-                    <ButtonArrow />
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>

@@ -6,7 +6,7 @@ const HomeSolutionWhite = () => {
   return (
     <section className="home-solution white">
       <div className="_container">
-        <div className="home-stand__body">
+        <div className="home-solution__body">
           <h3 className="fadeInUp">Our Solutions</h3>
           <h2 className="fadeInUp">
             Employment Services to Elevate Your Career

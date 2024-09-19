@@ -10,12 +10,43 @@ import OrderPopup from "@/global_components/OrderPopup";
 import ThanksPopup from "@/global_components/ThanksPopup";
 
 const HrPage = () => {
+  const reviews = [
+    {
+      name: "Sarah J.",
+      title: "Marketing Manager",
+      quote:
+        "“Quorixia helped me navigate a challenging contract negotiation and secure better terms. I’m more confident in my career decisions now!”",
+      link: "#",
+    },
+    {
+      name: "Daniel R.",
+      title: "Engineering Lead",
+      quote:
+        "“The leadership coaching I received was exceptional. It helped me step into a new management role with confidence.”",
+      link: "#",
+    },
+    {
+      name: "Laura M.",
+      title: "Project Coordinator",
+      quote:
+        "“I was struggling with workplace conflict, and Quorixia’s mediation service helped me resolve it quickly and professionally.”",
+      link: "#",
+    },
+    {
+      name: "Mike T.",
+      title: "IT Specialist",
+      quote:
+        "“Their exit strategy support was invaluable. Quorixia helped me transition out of a toxic work environment and into a new opportunity.”",
+      link: "#",
+    },
+  ];
+
   return (
     <>
       <HrHero />
       <HrExpertise />
       <HrPricing />
-      <HomeReviews />
+      <HomeReviews reviews={reviews} />
       <HrPersonalisedApproach />
       <HrRequest />
       <OrderPopup />
