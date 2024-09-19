@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ButtonArrow from "@/icons/ButtonArrow";
 import Link from "next/link";
+import OrderButton from "@/global_components/OrderButton";
 
 const HrExpertise = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -211,10 +212,10 @@ const HrExpertise = () => {
           </div>
         )}
         <div className="buttons-wrap">
-          <Link href="#" className="main-button">
-            <span>Order HR Service Now</span>
-            <ButtonArrow />
-          </Link>
+          <OrderButton
+            packageItem={"HR Service"}
+            text={"Order HR Service Now"}
+          />
         </div>
       </div>
     </section>
