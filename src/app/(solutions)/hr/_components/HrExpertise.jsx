@@ -133,6 +133,11 @@ const HrExpertise = () => {
       description:
         "We help connect you with mentors in your industry for growth and development.",
     },
+    {
+      title: "Workplace Wellness <br>& Mental Health Suppor",
+      description:
+        "Develop strategies to improve your mental well-being and create a healthier work-life environment.",
+    },
   ];
 
   // Function to split the data into chunks of 3 items each
