@@ -1,9 +1,13 @@
 import ButtonArrow from "@/icons/ButtonArrow";
+import { getPosts } from "@/utils/blog";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const HomeResources = () => {
+const HomeResources = async () => {
+  // Fetch the latest 3 posts
+  const posts = await getPosts(3);
+  console.log(posts[0].attributes.image.data.attributes.url);
   return (
     <section className="home-resources">
       <div className="_container">
@@ -17,34 +21,30 @@ const HomeResources = () => {
           you the tools to navigate your career confidently.
         </p>
         <div className="home-resources__body">
-          <div>
-            <div className="fadeInUp">
-              <div className="thumb">
-                <Image src={"/images/home/article1.png"} fill />
-              </div>
-              <div className="info">
-                <h4>How to Master Your Next Job Interview</h4>
-                <h5>01</h5>
-              </div>
-            </div>
-            <div className="fadeInUp">
-              <div className="thumb">
-                <Image src={"/images/home/article2.png"} fill />
-              </div>
-              <div className="info">
-                <h4>Top 10 Resume Tips You Can’t Afford to Miss</h4>
-                <h5>02</h5>
-              </div>
-            </div>
-            <div className="fadeInUp">
-              <div className="thumb">
-                <Image src={"/images/home/article3.png"} fill />
-              </div>
-              <div className="info">
-                <h4>How to Stay Ahead in a Rapidly Changing Job Market</h4>
-                <h5>03</h5>
-              </div>
-            </div>
+          <div className="blog">
+            {posts.map((post, index) => (
+              <Link
+                href={`/blog/${post.attributes.slug}`}
+                key={post.id}
+                className="fadeInUp"
+              >
+                <div className="thumb">
+                  <Image
+                    src={
+                      post.attributes.image.data?.attributes.url ||
+                      "/images/default.png"
+                    } // Fallback image if no URL
+                    alt={post.attributes.title}
+                    fill
+                  />
+                </div>
+                <div className="info">
+                  <h4>{post.attributes.title}</h4>
+                  <h5>{index + 1 < 10 ? `0${index + 1}` : index + 1}</h5>{" "}
+                  {/* Adds leading zero to the index */}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
         <Link href="#" className="main-button">
