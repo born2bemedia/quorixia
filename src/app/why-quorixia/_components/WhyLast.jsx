@@ -14,7 +14,7 @@ const WhyLast = () => {
               more about how we’re shaping careers and guiding individuals to
               success with every step.
             </p>
-            <Link href="#" className="main-button">
+            <Link href="/about-us" className="main-button">
               <span>Discover Our Approach</span>
               <ButtonArrow />
             </Link>

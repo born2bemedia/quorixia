@@ -45,11 +45,11 @@ const WhyDifferent = () => {
           </div>
         </div>
         <div className="buttons-wrap fadeInUp">
-          <Link href="#" className="main-button">
+          <Link href="/hr" className="main-button">
             <span>Explore Our HR Solutions</span>
             <ButtonArrow />
           </Link>
-          <Link href="#" className="main-button">
+          <Link href="/employment" className="main-button">
             <span>Unlock Employment Opportunities</span>
             <ButtonArrow />
           </Link>

@@ -60,7 +60,7 @@ const HomeSolutionBlack = () => {
               regulations that affect your rights and opportunities.
             </li>
           </ul>
-          <Link href="#" className="main-button">
+          <Link href="/hr" className="main-button">
             <span>Unlock Your Personalised HR Strategy</span>
             <ButtonArrow />
           </Link>

@@ -17,11 +17,11 @@ const HomeSecond = () => {
               are crafted to fit your personal journey.
             </p>
             <div className="buttons-wrap">
-              <Link href="#" className="main-button">
+              <Link href="/hr" className="main-button">
                 <span>Explore Our HR Solutions</span>
                 <ButtonArrow />
               </Link>
-              <Link href="#" className="main-button">
+              <Link href="/employment" className="main-button">
                 <span>Unlock Employment Opportunities</span>
                 <ButtonArrow />
               </Link>

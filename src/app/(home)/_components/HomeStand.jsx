@@ -42,7 +42,7 @@ const HomeStand = () => {
             </div>
           </div>
         </div>
-        <Link href="#" className="main-button">
+        <Link href="/why-quorixia" className="main-button">
           <span>See Why Clients Trust Quorixia</span>
           <ButtonArrow />
         </Link>
