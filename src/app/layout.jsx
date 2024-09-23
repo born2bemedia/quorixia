@@ -10,8 +10,21 @@ import { PopupsProvider } from "@/context/PopupsContext";
 const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Quorixia",
-  description: "",
+  title: {
+    default: "Personalized HR & Employment Services | Quorixia",
+    template: "%s",
+  },
+  description:
+    "Quorixia offers tailored HR and employment solutions designed to support your career growth. Explore our comprehensive services for personalised career guidance.",
+  openGraph: {
+    title: {
+      default: "Personalized HR & Employment Services | Quorixia",
+      template: "%s | Spectrum Consults",
+    },
+    description:
+      "Quorixia offers tailored HR and employment solutions designed to support your career growth. Explore our comprehensive services for personalised career guidance.",
+    images: "https://quorixia.com/images/meta.png",
+  },
 };
 
 export default function RootLayout({ children }) {

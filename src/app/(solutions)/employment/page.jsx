@@ -10,6 +10,18 @@ import EmploymentPersonalisedApproach from "./_components/EmploymentPersonalised
 import EmploymentRequest from "./_components/EmploymentRequest";
 import EmploymentHowWork from "./_components/EmploymentHowWork";
 
+export const metadata = {
+  title: "Employment Services to Elevate Your Career | Quorixia",
+  description:
+    "Quorixia offers employment services, including resume building, interview prep, and job search strategies to help you find and secure the right opportunities.",
+  openGraph: {
+    title: "Employment Services to Elevate Your Career | Quorixia",
+    description:
+      "Quorixia offers employment services, including resume building, interview prep, and job search strategies to help you find and secure the right opportunities.",
+    images: "https://quorixia.com/images/meta.png",
+  },
+};
+
 const EmploymentPage = () => {
   const reviews = [
     {

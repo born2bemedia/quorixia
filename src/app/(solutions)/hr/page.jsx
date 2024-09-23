@@ -9,6 +9,18 @@ import HrExpertise from "./_components/HrExpertise";
 import OrderPopup from "@/global_components/OrderPopup";
 import ThanksPopup from "@/global_components/ThanksPopup";
 
+export const metadata = {
+  title: "Expert HR Solutions for Career Success | Quorixia",
+  description:
+    "From contract negotiation to leadership coaching, Quorixia’s HR services provide the expert guidance you need to navigate and excel in your career.",
+  openGraph: {
+    title: "Expert HR Solutions for Career Success | Quorixia",
+    description:
+      "From contract negotiation to leadership coaching, Quorixia’s HR services provide the expert guidance you need to navigate and excel in your career.",
+    images: "https://quorixia.com/images/meta.png",
+  },
+};
+
 const HrPage = () => {
   const reviews = [
     {
