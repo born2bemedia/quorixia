@@ -198,6 +198,41 @@ const CartPage = () => {
       }
 
       newOrder(values);
+
+      const productTitles = cart.map((product) => product.attributes.title);
+      // Prepare order data for email
+    const emailOrderData = {
+      fullName: `${values.firstName} ${values.lastName}`,
+      email: values.email,
+      phone: values.phone,
+      service: 'Order', // Assuming you want to pass a service type
+      message: 'Your order details',
+      cart, // Pass the cart items to the email endpoint
+      totalAmount, // Include total amount in the email
+    };
+
+    try {
+      const response = await fetch("/api/emails/order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(emailOrderData),
+      });
+      console.log(JSON.stringify(emailOrderData));
+      if (response.ok) {
+        setTimeout(() => {
+          console.log(JSON.stringify(emailOrderData, null, 2));
+        }, 400);
+      } else {
+        setStatus({ success: false });
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus({ success: false });
+      setSubmitting(false);
+    }
+
     } catch (error) {
       console.error("An error occurred:", error);
     } finally {

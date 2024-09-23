@@ -54,7 +54,6 @@ const ChangePasswordReset = ({ token }) => {
         setChangePasswordError("");
         setTimeout(() => {
           setPasswordChanged(false);
-          localStorage.removeItem("resetToken");
           router.push("/log-in");
         }, 3000);
       } else {
