@@ -76,12 +76,21 @@ const Header = () => {
       </header>
       <div className={`menu-wrap ${menuOpened ? "opened" : ""}`}>
         <div className="_container">
-         
           <nav>
             <div className="left-col">
-              <Link href="/">Home</Link>
+              <Link href="/hr">HR</Link>
+              <Link href="/employment">Employment</Link>
+              <Link href="/pricing">Pricing</Link>
+              <Link href="/about-us">About Us</Link>
+              <Link href="/why-quorixia">Why Quorixia</Link>
             </div>
             <div className="right-col">
+              
+              <Link href="#">Careers</Link>
+              <Link href="#">Blog</Link>
+              <Link href="#">Case Studies</Link>
+              <Link href="#">Glossary</Link>
+              <Link href="#">Contact Us</Link>
             </div>
           </nav>
         </div>

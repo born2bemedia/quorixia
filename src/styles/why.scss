@@ -93,6 +93,7 @@
       z-index: 2;
       @media (max-width: rem(992)) {
         margin-bottom: rem(30);
+        font-size: rem(32);
       }
       br {
         display: none;
@@ -511,7 +512,8 @@
 .why-last {
   margin: rem(100) 0;
   @media (max-width: rem(992)) {
-    margin: rem(70) 0;
+    padding: rem(70) 0;
+    margin: 0;
     background: #a225ee;
   }
   &__body {
