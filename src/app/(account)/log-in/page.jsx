@@ -64,8 +64,13 @@ export default function SignIn() {
   return (
     <section className="log-in">
       <div className="_container">
-        <h1>Welcome to Quorixia!</h1>
-        <h2>Please enter your username and password to access your account.</h2>
+        <h1>Welcome Back to Quorixia!</h1>
+        <h2>
+          Log in to your account by entering your username or email and
+          password. <br />
+          If you’ve forgotten your password, use the “Forgot password?” link to
+          reset it.
+        </h2>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}

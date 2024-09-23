@@ -16,7 +16,8 @@ export default function SignUp() {
   const { fetchCurrentUser } = useAuth();
 
   const initialValues = {
-    name: "",
+    firstName: "",
+    lastName: "",
     phone: "",
     email: "",
     password: "",
@@ -24,12 +25,14 @@ export default function SignUp() {
     terms: false,
     privacy: false,
     age: false,
+    username: "",
   };
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
+    firstName: Yup.string().required("First name is required"),
+    lastName: Yup.string().required("Lame name is required"),
+    username: Yup.string().required("Lame name is required"),
     phone: Yup.string()
-      .matches(/^\d+$/, "Please provide a valid phone number")
       .required("Phone number is required"),
     email: Yup.string()
       .email("Invalid email address")
@@ -56,6 +59,7 @@ export default function SignUp() {
       setThanksPopupShow(true);
       setTimeout(() => {
         setThanksPopupShow(false);
+        console.log(response.data);
         localStorage.setItem("jwt", response.data.jwt);
         fetchCurrentUser();
         router.push("/dashboard");
@@ -72,8 +76,13 @@ export default function SignUp() {
     <>
       <section className="log-in">
         <div className="_container">
-          <h1>Join Quorixia today</h1>
-          <h2></h2>
+          <h1>Join the Quorixia Community</h1>
+          <h2>
+            Register to gain access to tailored career support, stay informed
+            about the latest job <br />
+            opportunities, and receive expert guidance to help you reach your
+            professional goals.
+          </h2>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -84,21 +93,44 @@ export default function SignUp() {
                 <div>
                   <Field
                     type="text"
-                    name="name"
+                    name="firstName"
                     placeholder="Name"
-                    className={touched.name && errors.name ? "invalid" : ""}
+                    className={
+                      touched.firstName && errors.firstName ? "invalid" : ""
+                    }
                   />
-                  <ErrorMessage name="name" component="div" className="error" />
+                  <ErrorMessage
+                    name="firstName"
+                    component="div"
+                    className="error"
+                  />
                 </div>
                 <div>
                   <Field
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className={touched.email && errors.email ? "invalid" : ""}
+                    type="text"
+                    name="lastName"
+                    placeholder="Name"
+                    className={
+                      touched.lastName && errors.lastName ? "invalid" : ""
+                    }
                   />
                   <ErrorMessage
-                    name="email"
+                    name="lastName"
+                    component="div"
+                    className="error"
+                  />
+                </div>
+                <div className="full">
+                  <Field
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    className={
+                      touched.username && errors.username ? "invalid" : ""
+                    }
+                  />
+                  <ErrorMessage
+                    name="username"
                     component="div"
                     className="error"
                   />
@@ -112,6 +144,19 @@ export default function SignUp() {
                   />
                   <ErrorMessage
                     name="phone"
+                    component="div"
+                    className="error"
+                  />
+                </div>
+                <div>
+                  <Field
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    className={touched.email && errors.email ? "invalid" : ""}
+                  />
+                  <ErrorMessage
+                    name="email"
                     component="div"
                     className="error"
                   />

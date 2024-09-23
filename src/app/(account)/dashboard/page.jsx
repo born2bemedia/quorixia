@@ -3,8 +3,9 @@ import React, { useState, useRef, useEffect } from "react";
 
 import LogoutButton from "./_components/LogoutButton";
 import Orders from "./_components/Orders";
-import ContactDetailsForm from "./_components/ContactDetailsForm";
 import { useAuth } from "@/context/AuthContext";
+import PersonalData from "./_components/PersonalData";
+import ThanksPopup from "@/global_components/ThanksPopup";
 
 export default function Account() {
   const { currentUser, fetchCurrentUser } = useAuth();
@@ -21,68 +22,60 @@ export default function Account() {
   };
 
   if (!currentUser) {
-    return <p>Please log in.</p>;
+    return (
+      <section className="account-wrap">
+        <div className="_container">
+          <p>Please log in.</p>
+        </div>
+      </section>
+    );
   }
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-extrabold text-gray-900 sm:text-5xl">
-        Your Account
-      </h1>
-      <div className="mt-6">
-        <p className="text-lg leading-6 font-medium text-gray-900">
-          Welcome,{" "}
-          <span className="font-bold">
-            {currentUser.name ? currentUser.name : currentUser.username}
-          </span>
-          !
-        </p>
-
-        <div className="md:flex mt-6">
-          <ul className="flex-column w-full sm:w-1/4 space-y space-y-4 text-sm font-medium text-gray-500 md:me-4 mb-4 md:mb-0">
-            <li>
-              <a
-                href="#"
+    <>
+      <section className="account-wrap">
+        <div className="_container">
+          <h1>
+            Welcome,{" "}
+            <span className="font-bold">
+              {currentUser.name ? currentUser.name : currentUser.username}
+            </span>
+            !
+          </h1>
+          <div className="account-wrap__body">
+            <ul className="account-nav">
+              <li
                 data-id={openIndex}
                 aria-current="page"
-                className={`inline-flex items-center px-5 py-2.5  gap-2 rounded-lg  w-full ${
-                  openIndex === 1
-                    ? "active bg-blue-700 text-white"
-                    : "bg-gray-50 text-gray-700"
-                }`}
                 onClick={() => toggleItem(1)}
+                className={`${openIndex === 1 && "active"}`}
               >
-                Orders
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
+                <span>Recent Orders</span>
+              </li>
+              <li
                 data-id={openIndex}
-                className={`inline-flex items-center px-5 py-2.5  gap-2 rounded-lg  w-full ${
-                  openIndex === 2
-                    ? "active bg-blue-700 text-white"
-                    : "bg-gray-50 text-gray-700"
-                }`}
+                aria-current="page"
                 onClick={() => toggleItem(2)}
+                className={`${openIndex === 2 && "active"}`}
               >
-                Contact Details
-              </a>
-            </li>
-            <li>
+                <span>Personal Data</span>
+              </li>
               <LogoutButton />
-            </li>
-          </ul>
-          <div className="sm:w-3/4 p-6 bg-gray-50 text-medium text-gray-500 rounded-lg w-full">
-            <div className={openIndex === 1 ? 'block' : 'hidden'}>
-              
-            </div>
-            <div className={openIndex === 2 ? 'block' : 'hidden'}>
-              <ContactDetailsForm />
+            </ul>
+
+            <div className="account-content">
+              <div className={openIndex === 1 ? "block" : "hidden"}>
+                <Orders />
+              </div>
+              <div className={openIndex === 2 ? "block" : "hidden"}>
+                <PersonalData />
+              </div>
+              <div className={openIndex === 3 ? "block" : "hidden"}></div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+      <ThanksPopup />
+    </>
   );
 }

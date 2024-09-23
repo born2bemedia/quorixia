@@ -1,10 +1,20 @@
 @import "mixin";
 
 .log-in {
-  padding: 150px 0;
-  background: #2f2d34;
+  padding: rem(200) 0 rem(150) 0;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 42%;
+    height: rem(100);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #a225ee;
+  }
   h1 {
-    color: #ffffff;
+    color: #1e1e1e;
     font-size: rem(36);
     font-weight: 700;
     line-height: 1.2;
@@ -13,7 +23,7 @@
     text-transform: uppercase;
   }
   h2 {
-    color: #ffffff;
+    color: #1e1e1e;
     font-size: rem(16);
     font-weight: 400;
     line-height: 1.2;
@@ -29,8 +39,7 @@
   form {
     display: flex;
     justify-content: center;
-    column-gap: 30px;
-    row-gap: 20px;
+    gap: rem(30);
     flex-wrap: wrap;
     max-width: rem(540);
     margin: 0 auto;
@@ -50,17 +59,21 @@
     button {
       margin: 20px auto 0 auto;
       border: none;
+      color: #1e1e1e;
     }
 
-    .success{
+    .success {
       text-align: center;
       font-size: rem(14);
       color: #fff;
     }
 
     > div {
-      width: rem(255);
+      width: calc(50% - rem(15));
       position: relative;
+      &.full {
+        width: 100%;
+      }
 
       @media (max-width: rem(992)) {
         width: 100%;
@@ -82,16 +95,16 @@
         width: 100%;
         height: rem(50);
         padding: 0 20px;
-        background: #FFFFFF0D;
-        border: 1px solid #FFFFFF1A;
+        background: #0000001a;
+        border: 1px solid #00000033;
         border-radius: 0;
-        color: #fff;
+        color: #1e1e1e;
         font-size: rem(16);
         font-weight: 400;
         line-height: 1.2;
         text-align: left;
         &::placeholder {
-          color: #ffffff80;
+          color: #00000082;
         }
         &.invalid {
           border-color: #ff5353;
@@ -99,7 +112,7 @@
       }
 
       &.checkbox {
-        width: rem(260);
+        width: 100%;
         margin: 0 auto;
         position: relative;
         @media (max-width: rem(992)) {
@@ -127,7 +140,7 @@
           display: flex;
           align-items: flex-start;
           gap: 10px;
-          color: #fff;
+          color: #1e1e1e;
           font-size: rem(12);
           font-weight: 400;
           line-height: 1.2;
@@ -135,7 +148,7 @@
           svg {
             width: rem(14);
             height: rem(14);
-            margin-top: -5px;
+            margin-top: 0;
             circle {
               &:last-child {
                 opacity: 0;
@@ -145,7 +158,8 @@
           span {
             width: calc(100% - 30px);
             a {
-              color: #ea4073;
+              color: #1e1e1e;
+              text-decoration: underline;
             }
           }
         }
@@ -153,7 +167,7 @@
     }
     .reset {
       width: 100%;
-      color: #ffffff;
+      color: #1e1e1e;
       font-size: rem(12);
       font-weight: 400;
       line-height: 1.2;
@@ -162,7 +176,6 @@
     }
   }
 }
-
 
 .change-password {
   padding: 150px 0;
@@ -194,7 +207,7 @@
     margin: 50px auto 0 auto;
     border: none;
   }
-  .success{
+  .success {
     text-align: center;
     font-size: rem(14);
     color: #fff;
@@ -221,9 +234,7 @@
       }
     }
 
-    
-
-    .success{
+    .success {
       text-align: center;
       font-size: rem(14);
       color: #fff;
@@ -324,7 +335,7 @@
     }
     .reset {
       width: 100%;
-      color: #ffffff;
+      color: #1e1e1e;
       font-size: rem(12);
       font-weight: 400;
       line-height: 1.2;
@@ -335,8 +346,26 @@
 }
 
 .account-wrap {
-  padding: 150px 0;
-  background: #2f2d34;
+  padding: rem(200) 0 rem(150) 0;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 42%;
+    height: rem(100);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #a225ee;
+  }
+  h1 {
+    color: #1e1e1e;
+    font-size: rem(32);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0 0 rem(35) 0;
+  }
   &__body {
     display: flex;
     gap: 30px;
@@ -350,40 +379,26 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: rem(10);
       @media (max-width: rem(992)) {
         width: 100%;
       }
       li {
         cursor: pointer;
-        color: #ffffff80;
+        color: #1e1e1e;
         font-size: rem(16);
         font-weight: 600;
         line-height: 1.2;
         text-align: left;
-        padding: 10px 30px 10px 30px;
-        height: rem(60);
-        background: #2f2d34;
-        border-radius: 20px;
+        padding: rem(25) rem(30);
+        height: rem(70);
+        background: #f2f2f2;
         border: none;
         display: flex;
         align-items: center;
-        svg {
-          margin-right: 10px;
-        }
         &.active {
           color: #ffffff;
-          &::before {
-            content: "";
-            display: block;
-            width: rem(4);
-            height: rem(30);
-            background: #ea4073;
-            border-radius: 20px;
-          }
-          span {
-            margin-left: 15px;
-          }
+          background: #a225ee;
         }
       }
     }
@@ -397,31 +412,33 @@
         display: none;
       }
       p {
-        color: #ffffff;
+        color: #1e1e1e;
         font-size: rem(16);
         font-weight: 400;
         line-height: 1.2;
         text-align: left;
         margin: 0 0 16px 0;
-        span{
+        span {
           cursor: pointer;
-          color: #EA4073;
+          color: #ea4073;
         }
       }
 
       h2 {
-        color: #ffffff;
-        font-size: rem(16);
-        font-weight: 700;
+        color: #1e1e1e;
+        font-size: rem(14);
+        font-weight: 500;
         line-height: 1.2;
         text-align: left;
+        background: #f2f2f2;
         margin: 0 0 30px 0;
+        padding: rem(15) rem(20);
       }
 
-      .success{
+      .success {
         text-align: left;
         font-size: rem(14);
-        color: #fff;
+        color: #1e1e1e;
       }
 
       form {
@@ -454,16 +471,16 @@
               width: 100%;
               height: rem(50);
               padding: 0 20px;
-              background: #ffffff1a;
-              border: 1px solid #ffffff33;
-              border-radius: 25px;
-              color: #fff;
+              background: #0000000d;
+              border: 1px solid #00000033;
+              border-radius: 0;
+              color: #1e1e1e;
               font-size: rem(16);
               font-weight: 400;
               line-height: 1.2;
               text-align: left;
               &::placeholder {
-                color: #ffffff80;
+                color: #00000082;
               }
               &.invalid {
                 border-color: #ff5353;
@@ -526,15 +543,19 @@
         }
         button {
           margin-top: 30px;
+          color: #1e1e1e;
         }
       }
 
       .change-password {
         margin-top: 100px;
-        button{
+        padding: 0;
+        background: transparent;
+        button {
           margin: 30px 0 0 0;
+          color: #1e1e1e;
         }
-        h2{
+        h2 {
           text-transform: unset;
         }
         .password-data {
@@ -544,8 +565,10 @@
           justify-content: flex-start;
           gap: 30px;
           margin: 0;
+          width: 100%;
+          max-width: 100%;
           > div {
-            width: rem(255);
+            width: calc(33.33% - rem(20));
             position: relative;
 
             @media (max-width: rem(992)) {
@@ -568,16 +591,16 @@
               width: 100%;
               height: rem(50);
               padding: 0 20px;
-              background: #ffffff1a;
-              border: 1px solid #ffffff33;
-              border-radius: 25px;
-              color: #fff;
+              background: #0000000d;
+              border: 1px solid #00000033;
+              border-radius: 0;
+              color: #1e1e1e;
               font-size: rem(16);
               font-weight: 400;
               line-height: 1.2;
               text-align: left;
               &::placeholder {
-                color: #ffffff80;
+                color: #00000082;
               }
               &.invalid {
                 border-color: #ff5353;

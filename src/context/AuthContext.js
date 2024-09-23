@@ -38,10 +38,16 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // Function to retrieve the token from localStorage
+  const getToken = () => {
+    return localStorage.getItem("jwt");
+  };
+
   const value = {
     currentUser,
     setCurrentUser,
     fetchCurrentUser, // Expose fetchCurrentUser for manual calls
+    getToken, // Expose getToken function
     loading,
   };
 

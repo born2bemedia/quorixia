@@ -6,50 +6,49 @@ const apiUrl = process.env.NEXT_PUBLIC_REST_API_URL;
 export async function POST(request) {
   const requestBody = await request.text();
   const bodyJSON = JSON.parse(requestBody);
-  const {
-    firstName,
-    lastName,
-    email,
-    phone,
-    street,
-    address,
-    city,
-    state,
-    zip,
-    country,
-    userId,
-  } = bodyJSON;
+  const { email, currentPassword, newPassword } = bodyJSON;
 
   try {
-    // Construct the user update payload
+    // Login the user to verify the current password
+    const loginUrl = `${apiUrl}/auth/local`;
+
+    const loginResponse = await axios.post(loginUrl, {
+      identifier: email,
+      password: currentPassword,
+    });
+
+    if (!loginResponse.data.jwt) {
+      return new Response(
+        JSON.stringify({ message: "The current password is incorrect" }),
+        {
+          status: 400,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
+
+    // Retrieve the JWT token for authorization
+    const authToken = loginResponse.data.jwt;
+
+    // Construct the user update URL and payload for password change
+    const updateUrl = `${apiUrl}/users/${loginResponse.data.user.id}`;
     const userData = {
-      firstName,
-      lastName,
-      email,
-      phone,
-      street, // Assuming these fields map to Strapi fields
-      address,
-      city,
-      state,
-      zip,
-      country: country.value, // Ensure the correct format for Strapi
+      password: newPassword,
     };
 
-    // Construct headers for the request
+    // Update the user password using the JWT token
     const headers = {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`, // Use apiKey for authentication
+      Authorization: `Bearer ${authToken}`,
     };
 
-    // URL for updating user details in Strapi
-    const updateUrl = `${apiUrl}users/${userId}`;
-
-    // Make the request to update user details in Strapi
     const updateResponse = await axios.put(updateUrl, userData, { headers });
 
     return new Response(
       JSON.stringify({
-        message: "Success: User details updated",
+        message: "Password changed successfully",
         user: updateResponse.data,
       }),
       {
@@ -64,7 +63,7 @@ export async function POST(request) {
 
     return new Response(
       JSON.stringify({
-        message: "Failed to update user details",
+        message: "Failed to change password",
         error: error.response ? error.response.data : error.message,
       }),
       {

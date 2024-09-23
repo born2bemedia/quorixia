@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { useAuth } from "@/context/AuthContext";
 import { getOrdersByUser } from "@/app/api/orders";
+import { useAuth } from "@/context/AuthContext";
+import Link from "next/link";
 
 function Orders() {
   const { currentUser, fetchCurrentUser } = useAuth();
@@ -80,21 +80,19 @@ function Orders() {
                       </td>
 
                       <td className="px-6 py-4 text-sm text-gray-500">
-                        {order.attributes.status != "cancelled"  && (
-                            order.attributes.products.data.map((product) => (
-                              <Link
-                                key={product.id}
-                                target="_blank"
-                                href={
-                                  product.attributes.files.data[0].attributes.url
-                                }
-                                className="gap-2 inline-flex items-center bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                              >
-                                {product.attributes.title}
-                              </Link>
-                            ))
-                        )}
-                        
+                        {order.attributes.status != "cancelled" &&
+                          order.attributes.products.data.map((product) => (
+                            <Link
+                              key={product.id}
+                              target="_blank"
+                              href={
+                                product.attributes.files.data[0].attributes.url
+                              }
+                              className="gap-2 inline-flex items-center bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                            >
+                              {product.attributes.title}
+                            </Link>
+                          ))}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-700">
                         $ {order.attributes.amount}
