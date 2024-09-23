@@ -27,9 +27,10 @@ const CartPage = () => {
 
                   <div className="cart">
                     <div className="cart-head">
-                      <div>Product</div>
-                      <div>Quantity</div>
+                      <div>Service Name</div>
                       <div>Price</div>
+                      <div>Quantity</div>
+
                       <div>Subtotal</div>
                     </div>
                     <div className="cart-content">
@@ -39,11 +40,12 @@ const CartPage = () => {
                             <button onClick={() => deleteFromCart(item.id)}>
                               <DeleteIcon />
                             </button>
-                            <span>{item.title}</span>
+                            <span>{item.attributes.title}</span>
                           </div>
+                          <div>€{item.attributes.price}</div>
                           <div>{item.quantity}</div>
-                          <div>€{item.price}</div>
-                          <div>€{item.quantity * item.price}</div>
+
+                          <div>€{item.quantity * item.attributes.price}</div>
                         </div>
                       ))}
                     </div>

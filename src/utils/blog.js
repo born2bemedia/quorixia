@@ -28,9 +28,7 @@ const buildPostsUrl = (count) => {
 export const getPosts = async (count) => {
   try {
     const url = buildPostsUrl(count);
-    console.log("Fetching URL: ", url); // Log the URL for debugging
     const response = await axiosClient.get(url);
-    console.log("Response Status: ", response.status); // Log the response status
 
     // Add full URL to image paths
     const posts = response.data.data.map(post => {

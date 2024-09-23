@@ -99,7 +99,7 @@ function OrderPopup() {
               >
                 <path
                   d="M18 18.5L2 2.5M18 2.5L2 18.5"
-                  stroke="#FFFFFF"
+                  stroke="#1E1E1E"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
@@ -109,17 +109,17 @@ function OrderPopup() {
                   <Form>
                     {!status && (
                       <div className="form-inner">
-                        <h2>Ready to Transform Your Professional Journey?</h2>
+                        <h2>Complete Package Request</h2>
                         <p>
-                          Get started with our tailored HR solutions today.
-                          Schedule a consultation and take the first step toward
-                          achieving your career goals.
+                          Interested in our ready-made package? Please fill out
+                          the form below so our representative can contact you
+                          shortly with all the necessary details.
                         </p>
 
                         <span className="service">{serviceValue}</span>
 
                         <Field type="hidden" name="service" />
-                        <div className="full">
+                        <div>
                           <Field
                             name="fullName"
                             type="text"
@@ -169,10 +169,10 @@ function OrderPopup() {
                           />
                         </div>
 
-                        <div className="full">
+                        <div>
                           <Field
                             name="message"
-                            as="textarea"
+                            type="text"
                             placeholder="Your Message"
                             className={
                               touched.message && errors.message ? "invalid" : ""

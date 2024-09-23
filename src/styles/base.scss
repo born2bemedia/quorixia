@@ -176,7 +176,7 @@ a {
     transition: all 0.5s;
     width: rem(540);
     max-width: 95%;
-    background: #2f2d34;
+    background: #ffffff;
     padding: 50px;
     border-radius: 20px;
     position: absolute;
@@ -215,7 +215,7 @@ a {
       align-items: center;
       width: 100%;
       h3 {
-        color: #fff;
+        color: #1e1e1e;
         margin: 10px 0 10px 0;
         font-size: rem(36);
         font-weight: 600;
@@ -224,7 +224,7 @@ a {
       }
       p {
         margin: 0;
-        color: #fff;
+        color: #1e1e1e;
         font-size: rem(14);
         font-weight: 400;
         line-height: 18.23px;
@@ -339,7 +339,7 @@ a {
     transition: all 0.5s;
     width: rem(730);
     max-width: 95%;
-    background: #1e1e1e;
+    background: #fff;
     padding: 70px 95px;
     border-radius: 0;
     position: absolute;
@@ -374,11 +374,11 @@ a {
     }
     h2 {
       margin: 0 0 10px 0;
-      font-size: rem(36);
+      font-size: rem(32);
       font-weight: 600;
       line-height: 1.2;
-      text-align: left;
-      color: #fff;
+      text-align: center;
+      color: #1e1e1e;
       width: 100%;
       @media (max-width: rem(992)) {
         font-size: rem(24);
@@ -388,7 +388,7 @@ a {
       }
     }
     h3 {
-      color: #ffffff;
+      color: #1e1e1e;
       font-size: rem(16);
       font-weight: 400;
       line-height: 1.2;
@@ -396,7 +396,7 @@ a {
       margin: 0 0 0 0;
     }
     p {
-      color: #FFFFFF;
+      color: #1e1e1e;
       font-size: rem(16);
       font-weight: 400;
       line-height: 1.2;
@@ -405,10 +405,12 @@ a {
     }
     .service {
       color: #a225ee;
-      font-size: rem(24);
+      font-size: rem(16);
       font-weight: 600;
       line-height: 1.2;
-      text-align: left;
+      text-align: center;
+      margin-bottom: rem(25);
+      width: 100%;
     }
     form {
       .form-inner {
@@ -441,11 +443,11 @@ a {
               gap: 10px;
               .upload-custom {
                 width: 100%;
-                color: #ffffff;
+                color: #1e1e1e;
                 height: rem(50);
                 border-radius: 25px;
-                background: #ffffff0d;
-                border: 1px solid #ffffff26;
+                background: #0000000d;
+                border: 1px solid #00000033;
                 font-size: rem(16);
                 font-weight: 400;
                 line-height: 1.2;
@@ -492,7 +494,7 @@ a {
               align-items: center;
               gap: 10px;
               justify-content: center;
-              color: #ffffff;
+              color: #1e1e1e;
               font-size: rem(14);
               font-weight: 400;
               line-height: 1.2;
@@ -528,11 +530,11 @@ a {
           .custom-input {
             width: 100%;
 
-            color: #ffffff;
+            color: #1e1e1e;
             height: rem(50);
             border-radius: 0;
-            background: #ffffff0d;
-            border: 1px solid #ffffff1a;
+            background: #0000000d;
+            border: 1px solid #00000033;
             font-size: rem(16);
             font-weight: 400;
             line-height: 1.2;
@@ -542,7 +544,7 @@ a {
               border-color: #e74848;
             }
             &::placeholder {
-              color: #ffffff4d;
+              color: #00000082;
             }
           }
           textarea {
@@ -553,9 +555,10 @@ a {
       }
 
       button {
-        margin: 10px 0 0 0;
+        margin: 10px auto 0 auto;
         font-weight: 600;
-        width: rem(255);
+        width: fit-content;
+        color: #1e1e1e;
       }
       .success {
         display: flex;
@@ -563,7 +566,7 @@ a {
         align-items: center;
         width: 100%;
         h3 {
-          color: #fff;
+          color: #1e1e1e;
           margin: 10px 0 10px 0;
           font-size: rem(36);
           font-weight: 600;
@@ -572,12 +575,48 @@ a {
         }
         p {
           margin: 0;
-          color: #fff;
+          color: #1e1e1e;
           font-size: rem(14);
           font-weight: 400;
           line-height: 18.23px;
           text-align: center;
         }
+      }
+    }
+  }
+}
+
+.thankyou-page {
+  padding: rem(200) 0 rem(150) 0;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 42%;
+    height: rem(100);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #a225ee;
+  }
+  h1 {
+    color: #1e1e1e;
+    font-size: rem(36);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+  h2 {
+    color: #1e1e1e;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 0 40px 0;
+    @media (max-width: rem(767)) {
+      br {
+        display: none;
       }
     }
   }

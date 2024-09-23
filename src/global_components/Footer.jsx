@@ -40,7 +40,7 @@ const Footer = () => {
             <div>
               <Link href="/hr">HR</Link>
               <Link href="/employment">Employment</Link>
-              <Link href="#">Pricing</Link>
+              <Link href="/pricing">Pricing</Link>
             </div>
           </div>
           <div>

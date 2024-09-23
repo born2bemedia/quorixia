@@ -1,9 +1,8 @@
 import qs from 'qs';
 import axiosClient from './GlobalApi';
 
-const PRODUCTS_URL = `/products?` + qs.stringify({
-    fields: ['id', 'slug', 'title', 'description', 'price', 'category'],
-    populate: {banner: {fields: ['url']}, files: {fields: ['url']}},
+const PRODUCTS_URL = `products?` + qs.stringify({
+    fields: ['id', 'slug', 'title', 'description', 'price', 'category', 'includes'],
     pagination: { pageSize: 9999},
 });
 

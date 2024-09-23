@@ -3,21 +3,20 @@ import React, { useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 import ButtonArrow from "@/icons/ButtonArrow";
 
-const ChangePasswordReset = ({ email, token }) => {
+const ChangePasswordReset = ({ token }) => {
   const [changePasswordError, setChangePasswordError] = useState("");
   const [passwordChanged, setPasswordChanged] = useState(false);
   const router = useRouter();
-  const [userEmail, setUserEmail] = useState(null);
   const [userToken, setUserToken] = useState(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setUserEmail(email);
       setUserToken(token);
     }
-  }, []);
+  }, [token]);
 
   const initialValues = {
     newPassword: "",
@@ -32,39 +31,40 @@ const ChangePasswordReset = ({ email, token }) => {
   });
 
   const handleSubmit = async (values, { setSubmitting }) => {
-    if (!email || !token) {
+    if (!userToken) {
       setChangePasswordError("Invalid or expired token.");
       setSubmitting(false);
       return;
     }
 
-    const { newPassword } = values;
+    const { newPassword, confirmPassword } = values;
 
     try {
-      const response = await fetch("/api/auth/reset-password", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, token, newPassword }),
-      });
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_REST_API_URL}auth/reset-password`,
+        {
+          code: userToken, // token received in the reset link
+          password: newPassword,
+          passwordConfirmation: confirmPassword,
+        }
+      );
 
-      if (response.ok) {
+      if (response.status === 200) {
         setPasswordChanged(true);
         setChangePasswordError("");
         setTimeout(() => {
           setPasswordChanged(false);
           localStorage.removeItem("resetToken");
-          localStorage.removeItem("resetEmail");
           router.push("/log-in");
         }, 3000);
       } else {
-        const errorData = await response.json();
-        setChangePasswordError(errorData.message);
+        setChangePasswordError("Failed to change password.");
       }
     } catch (error) {
       console.error("Failed to change password", error);
-      setChangePasswordError("An error occurred. Please try again.");
+      setChangePasswordError(
+        error.response?.data?.message || "An error occurred. Please try again."
+      );
     } finally {
       setSubmitting(false);
     }

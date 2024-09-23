@@ -12,6 +12,8 @@ import countryList from "react-select-country-list";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import ButtonArrow from "@/icons/ButtonArrow";
+import axiosClient from "@/utils/GlobalApi";
+import { createOrder } from "@/app/api/orders";
 
 const getCountryOptionByCode = (code) => {
   const countries = countryList().getData();
@@ -24,9 +26,9 @@ const customStyles = {
     width: "100%",
     color: "#ffffff4d",
     height: "50px",
-    borderRadius: "25px",
-    background: "#ffffff0d",
-    border: state.isFocused ? "1px solid #ffffff26" : "1px solid #ffffff26",
+    borderRadius: "0",
+    background: "#0000000D",
+    border: state.isFocused ? "1px solid #00000033" : "1px solid #00000033",
     fontSize: "16px",
     fontWeight: "400",
     lineHeight: "1.2",
@@ -34,7 +36,7 @@ const customStyles = {
     padding: "0 20px",
     boxShadow: "unset",
     "&:hover": {
-      borderColor: "#ffffff26",
+      borderColor: "#00000033",
     },
   }),
   valueContainer: (provided) => ({
@@ -50,11 +52,11 @@ const customStyles = {
     margin: "0",
     padding: "0",
     border: "none",
-    color: "#ffffff",
+    color: "#1E1E1E",
   }),
   singleValue: (provided) => ({
     ...provided,
-    color: "#ffffff",
+    color: "#1E1E1E",
   }),
   indicatorsContainer: (provided) => ({
     ...provided,
@@ -72,10 +74,11 @@ const customStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
-    background: state.isSelected ? "#222222" : "#222222",
-    color: "#ffffff",
+    background: state.isSelected ? "#F2F2F2" : "#F2F2F2",
+    color: "#1E1E1E",
     "&:hover": {
-      background: "#161616",
+      background: "#A225EE",
+      color: "#ffffff",
     },
   }),
 };
@@ -83,23 +86,25 @@ const customStyles = {
 const CartPage = () => {
   const { cart, deleteFromCart, clearCart, totalAmount } = useCart();
   const [isMounted, setIsMounted] = useState(false);
-  const { currentUser, setCurrentUser, refreshToken } = useAuth();
+  const { currentUser, setCurrentUser, getToken } = useAuth();
   const router = useRouter();
+
   useEffect(() => {
     setIsMounted(true);
+    console.log(currentUser);
   }, []);
 
   const initialValues = {
-    firstName: currentUser?.billing?.first_name || "",
-    lastName: currentUser?.billing?.last_name || "",
+    firstName: currentUser?.firstName || "",
+    lastName: currentUser?.lastName || "",
     email: currentUser?.email || "",
-    phone: currentUser?.billing?.phone || "",
-    street: currentUser?.billing?.address_1 || "",
-    address: currentUser?.billing?.address_2 || "",
-    city: currentUser?.billing?.city || "",
-    state: currentUser?.billing?.state || "",
-    zip: currentUser?.billing?.postcode || "",
-    country: getCountryOptionByCode(currentUser?.billing?.country) || "",
+    phone: currentUser?.phone || "",
+    street: currentUser?.street || "",
+    address: currentUser?.address || "",
+    city: currentUser?.city || "",
+    state: currentUser?.state || "",
+    zip: currentUser?.zip || "",
+    country: getCountryOptionByCode(currentUser?.country) || "",
     terms: false,
   };
 
@@ -115,7 +120,7 @@ const CartPage = () => {
     street: Yup.string().required("This field is required."),
     address: Yup.string().required("This field is required."),
     city: Yup.string().required("This field is required."),
-    //state: Yup.string().required("This field is required."),
+    state: Yup.string().required("This field is required."),
     zip: Yup.string().required("This field is required."),
     country: Yup.string().required("This field is required."),
     terms: Yup.bool().oneOf(
@@ -125,84 +130,104 @@ const CartPage = () => {
   });
 
   const handleSubmit = async (values, { setSubmitting }) => {
-    const orderData = {
-      payment_method: "bacs",
-      payment_method_title: "Direct Bank Transfer",
-      set_paid: false,
-      status: "processing",
-      billing: {
-        first_name: values.firstName,
-        last_name: values.lastName,
-        address_1: values.street,
-        address_2: values.address,
-        city: values.city,
-        state: values.state,
-        postcode: values.zip,
-        country: values.country.value,
-        email: values.email,
-        phone: values.phone,
-      },
-      line_items: cart.map((item) => ({
-        product_id: item.id,
-        quantity: item.quantity,
-      })),
-    };
-
-    const updateData = {
-      billing: {
-        first_name: values.firstName,
-        last_name: values.lastName,
-        address_1: values.street,
-        address_2: values.address,
-        city: values.city,
-        state: values.state,
-        postcode: values.zip,
-        country: values.country.value,
-        email: values.email,
-        phone: values.phone,
-      },
-    };
-
     try {
-      if (currentUser) {
-        const updateResponse = await fetch("/api/auth/update-user", {
+      let userId = currentUser?.id;
+      if (!userId) {
+        // Register a new user if they do not exist
+        const registerData = {
+          email: values.email,
+          password: "defaultPassword", // Use a default or generated password here
+          firstName: values.firstName,
+          lastName: values.lastName,
+          username: values.email,
+          phone: values.phone,
+        };
+
+        const registerResponse = await fetch("/api/auth/sign-up", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+          },
+          body: JSON.stringify(registerData),
+        });
+
+        if (registerResponse.ok) {
+          const registerResult = await registerResponse.json();
+          userId = registerResult.user.id;
+          setCurrentUser(registerResult.user); // Update current user context
+          localStorage.setItem("user", JSON.stringify(registerResult.user));
+        } else {
+          throw new Error("User registration failed.");
+        }
+      } else {
+        // Update existing user information
+        const updateData = {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          phone: values.phone,
+          street: values.street,
+          address: values.address,
+          city: values.city,
+          state: values.state,
+          zip: values.zip,
+          country: values.country,
+          userId,
+        };
+
+        console.log("updateData", updateData);
+
+        const token = getToken();
+
+        const updateResponse = await fetch("/api/auth/user-update", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(updateData),
         });
 
         if (!updateResponse.ok) {
-          throw new Error("Failed to update user data");
+          throw new Error("Failed to update user data.");
         }
 
         const updatedUser = await updateResponse.json();
-        setCurrentUser(updatedUser);
-        localStorage.setItem("user", JSON.stringify(updatedUser));
-        //await refreshToken();
+        setCurrentUser(updatedUser.user);
+        localStorage.setItem("user", JSON.stringify(updatedUser.user));
       }
 
-      const response = await fetch("/api/orders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderData),
-      });
-
-      if (response.ok) {
-        clearCart();
-        router.push("/thankyou");
-      } else {
-        const errorData = await response.json();
-        //alert(`Error: ${errorData.message}`);
-      }
+      newOrder(values);
     } catch (error) {
-      //alert("There was an error placing the order.");
+      console.error("An error occurred:", error);
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const newOrder = (values) => {
+    const productIds = cart.map((product) => product.id); // Proper use of map to transform cart items into an array of IDs
+
+    const orderData = {
+      data: {
+        email: values.email, // Include email
+        users_permissions_user: currentUser.id,
+        products: productIds, // Use the transformed array
+        amount: totalAmount,
+        status: "completed",
+      },
+    };
+
+    createOrder(orderData).then((response) => {
+      console.log(orderData);
+      console.log(response);
+      if (response.status === 200) {
+        clearCart();
+        router.push("/thankyou");
+      } else {
+        console.error("Order creation failed:", response);
+      }
+    });
   };
 
   return (
@@ -428,9 +453,17 @@ const CartPage = () => {
                                 className="error"
                               />
                             </div>
+                            <div className="full">
+                              <p>
+                                * An email containing payment instructions,
+                                including our bank details, will be sent shortly
+                                after placing an order. This email will also
+                                include a summary of your order details.
+                              </p>
+                            </div>
                           </div>
 
-                          <h2>PAYMENT METHOD</h2>
+                          <h2>Payment Method</h2>
                           <div className="payment">
                             <div>Bank Transfer*</div>
                             <p>
@@ -496,11 +529,12 @@ const CartPage = () => {
                             </div>
 
                             <button
-                              className="white-button"
+                              className="main-button"
                               type="submit"
                               disabled={isSubmitting}
                             >
-                              Submit
+                              <span>Submit</span>
+                              <ButtonArrow />
                             </button>
 
                             <div className="privacy">

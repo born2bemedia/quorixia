@@ -3,6 +3,7 @@ import "@/styles/account.scss";
 import { useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 import ButtonArrow from "@/icons/ButtonArrow";
 
 export default function PasswordResetRequest() {
@@ -21,15 +22,11 @@ export default function PasswordResetRequest() {
     { setSubmitting, resetForm, setStatus }
   ) => {
     try {
-      const response = await fetch("/api/auth/password-reset-request", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
+      const response = await axios.post(`https://quorixia-cms.onrender.com/api/auth/forgot-password`, {
+        email: values.email,
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         setSubmitting(false);
         resetForm();
         setStatus({ success: true });
@@ -37,7 +34,8 @@ export default function PasswordResetRequest() {
         setStatus({ success: false });
       }
     } catch (error) {
-      console.error(error);
+      console.error("An error occurred:", error.response);
+      setStatus({ success: false });
     }
   };
 
@@ -77,6 +75,11 @@ export default function PasswordResetRequest() {
               {status && status.success && (
                 <div className="success">
                   <p>Reset link was sent to your email!</p>
+                </div>
+              )}
+              {status && status.success === false && (
+                <div className="error">
+                  <p>An error occurred. Please try again.</p>
                 </div>
               )}
             </Form>

@@ -222,7 +222,7 @@ const EmploymentExpertise = () => {
         )}
         <div className="buttons-wrap">
           <OrderButton
-            packageItem={"HR Service"}
+            packageItem={"Order Employment"}
             text={"Order Employment Service Now"}
           />
         </div>

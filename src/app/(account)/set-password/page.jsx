@@ -4,25 +4,25 @@ import { Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import "@/styles/account.scss";
 import ChangePasswordReset from "../dashboard/_components/ChangePasswordReset";
+import { useAuth } from "@/context/AuthContext";
 
 function SetPasswordContent() {
+  const { currentUser, fetchCurrentUser } = useAuth();
   const searchParams = useSearchParams();
-  const email = searchParams.get("email");
-  const token = searchParams.get("token");
+  const token = searchParams.get("code");
   const router = useRouter();
 
   useEffect(() => {
-    if (email && token) {
+    if (token) {
       localStorage.setItem("resetToken", token);
-      localStorage.setItem("resetEmail", email);
     }
-  }, [email, token]);
+  }, [token]);
 
-  if (!email || !token) {
+  if (!token) {
     return <div>Invalid or expired link.</div>;
   }
 
-  return <ChangePasswordReset email={email} token={token} />;
+  return <ChangePasswordReset token={token} />;
 }
 
 export default function SetPassword() {

@@ -16,7 +16,7 @@ function Orders() {
       setLoading(true);
       try {
         const ordersData = await getOrdersByUser(currentUser.email);
-        console.log(currentUser);
+        console.log(ordersData);
         setOrders(ordersData);
       } catch (error) {
         console.error("Failed to fetch orders:", error);
@@ -32,70 +32,49 @@ function Orders() {
   return (
     <>
       <div>
-        <h2 className="text-xl font-bold text-gray-900">Your orders</h2>
-        {loading && <p className="mt-4 text-gray-600">Loading orders...</p>}
-        {error && <p className="mt-4 text-red-600">{error}</p>}
+        {loading && <p className="">Loading orders...</p>}
+        {error && <p className="">{error}</p>}
         {orders && (
-          <div className="mt-8">
-            <div className="mt-4 overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
+          <div className="">
+            <div className="orders-wrap">
+              <table className="orders">
+                <thead className="">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      ID
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Status
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Date
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Products
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Amount
-                    </th>
+                    <th className="">Order ID</th>
+                    <th className="">Service Purchased</th>
+                    <th className="">Date</th>
+                    <th className="">Total Price</th>
+                    <th className="">Payment Method</th>
+                    <th className="">Order Status</th>
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                <tbody className="">
                   {orders.map((order) => (
                     <tr key={order.id}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {order.id}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {order.attributes.status == "cancelled" ? (
-                          <div className="inline-block bg-red-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                            Cancelled
-                          </div>
-                        ) : (
-                          <div className="inline-block bg-green-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                            Completed
-                          </div>
-                        )}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {order.attributes.createdAt}
-                      </td>
-
-                      <td className="px-6 py-4 text-sm text-gray-500">
+                      <td className="">#{order.id}</td>
+                      <td className="">
                         {order.attributes.status != "cancelled" &&
                           order.attributes.products.data.map((product) => (
                             <Link
                               key={product.id}
                               target="_blank"
-                              href={
-                                product.attributes.files.data[0].attributes.url
-                              }
-                              className="gap-2 inline-flex items-center bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                              href={"#"}
+                              className=""
                             >
                               {product.attributes.title}
                             </Link>
                           ))}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-700">
-                        $ {order.attributes.amount}
+                      <td className="">{order.attributes.createdAt}</td>
+
+                      <td className="">$ {order.attributes.amount}</td>
+                      <td className="">Bank Transfer</td>
+                      <td className="">
+                        {order.attributes.status == "cancelled" ? (
+                          <div className="">Cancelled</div>
+                        ) : (
+                          <div className="">Completed</div>
+                        )}
                       </td>
                     </tr>
                   ))}
