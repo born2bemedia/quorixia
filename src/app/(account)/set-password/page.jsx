@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import "@/styles/account.scss";
-import ChangePasswordReset from "../(account)/dashboard/_components/ChangePasswordReset";
+import ChangePasswordReset from "../dashboard/_components/ChangePasswordReset";
 
 function SetPasswordContent() {
   const searchParams = useSearchParams();
