@@ -129,6 +129,16 @@ const CartPage = () => {
     ),
   });
 
+  const generateRandomPassword = (length = 12) => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+    let password = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      password += characters[randomIndex];
+    }
+    return password;
+  };
+
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       let userId = currentUser?.id;
@@ -136,7 +146,7 @@ const CartPage = () => {
         // Register a new user if they do not exist
         const registerData = {
           email: values.email,
-          password: "defaultPassword", // Use a default or generated password here
+          password: generateRandomPassword(), // Use a default or generated password here
           firstName: values.firstName,
           lastName: values.lastName,
           username: values.email,
@@ -156,6 +166,24 @@ const CartPage = () => {
           userId = registerResult.user.id;
           setCurrentUser(registerResult.user); // Update current user context
           localStorage.setItem("user", JSON.stringify(registerResult.user));
+          newOrder(values, userId);
+          try {
+            const response = await fetch("/api/emails/sign-up", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(registerData),
+            });
+            console.log(JSON.stringify(registerData));
+            if (response.ok) {
+              setTimeout(() => {
+                console.log(JSON.stringify(registerData, null, 2));
+              }, 400);
+            }
+          } catch (error) {
+            console.error(error);
+          }
         } else {
           throw new Error("User registration failed.");
         }
@@ -195,9 +223,8 @@ const CartPage = () => {
         const updatedUser = await updateResponse.json();
         setCurrentUser(updatedUser.user);
         localStorage.setItem("user", JSON.stringify(updatedUser.user));
+        newOrder(values, currentUser.id);
       }
-
-      newOrder(values);
 
       const productTitles = cart.map((product) => product.attributes.title);
       // Prepare order data for email
@@ -239,13 +266,13 @@ const CartPage = () => {
     }
   };
 
-  const newOrder = (values) => {
+  const newOrder = (values, id) => {
     const productIds = cart.map((product) => product.id); // Proper use of map to transform cart items into an array of IDs
 
     const orderData = {
       data: {
         email: values.email, // Include email
-        users_permissions_user: currentUser.id,
+        users_permissions_user: id,
         products: productIds, // Use the transformed array
         amount: totalAmount,
         status: "completed",
