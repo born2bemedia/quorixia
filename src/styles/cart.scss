@@ -82,6 +82,15 @@
             &:first-child {
               &:before {
                 content: "Service Name";
+                order: 1;
+              }
+              span {
+                text-align: right;
+                order: 2;
+              }
+              button {
+                order: 3;
+                margin: 0 0 0 rem(10);
               }
             }
             &:nth-child(2) {
@@ -285,7 +294,7 @@
       flex-direction: column;
       @media (max-width: rem(992)) {
         flex-direction: column;
-        gap: 30px;
+        gap: 10px;
       }
       .checkbox {
         width: 100%;
