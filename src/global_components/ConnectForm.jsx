@@ -119,7 +119,7 @@ const ConnectForm = () => {
     resetForm();
     setStatus({ success: true });
 
-    /*try {
+    try {
       console.log("Submitting form with values:", values);
       const response = await fetch("/api/emails/contact", {
         method: "POST",
@@ -149,7 +149,7 @@ const ConnectForm = () => {
       console.error("Error submitting form:", error);
       setStatus({ success: false });
       setSubmitting(false);
-    }*/
+    }
   };
 
   const customSelectStyles = {

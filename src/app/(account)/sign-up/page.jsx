@@ -32,8 +32,7 @@ export default function SignUp() {
     firstName: Yup.string().required("First name is required"),
     lastName: Yup.string().required("Lame name is required"),
     username: Yup.string().required("Lame name is required"),
-    phone: Yup.string()
-      .required("Phone number is required"),
+    phone: Yup.string().required("Phone number is required"),
     email: Yup.string()
       .email("Invalid email address")
       .required("Email is required"),
@@ -57,11 +56,31 @@ export default function SignUp() {
       }
 
       setThanksPopupShow(true);
+
+      try {
+        const response = await fetch("/api/emails/sign-up", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
+        console.log(JSON.stringify(values));
+        if (response.ok) {
+          setTimeout(() => {
+            console.log(JSON.stringify(values, null, 2));
+          }, 400);
+        } 
+      } catch (error) {
+        console.error(error);
+      }
+
       setTimeout(() => {
         setThanksPopupShow(false);
         console.log(response.data);
         localStorage.setItem("jwt", response.data.jwt);
         fetchCurrentUser();
+
         router.push("/dashboard");
       }, 3000);
     } catch (error) {
@@ -94,7 +113,7 @@ export default function SignUp() {
                   <Field
                     type="text"
                     name="firstName"
-                    placeholder="Name"
+                    placeholder="First name"
                     className={
                       touched.firstName && errors.firstName ? "invalid" : ""
                     }
@@ -109,7 +128,7 @@ export default function SignUp() {
                   <Field
                     type="text"
                     name="lastName"
-                    placeholder="Name"
+                    placeholder="Last name"
                     className={
                       touched.lastName && errors.lastName ? "invalid" : ""
                     }
