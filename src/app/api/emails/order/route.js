@@ -5,19 +5,24 @@ export async function POST(request) {
   try {
     const requestBody = await request.text();
     const bodyJSON = JSON.parse(requestBody);
-    const { fullName, email, phone, service, message, cart, totalAmount } = bodyJSON;
+    const { fullName, email, phone, service, message, cart, totalAmount } =
+      bodyJSON;
 
     // Extract first name and last name from fullName if available
     const [firstName = "", lastName = ""] = fullName.split(" ");
 
     // Create HTML list of cart items
-    const cartItemsHtml = cart.map(item => `
+    const cartItemsHtml = cart
+      .map(
+        (item) => `
       <li>
         <strong>${item.attributes.title}</strong><br>
         Quantity: ${item.attributes.quantity}<br>
         Price: €${item.attributes.price}
       </li>
-    `).join('');
+    `
+      )
+      .join("");
 
     // Configure nodemailer with Gmail SMTP
     const transporter = nodemailer.createTransport({
@@ -30,6 +35,32 @@ export async function POST(request) {
         rejectUnauthorized: false, // This bypasses the certificate validation
       },
     });
+
+    const mailOptionsRecipient = {
+      from: '"Quorixia" <noreply@quorixia.com>', // Sender address
+      to: "noreply@quorixia.com", // Change to your recipient's email
+      subject: "Order Form Submission",
+      html: `
+      <table style="border-collapse: collapse; margin: 0 auto; font-style: sans-serif">
+      <tbody>
+        <tr>
+          <td>
+            <p style="text-align: left; font-size: 16px">
+              Name: ${fullName}<br>
+              Email: ${email}<br>
+              Phone: ${phone}<br>
+              Message: ${message}
+            </p>
+            <p style="text-align: left; font-size: 16px;font-weight:600;">Order:</p>
+            <ul style="text-align: left; font-size: 16px;">
+              ${cartItemsHtml}
+            </ul>
+          <td>
+        </tr>
+      </tbody>
+      </table>
+      `,
+    };
 
     // Set up email data for the client
     const mailOptionsClient = {
@@ -84,12 +115,16 @@ export async function POST(request) {
       `,
     };
 
+    await transporter.sendMail(mailOptionsRecipient);
     // Send email to the client
     await transporter.sendMail(mailOptionsClient);
 
     return NextResponse.json({ message: "Success: emails were sent" });
   } catch (error) {
     console.error("Error sending emails:", error);
-    return NextResponse.status(500).json({ message: "Could not send message", error: error.message });
+    return NextResponse.status(500).json({
+      message: "Could not send message",
+      error: error.message,
+    });
   }
 }

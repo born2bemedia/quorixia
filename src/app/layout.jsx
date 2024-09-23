@@ -5,7 +5,7 @@ import Footer from "@/global_components/Footer";
 import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
 import { PopupsProvider } from "@/context/PopupsContext";
-
+import Preloader from "@/global_components/Preloader";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -34,6 +34,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <CartProvider>
             <PopupsProvider>
+              <Preloader />
               <Header />
               <main className="site">{children}</main>
               <Footer />
