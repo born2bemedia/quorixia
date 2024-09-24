@@ -15,6 +15,5 @@ export const getOrdersByUser = async (email) => {
   const orderByUser = orders.filter(
     (order) => order.attributes.email === email
   );
-  console.log(orderByUser);
   return orderByUser;
 };

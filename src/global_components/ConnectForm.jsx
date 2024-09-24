@@ -113,14 +113,12 @@ const ConnectForm = () => {
       coverLetter: coverLetterData,
     };
 
-    console.log("Form submitted successfully:", payload);
     setThanksPopupDisplay(true);
     setSubmitting(false);
     resetForm();
     setStatus({ success: true });
 
     try {
-      console.log("Submitting form with values:", values);
       const response = await fetch("/api/emails/contact", {
         method: "POST",
         headers: {
@@ -131,11 +129,9 @@ const ConnectForm = () => {
 
       const result = await response.json();
 
-      console.log("Response from server:", result);
 
       if (response.ok) {
         setTimeout(() => {
-          console.log("Form submitted successfully:", payload);
           setThanksPopupDisplay(true);
           setSubmitting(false);
           resetForm();
@@ -422,7 +418,7 @@ const ConnectForm = () => {
                     type="file"
                     onChange={(event) => {
                       setFieldValue("resume", event.currentTarget.files[0]);
-                      console.log(event.currentTarget.files[0]);
+  
                     }}
                     style={{ display: "none" }}
                   />
@@ -454,7 +450,6 @@ const ConnectForm = () => {
                         "coverLetter",
                         event.currentTarget.files[0]
                       );
-                      console.log(event.currentTarget.files[0]);
                     }}
                     style={{ display: "none" }}
                   />

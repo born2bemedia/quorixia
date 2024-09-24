@@ -10,7 +10,6 @@ function JobButton({ job, text }) {
     usePopup();
 
   const orderPopupOpen = () => {
-    console.log("popup");
     setJobValue(job);
     setJobPopupDisplay(true);
   };

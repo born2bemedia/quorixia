@@ -87,7 +87,6 @@ const PersonalData = () => {
 
   useEffect(() => {
     setIsMounted(true);
-    console.log(currentUser);
   }, []);
 
   const initialValues = {

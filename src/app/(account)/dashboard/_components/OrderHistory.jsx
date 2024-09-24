@@ -23,7 +23,6 @@ const OrderHistory = () => {
         const jwt = localStorage.getItem("jwt");
 
         const ordersData = await getOrdersByUser(currentUser.email, jwt);
-        console.log(ordersData);
         setOrders(ordersData);
       } catch (error) {
         console.error("Failed to fetch orders:", error);

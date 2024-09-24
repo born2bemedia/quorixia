@@ -16,7 +16,6 @@ function AvailableFiles() {
       setLoading(true);
       try {
         const ordersData = await getOrdersByUser(currentUser.email);
-        console.log(ordersData);
         setOrders(ordersData);
       } catch (error) {
         console.error("Failed to fetch orders:", error);

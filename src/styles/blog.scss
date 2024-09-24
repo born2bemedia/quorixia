@@ -144,13 +144,13 @@
 }
 
 .blog-inner {
-  padding: rem(200) 0 rem(150) 0;
+  padding: rem(250) 0 rem(150) 0;
   position: relative;
   &::before {
     content: "";
     display: block;
     width: 42%;
-    height: rem(100);
+    height: rem(150);
     position: absolute;
     left: 0;
     top: 0;

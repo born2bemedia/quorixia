@@ -174,10 +174,8 @@ function JobPopup() {
         },
         body: JSON.stringify(payload),
       });
-      console.log(JSON.stringify(payload));
       if (response.ok) {
         setTimeout(() => {
-          console.log(JSON.stringify(payload, null, 2));
           setSubmitting(false);
           resetForm();
           setStatus({ success: true });
@@ -335,7 +333,6 @@ function JobPopup() {
                                   "resume",
                                   event.currentTarget.files[0]
                                 );
-                                console.log(event.currentTarget.files[0]);
                               }}
                               style={{ display: "none" }}
                             />
@@ -367,7 +364,6 @@ function JobPopup() {
                                   "portfolio",
                                   event.currentTarget.files[0]
                                 );
-                                console.log(event.currentTarget.files[0]);
                               }}
                               style={{ display: "none" }}
                             />

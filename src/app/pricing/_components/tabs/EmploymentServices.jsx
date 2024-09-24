@@ -11,7 +11,6 @@ const EmploymentServices = () => {
     const fetchProducts = async () => {
       try {
         const data = await getProductsByCategory("employment");
-        console.log("Fetched Products:", data);
         setProducts(data);
       } catch (error) {
         console.error(

@@ -1,10 +1,10 @@
 @import "mixin";
 
 header {
-  padding: 25px 0;
+  padding: rem(50) 0;
   position: relative;
   z-index: 999;
-  margin-bottom: -100px;
+  margin-bottom: -150px;
 
   &.menu-opened {
     .header-row {

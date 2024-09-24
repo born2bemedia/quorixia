@@ -16,7 +16,6 @@ const CareerSolution = () => {
     const fetchProducts = async () => {
       try {
         const data = await getProductsByCategory("package");
-        console.log("Fetched:", data);
         setProducts(data);
       } catch (error) {
         console.error(

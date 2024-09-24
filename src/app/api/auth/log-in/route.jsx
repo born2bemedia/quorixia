@@ -18,9 +18,6 @@ export async function POST(request) {
             }
         });
 
-        // Logging the response data for debugging purposes
-        //console.log(response.data);
-
         // If the request is successful, return the success response
         return new Response(JSON.stringify({ message: "Login successful", user: response.data }), {
             status: 200,
@@ -30,10 +27,8 @@ export async function POST(request) {
         //console.error(error);
         let errorMessage = "Login failed";
         if (error.response) {
-            console.log(error.response.data);
             errorMessage = error.response.data.message || errorMessage;
             // Optionally, log more details
-            console.log(`Status: ${error.response.status}, ${error.response.statusText}`);
         }
         return new Response(JSON.stringify({ message: errorMessage }), {
             status: error.response ? error.response.status : 500,

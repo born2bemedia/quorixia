@@ -65,10 +65,8 @@ export default function SignUp() {
           },
           body: JSON.stringify(values),
         });
-        console.log(JSON.stringify(values));
         if (response.ok) {
           setTimeout(() => {
-            console.log(JSON.stringify(values, null, 2));
           }, 400);
         } 
       } catch (error) {
@@ -77,7 +75,6 @@ export default function SignUp() {
 
       setTimeout(() => {
         setThanksPopupShow(false);
-        console.log(response.data);
         localStorage.setItem("jwt", response.data.jwt);
         fetchCurrentUser();
 

@@ -53,10 +53,8 @@ function OrderPopup() {
         },
         body: JSON.stringify(values),
       });
-      console.log(JSON.stringify(values));
       if (response.ok) {
         setTimeout(() => {
-          console.log(JSON.stringify(values, null, 2));
           setSubmitting(false);
           resetForm();
           setStatus({ success: true });

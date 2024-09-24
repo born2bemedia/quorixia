@@ -11,7 +11,6 @@ const HrServices = () => {
     const fetchProducts = async () => {
       try {
         const data = await getProductsByCategory("hr");
-        console.log("Fetched Products:", data);
         setProducts(data);
       } catch (error) {
         console.error(

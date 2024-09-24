@@ -27,7 +27,6 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     localStorage.setItem("totalAmount", JSON.stringify(totalAmount));
-    console.log("totalAmount: ", totalAmount);
     const cartQuantityValue = cart.reduce(
       (quantity, item) => quantity + item.quantity,
       0
@@ -45,7 +44,6 @@ export const CartProvider = ({ children }) => {
         // If product already exists in cart, do not add it again
         return prev;
       } else {
-        console.log(product.attributes.price);
         newTotalAmount += product.attributes.price * product.quantity;
         setTotalAmount(newTotalAmount);
         return [...prev, product];

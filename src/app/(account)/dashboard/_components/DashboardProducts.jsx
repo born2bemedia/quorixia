@@ -19,7 +19,6 @@ const DashboardProducts = ({ category, title }) => {
       try {
         const data = await fetchProductsByCategory(category, 3);
         setProducts(data);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {

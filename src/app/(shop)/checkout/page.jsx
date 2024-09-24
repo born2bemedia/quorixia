@@ -91,7 +91,6 @@ const CartPage = () => {
 
   useEffect(() => {
     setIsMounted(true);
-    console.log(currentUser);
   }, []);
 
   const initialValues = {
@@ -175,10 +174,8 @@ const CartPage = () => {
               },
               body: JSON.stringify(registerData),
             });
-            console.log(JSON.stringify(registerData));
             if (response.ok) {
               setTimeout(() => {
-                console.log(JSON.stringify(registerData, null, 2));
               }, 400);
             }
           } catch (error) {
@@ -203,7 +200,6 @@ const CartPage = () => {
           userId,
         };
 
-        console.log("updateData", updateData);
 
         const token = getToken();
 
@@ -246,7 +242,6 @@ const CartPage = () => {
           },
           body: JSON.stringify(emailOrderData),
         });
-        console.log(JSON.stringify(emailOrderData));
         if (response.ok) {
           setTimeout(() => {
             console.log(JSON.stringify(emailOrderData, null, 2));
@@ -280,8 +275,6 @@ const CartPage = () => {
     };
 
     createOrder(orderData).then((response) => {
-      console.log(orderData);
-      console.log(response);
       if (response.status === 200) {
         clearCart();
         router.push("/thankyou");
@@ -502,7 +495,6 @@ const CartPage = () => {
                                           option.value === values.country.value
                                       )}
                                     onChange={(option) => (
-                                      console.log(option.value),
                                       setFieldValue("country", option.value)
                                     )}
                                   />
