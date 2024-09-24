@@ -31,14 +31,16 @@ export const getPosts = async (count) => {
     const response = await axiosClient.get(url);
 
     // Add full URL to image paths
-    const posts = response.data.data.map((post) => {
+    /* const posts = response.data.data.map((post) => {
       const imageUrl = post.attributes.image.data?.attributes.url;
       // If image exists, prepend the cmsUrl to the path
       if (imageUrl) {
         post.attributes.image.data.attributes.url = `${cmsUrl}${imageUrl}`;
       }
       return post;
-    });
+    });*/
+
+    const posts = response.data.data;
 
     return posts;
   } catch (error) {
