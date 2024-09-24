@@ -14,6 +14,8 @@ import { useRouter } from "next/navigation";
 import ButtonArrow from "@/icons/ButtonArrow";
 import axiosClient from "@/utils/GlobalApi";
 import { createOrder } from "@/app/api/orders";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const getCountryOptionByCode = (code) => {
   const countries = countryList().getData();
@@ -89,6 +91,8 @@ const CartPage = () => {
   const { currentUser, setCurrentUser, getToken } = useAuth();
   const router = useRouter();
 
+  console.log(getCountryOptionByCode(currentUser?.country));
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -129,8 +133,9 @@ const CartPage = () => {
   });
 
   const generateRandomPassword = (length = 12) => {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
-    let password = '';
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+    let password = "";
     for (let i = 0; i < length; i++) {
       const randomIndex = Math.floor(Math.random() * characters.length);
       password += characters[randomIndex];
@@ -175,8 +180,7 @@ const CartPage = () => {
               body: JSON.stringify(registerData),
             });
             if (response.ok) {
-              setTimeout(() => {
-              }, 400);
+              setTimeout(() => {}, 400);
             }
           } catch (error) {
             console.error(error);
@@ -199,7 +203,6 @@ const CartPage = () => {
           country: values.country,
           userId,
         };
-
 
         const token = getToken();
 
@@ -276,8 +279,10 @@ const CartPage = () => {
 
     createOrder(orderData).then((response) => {
       if (response.status === 200) {
-        clearCart();
         router.push("/thankyou");
+        setTimeout(() => {
+          clearCart();
+        }, 2000);
       } else {
         console.error("Order creation failed:", response);
       }
@@ -367,22 +372,23 @@ const CartPage = () => {
                               />
                             </div>
                             <div>
-                              <label>
-                                <Field
-                                  placeholder="Phone"
-                                  type="text"
-                                  name="phone"
-                                  className={
-                                    touched.phone && errors.phone
-                                      ? "invalid"
-                                      : ""
-                                  }
-                                />
-                              </label>
+                              <PhoneInput
+                                country={"us"}
+                                value={
+                                  currentUser?.phone ? currentUser?.phone : ""
+                                }
+                                placeholder="Phone Number "
+                                onChange={(phone) =>
+                                  setFieldValue("phone", phone)
+                                }
+                                className={
+                                  touched.phone && errors.phone ? "invalid" : ""
+                                }
+                              />
                               <ErrorMessage
-                                className="error"
                                 name="phone"
                                 component="div"
+                                className="error"
                               />
                             </div>
                             <div>
@@ -492,11 +498,11 @@ const CartPage = () => {
                                       .getData()
                                       .find(
                                         (option) =>
-                                          option.value === values.country.value
+                                          option.value === values.country
                                       )}
-                                    onChange={(option) => (
-                                      setFieldValue("country", option.value)
-                                    )}
+                                    onChange={(option) =>
+                                      setFieldValue("country", option)
+                                    }
                                   />
                                 )}
                               </Field>

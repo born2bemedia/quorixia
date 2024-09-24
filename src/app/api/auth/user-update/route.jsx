@@ -32,7 +32,7 @@ export async function POST(request) {
       city,
       state,
       zip,
-      country: country.value, // Ensure the correct format for Strapi
+      country: country, // Ensure the correct format for Strapi
     };
 
     // Construct headers for the request

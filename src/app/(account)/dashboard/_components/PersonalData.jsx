@@ -108,8 +108,7 @@ const PersonalData = () => {
     email: Yup.string()
       .email("Please provide a valid email address.")
       .required("This field is required."),
-    phone: Yup.string()
-      .required("This field is required."),
+    phone: Yup.string().required("This field is required."),
     street: Yup.string().required("This field is required."),
     address: Yup.string(),
     city: Yup.string().required("This field is required."),
@@ -122,13 +121,27 @@ const PersonalData = () => {
     try {
       const token = getToken(); // Get the JWT token for authentication
 
+      const updateData = {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        phone: values.phone,
+        street: values.street,
+        address: values.address,
+        city: values.city,
+        state: values.state,
+        zip: values.zip,
+        country: values.country.value,
+        userId: currentUser?.id,
+      };
+
       const response = await fetch("/api/auth/user-update", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`, // Include JWT in request
         },
-        body: JSON.stringify({ ...values, userId: currentUser.id }), // Include userId
+        body: JSON.stringify(updateData), // Include userId
       });
 
       if (response.ok) {
@@ -159,13 +172,7 @@ const PersonalData = () => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
             >
-              {({
-                isSubmitting,
-                setFieldValue,
-                touched,
-                errors,
-                values,
-              }) => (
+              {({ isSubmitting, setFieldValue, touched, errors, values }) => (
                 <Form>
                   <div className="billing-data">
                     <div>
