@@ -56,7 +56,7 @@ const Footer = () => {
             <div>
               <Link href="/blog">Blog</Link>
               <Link href="#">Case Studies</Link>
-              <Link href="#">Glossary</Link>
+              <Link href="/glossary">Glossary</Link>
             </div>
           </div>
           <div>
@@ -65,7 +65,7 @@ const Footer = () => {
               <Link href="/contact-us">Contact Us</Link>
               <Link href="#">Privacy Policy</Link>
               <Link href="#">Terms of Use</Link>
-              <Link href="#">Refund Policy</Link>
+              <Link href="/refund-policy">Refund Policy</Link>
               <Link href="#">Cookies & Tracking</Link>
             </div>
           </div>
