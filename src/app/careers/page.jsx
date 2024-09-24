@@ -7,6 +7,7 @@ import CareersProcess from "./_components/CareersProcess";
 import CareersWrap from "./_components/CareersWrap";
 import CareersWhy from "./_components/CareersWhy";
 import CareersBenefits from "./_components/CareersBenefits";
+import JobPopup from "@/global_components/JobPopup";
 
 export const metadata = {
   title: "Careers at Quorixia: Join Our Growing Team",
@@ -30,6 +31,7 @@ const Careers = () => {
       <CareersHow />
       <CareersProcess />
       <CareersLast />
+      <JobPopup />
     </>
   );
 };

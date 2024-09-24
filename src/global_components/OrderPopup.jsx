@@ -11,6 +11,8 @@ import {
 import * as Yup from "yup";
 import { usePopup } from "@/context/PopupsContext";
 import ButtonArrow from "@/icons/ButtonArrow";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 function OrderPopup() {
   const { orderPopupDisplay, setOrderPopupDisplay, serviceValue } = usePopup();
@@ -134,10 +136,11 @@ function OrderPopup() {
                         </div>
 
                         <div>
-                          <Field
-                            name="phone"
-                            type="tel"
-                            placeholder={"Phone"}
+                          <PhoneInput
+                            country={"us"}
+                            value=""
+                            placeholder="Phone Number "
+                            onChange={(phone) => setFieldValue("phone", phone)}
                             className={
                               touched.phone && errors.phone ? "invalid" : ""
                             }

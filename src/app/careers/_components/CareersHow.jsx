@@ -1,3 +1,4 @@
+import JobButton from "@/global_components/JobButton";
 import ButtonArrow from "@/icons/ButtonArrow";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,10 +17,7 @@ const CareersHow = () => {
               a great fit. Please include the job title you’re applying for in
               the subject line.
             </p>
-            <button className="main-button">
-              <span>Submit Your Resume</span>
-              <ButtonArrow />
-            </button>
+            <JobButton text={"Submit Your Resume"} />
           </div>
           <Image
             className="fadeInUp"

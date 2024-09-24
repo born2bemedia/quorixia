@@ -197,7 +197,7 @@ function RequestPopup() {
       color: "#1E1E1E",
       "&:hover": {
         background: "#A225EE",
-        color: "#ffffff"
+        color: "#ffffff",
       },
     }),
   };
@@ -264,7 +264,14 @@ function RequestPopup() {
         onSubmit={handleSubmit}
         enableReinitialize
       >
-        {({ isSubmitting, status, touched, errors, resetForm , setFieldValue}) => (
+        {({
+          isSubmitting,
+          status,
+          touched,
+          errors,
+          resetForm,
+          setFieldValue,
+        }) => (
           <div>
             <div
               className="overlay"
@@ -340,10 +347,11 @@ function RequestPopup() {
                         </div>
 
                         <div>
-                          <Field
-                            name="phone"
-                            type="tel"
-                            placeholder={"Phone"}
+                          <PhoneInput
+                            country={"us"}
+                            value=""
+                            placeholder="Phone Number "
+                            onChange={(phone) => setFieldValue("phone", phone)}
                             className={
                               touched.phone && errors.phone ? "invalid" : ""
                             }
