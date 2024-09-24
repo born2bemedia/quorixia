@@ -30,10 +30,7 @@ const HomeResources = async () => {
               >
                 <div className="thumb">
                   <Image
-                    src={
-                      post.attributes.image.data?.attributes.url ||
-                      "/images/default.png"
-                    } // Fallback image if no URL
+                    src={`/images/blog/${post.attributes.slug}.png`} // Fallback image if no URL
                     alt={post.attributes.title}
                     fill
                   />
