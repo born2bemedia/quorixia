@@ -31,7 +31,7 @@ export const getPosts = async (count) => {
     const response = await axiosClient.get(url);
 
     // Add full URL to image paths
-    const posts = response.data.data.map(post => {
+    const posts = response.data.data.map((post) => {
       const imageUrl = post.attributes.image.data?.attributes.url;
       // If image exists, prepend the cmsUrl to the path
       if (imageUrl) {
@@ -44,6 +44,22 @@ export const getPosts = async (count) => {
   } catch (error) {
     console.error(
       "Error fetching posts:",
+      error.response ? error.response.data : error.message
+    );
+    throw error; // Rethrow the error after logging
+  }
+};
+
+export const getSlugs = async (count) => {
+  try {
+    const url = buildPostsUrl(count);
+    const response = await axiosClient.get(url);
+
+    // Extract and return only the slugs
+    return response.data.data.map((post) => post.attributes.slug);
+  } catch (error) {
+    console.error(
+      "Error fetching slugs:",
       error.response ? error.response.data : error.message
     );
     throw error; // Rethrow the error after logging

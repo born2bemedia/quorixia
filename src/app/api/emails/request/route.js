@@ -8,25 +8,13 @@ export async function POST(request) {
     const bodyJSON = JSON.parse(requestBody);
 
     const {
-      firstName,
-      lastName,
+      fullName,
       email,
       phone,
-      desiredRole,
-      sector,
-      coreCompetencies,
-      expertiseLevel,
-      salaryRange,
-      startDate,
-      workLocation,
-      linkedInProfile,
-      additionalInfo,
-      resume,
-      coverLetter,
+      message,
+      service
     } = bodyJSON;
 
-    // Create a full name by combining firstName and lastName
-    const fullName = `${firstName} ${lastName}`;
 
     // Configure nodemailer with Gmail SMTP
     const transporter = nodemailer.createTransport({
@@ -40,50 +28,19 @@ export async function POST(request) {
       },
     });
 
-    // Prepare the attachments array
-    const attachments = [];
-
-    // Add resume to attachments if it exists
-    if (resume) {
-      attachments.push({
-        filename: resume.filename, // Use the actual filename from the client
-        content: resume.base64, // Base64 encoded data
-        encoding: "base64",
-      });
-    }
-
-    // Add cover letter to attachments if it exists
-    if (coverLetter) {
-      attachments.push({
-        filename: coverLetter.filename, // Use the actual filename from the client
-        content: coverLetter.base64, // Base64 encoded data
-        encoding: "base64",
-      });
-    }
 
     // Set up email data for the recipient
     const mailOptionsRecipient = {
       from: '"Quorixia" <noreply@quorixia.com>', // Sender address
       to: "noreply@quorixia.com", // Change to your recipient's email
-      subject: "New Job Form Submission",
+      subject: "New Request Form Submission",
       text: `
-
         Name: ${fullName}
         Email: ${email}
         Phone: ${phone}
-        Desired Job Role: ${desiredRole}
-        Sector of Interest: ${sector}
-        Core Competencies: ${coreCompetencies}
-        Expertise Level: ${expertiseLevel}
-        Expected Salary Range: ${salaryRange}
-        Earliest Start Date: ${startDate}
-        Preferred Work Location: ${workLocation}
-        LinkedIn Profile: ${linkedInProfile}
-        Additional Information: ${additionalInfo}
-
-        Please find the attached resume and cover letter.
+        Service: ${service}
+        Message: ${message}
       `,
-      attachments: attachments,
     };
 
     // Send email to the recipient

@@ -5,7 +5,7 @@ const PopupsContext = createContext();
 
 export const PopupsProvider = ({ children }) => {
   const [orderPopupDisplay, setOrderPopupDisplay] = useState(false);
-  const [jobPopupDisplay, setJobPopupDisplay] = useState(false);
+  const [requestPopupDisplay, setRequestPopupDisplay] = useState(false);
   const [thanksPopupDisplay, setThanksPopupDisplay] = useState(false);
   const [serviceValue, setServiceValue] = useState(false);
   const [jobValue, setJobValue] = useState(false);
@@ -19,8 +19,8 @@ export const PopupsProvider = ({ children }) => {
         setThanksPopupDisplay,
         serviceValue,
         setServiceValue,
-        jobPopupDisplay,
-        setJobPopupDisplay,
+        requestPopupDisplay,
+        setRequestPopupDisplay,
         jobValue,
         setJobValue,
       }}

@@ -87,7 +87,7 @@ const Header = () => {
             <div className="right-col">
               
               <Link href="#">Careers</Link>
-              <Link href="#">Blog</Link>
+              <Link href="/blog">Blog</Link>
               <Link href="#">Case Studies</Link>
               <Link href="#">Glossary</Link>
               <Link href="/contact-us">Contact Us</Link>

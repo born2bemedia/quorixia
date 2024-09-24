@@ -9,6 +9,7 @@ import EmploymentPricing from "./_components/EmploymentPricing";
 import EmploymentPersonalisedApproach from "./_components/EmploymentPersonalisedApproach";
 import EmploymentRequest from "./_components/EmploymentRequest";
 import EmploymentHowWork from "./_components/EmploymentHowWork";
+import RequestPopup from "@/global_components/RequestPopup";
 
 export const metadata = {
   title: "Employment Services to Elevate Your Career | Quorixia",
@@ -62,7 +63,7 @@ const EmploymentPage = () => {
       <EmploymentHowWork />
       <HomeReviews reviews={reviews} />
       <EmploymentRequest />
-      <OrderPopup />
+      <RequestPopup />
       <ThanksPopup />
     </>
   );

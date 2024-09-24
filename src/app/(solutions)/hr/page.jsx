@@ -8,6 +8,7 @@ import HrPersonalisedApproach from "./_components/HrPersonalisedApproach";
 import HrExpertise from "./_components/HrExpertise";
 import OrderPopup from "@/global_components/OrderPopup";
 import ThanksPopup from "@/global_components/ThanksPopup";
+import RequestPopup from "@/global_components/RequestPopup";
 
 export const metadata = {
   title: "Expert HR Solutions for Career Success | Quorixia",
@@ -61,7 +62,7 @@ const HrPage = () => {
       <HomeReviews reviews={reviews} />
       <HrPersonalisedApproach />
       <HrRequest />
-      <OrderPopup />
+      <RequestPopup />
       <ThanksPopup />
     </>
   );

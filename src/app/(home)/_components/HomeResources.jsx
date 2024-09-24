@@ -7,7 +7,6 @@ import React from "react";
 const HomeResources = async () => {
   // Fetch the latest 3 posts
   const posts = await getPosts(3);
-  console.log(posts[0].attributes.image.data.attributes.url);
   return (
     <section className="home-resources">
       <div className="_container">

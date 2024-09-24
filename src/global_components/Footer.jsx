@@ -54,7 +54,7 @@ const Footer = () => {
           <div>
             <h3>Resources</h3>
             <div>
-              <Link href="#">Blog</Link>
+              <Link href="/blog">Blog</Link>
               <Link href="#">Case Studies</Link>
               <Link href="#">Glossary</Link>
             </div>

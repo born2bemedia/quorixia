@@ -43,12 +43,8 @@ function OrderPopup() {
     values,
     { setSubmitting, resetForm, setStatus }
   ) => {
-    console.log(JSON.stringify(values, null, 2));
-    setSubmitting(false);
-    resetForm();
-    setStatus({ success: true });
-    /*try {
-      const response = await fetch("/api/emails/order", {
+    try {
+      const response = await fetch("/api/emails/request", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +66,7 @@ function OrderPopup() {
       console.error(error);
       setStatus({ success: false });
       setSubmitting(false);
-    }*/
+    }
   };
 
   return (

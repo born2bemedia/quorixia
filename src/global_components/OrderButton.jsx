@@ -11,12 +11,19 @@ function OrderButton({ packageItem, text }) {
     setOrderPopupDisplay,
     serviceValue,
     setServiceValue,
+    setRequestPopupDisplay
   } = usePopup();
 
   const orderPopupOpen = () => {
     console.log("popup");
     setServiceValue(packageItem);
-    setOrderPopupDisplay(true);
+    
+    if(packageItem == "HR Service" || packageItem == "Order Employment"){
+      setRequestPopupDisplay(true)
+    } else {
+      setOrderPopupDisplay(true);
+    }
+    
   };
   return (
     <>
