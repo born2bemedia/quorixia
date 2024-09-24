@@ -10,7 +10,7 @@ const HomeStand = () => {
         <div className="home-stand__body">
           <div>
             <div className="fadeInUp">
-              <img src="/images/home/dots.svg" />
+              <img src="/images/home/dots.svg" alt="dot"/>
               <h3>Years of Expertise, Fresh Perspective</h3>
               <p>
                 While Quorixia is a young, forward-thinking company, our team of
@@ -20,7 +20,7 @@ const HomeStand = () => {
               </p>
             </div>
             <div className="fadeInUp">
-              <img src="/images/home/dots.svg" />
+              <img src="/images/home/dots.svg" alt="dot" />
               <h3>Precision-Crafted Solutions, Tailored to You</h3>
               <p>
                 At Quorixia, we don’t believe in one-size-fits-all approaches.
@@ -30,7 +30,7 @@ const HomeStand = () => {
               </p>
             </div>
             <div className="fadeInUp">
-              <img src="/images/home/dots.svg" />
+              <img src="/images/home/dots.svg" alt="dot" />
               <h3>Empathy and Empowerment at the Core</h3>
               <p>
                 Our approach goes beyond standard consulting. It’s about

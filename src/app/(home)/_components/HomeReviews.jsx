@@ -32,15 +32,17 @@ const HomeReviews = ({ reviews }) => {
                       <img
                         src="/images/home/prev.svg"
                         className="prev-button"
+                        alt="prev"
                       />
                       <img
                         src="/images/home/next.svg"
                         className="next-button"
+                        alt="next"
                       />
                     </div>
                   </div>
                   <div className="right fadeInUp">
-                    <img src="/images/home/quote.svg" />
+                    <img src="/images/home/quote.svg" alt="quote" />
                     <p>{review.quote}</p>
                     <Link href="/case-studies" className="main-button">
                       <span>Read More Success Stories</span>

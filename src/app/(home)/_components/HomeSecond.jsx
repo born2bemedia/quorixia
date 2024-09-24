@@ -32,6 +32,7 @@ const HomeSecond = () => {
             src={"/images/home/homeSecond.png"}
             width={445}
             height={320}
+            alt="homeSecond"
           />
         </div>
       </div>
