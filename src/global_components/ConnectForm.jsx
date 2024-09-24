@@ -410,7 +410,7 @@ const ConnectForm = () => {
                     <span>
                       {values.resume ? values.resume.name : "Attach Resume"}
                     </span>
-                    <img src="/images/upload.svg" />
+                    <img src="/images/upload.svg" alt="upload" />
                   </span>
                   <input
                     id="resume"
@@ -439,7 +439,7 @@ const ConnectForm = () => {
                         ? values.coverLetter.name
                         : "Cover Letter"}
                     </span>
-                    <img src="/images/upload.svg" />
+                    <img src="/images/upload.svg" alt="upload" />
                   </span>
                   <input
                     id="coverLetter"
