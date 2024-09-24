@@ -14,7 +14,7 @@ const AboutLast = () => {
               Explore our unique approach and discover how we create
               personalised solutions tailored to your needs.
             </p>
-            <Link href="/employment" className="main-button">
+            <Link href="/why-quorixia" className="main-button">
               <span>Why Choose Quorixia?</span>
               <ButtonArrow />
             </Link>

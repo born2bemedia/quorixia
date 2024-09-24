@@ -46,7 +46,7 @@ const HomeResources = async () => {
             ))}
           </div>
         </div>
-        <Link href="#" className="main-button">
+        <Link href="/blog" className="main-button">
           <span>Visit Our Resources</span>
           <ButtonArrow />
         </Link>

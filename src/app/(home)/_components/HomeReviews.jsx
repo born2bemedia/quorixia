@@ -42,7 +42,7 @@ const HomeReviews = ({ reviews }) => {
                   <div className="right fadeInUp">
                     <img src="/images/home/quote.svg" />
                     <p>{review.quote}</p>
-                    <Link href={review.link} className="main-button">
+                    <Link href="/case-studies" className="main-button">
                       <span>Read More Success Stories</span>
                       <ButtonArrow />
                     </Link>

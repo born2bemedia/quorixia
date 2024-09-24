@@ -18,7 +18,7 @@ const HrPricing = () => {
               right package for you.
             </p>
             <div className="buttons-wrap">
-              <Link href="#" className="main-button">
+              <Link href="/pricing" className="main-button">
                 <span>View Pricing & Packages</span>
                 <ButtonArrow />
               </Link>

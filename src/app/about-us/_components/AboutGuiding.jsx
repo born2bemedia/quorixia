@@ -45,7 +45,7 @@ const AboutGuiding = () => {
             </div>
           </div>
         </div>
-        <Link href="#" className="main-button">
+        <Link href="/case-studies" className="main-button">
           <span>Read Success Stories</span>
           <ButtonArrow />
         </Link>
