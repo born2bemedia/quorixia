@@ -6,6 +6,7 @@ import Orders from "./_components/Orders";
 import { useAuth } from "@/context/AuthContext";
 import PersonalData from "./_components/PersonalData";
 import ThanksPopup from "@/global_components/ThanksPopup";
+import AvailableFiles from "./_components/AvailableFiles";
 
 export default function Account() {
   const { currentUser, fetchCurrentUser } = useAuth();
@@ -58,6 +59,14 @@ export default function Account() {
                 onClick={() => toggleItem(2)}
                 className={`${openIndex === 2 && "active"}`}
               >
+                <span>Available Files</span>
+              </li>
+              <li
+                data-id={openIndex}
+                aria-current="page"
+                onClick={() => toggleItem(3)}
+                className={`${openIndex === 3 && "active"}`}
+              >
                 <span>Personal Data</span>
               </li>
               <LogoutButton />
@@ -68,9 +77,12 @@ export default function Account() {
                 <Orders />
               </div>
               <div className={openIndex === 2 ? "block" : "hidden"}>
+                <AvailableFiles />
+              </div>
+              <div className={openIndex === 3 ? "block" : "hidden"}>
                 <PersonalData />
               </div>
-              <div className={openIndex === 3 ? "block" : "hidden"}></div>
+              <div className={openIndex === 4 ? "block" : "hidden"}></div>
             </div>
           </div>
         </div>
