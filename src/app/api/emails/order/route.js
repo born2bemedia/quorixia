@@ -41,7 +41,7 @@ export async function POST(request) {
       to: "noreply@quorixia.com", // Change to your recipient's email
       subject: "Order Form Submission",
       html: `
-      <table style="border-collapse: collapse; margin: 0 auto; font-style: sans-serif">
+      <table style="border-collapse: collapse;font-style: sans-serif">
       <tbody>
         <tr>
           <td>
