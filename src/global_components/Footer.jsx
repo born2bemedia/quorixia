@@ -48,7 +48,7 @@ const Footer = () => {
             <div>
               <Link href="/about-us">About Us</Link>
               <Link href="/why-quorixia">Why Quorixia</Link>
-              <Link href="#">Careers</Link>
+              <Link href="/careers">Careers</Link>
             </div>
           </div>
           <div>

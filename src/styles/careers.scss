@@ -1,0 +1,589 @@
+@import "mixin";
+
+.careers-hero {
+  //min-height: rem(760);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  padding: rem(150) 0 rem(100) 0;
+  @media (max-width: rem(992)) {
+    flex-direction: column;
+    padding: rem(150) rem(16) rem(70) 0;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 42%;
+    height: 60%;
+    background: #a225ee;
+    top: 0;
+    left: 0;
+  }
+  &__body {
+    position: relative;
+    z-index: 1;
+    padding-left: calc((100vw - 1110px) / 2);
+    padding-right: rem(16);
+    margin-right: calc((100vw - 1110px) / 2);
+    width: 100%;
+    padding-top: rem(132);
+    padding-bottom: rem(132);
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-image: url(/images/careers/hero.webp);
+    @media (max-width: rem(992)) {
+      padding-left: rem(16);
+      padding-right: rem(16);
+      padding-top: rem(100);
+      padding-bottom: rem(100);
+      background-image: url(/images/careers/hero.webp);
+      margin: 0;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      z-index: 0;
+      right: -49px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 70%;
+      background: #a225ee;
+      width: rem(50);
+      @media (max-width: rem(992)) {
+        display: none;
+      }
+    }
+    img {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc((100vw - 1230px) / 2);
+      width: 100%;
+      height: auto;
+      @media (max-width: rem(992)) {
+        right: rem(16);
+      }
+    }
+    h2 {
+      color: #a225ee;
+      font-size: rem(24);
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: left;
+      margin: 0 0 rem(30) 0;
+      position: relative;
+      z-index: 2;
+      @media (max-width: rem(992)) {
+        margin-bottom: rem(20);
+      }
+    }
+    h1 {
+      color: #fff;
+      font-size: rem(48);
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: left;
+      margin: 0 0 rem(30) 0;
+      position: relative;
+      z-index: 2;
+      @media (max-width: rem(992)) {
+        margin-bottom: rem(30);
+        font-size: rem(32);
+      }
+      br {
+        @media (max-width: rem(992)) {
+          display: block;
+        }
+      }
+    }
+    p {
+      position: relative;
+      color: #fff;
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.2;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      @media (max-width: rem(992)) {
+        padding: 0;
+        font-size: rem(14);
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.careers-how {
+  padding: rem(100) 0;
+  background: #f2f2f2;
+  position: relative;
+  @media (max-width: rem(992)) {
+    padding: rem(70) 0;
+  }
+  &::before {
+    content: "";
+    width: 30%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background: #a225ee;
+    position: absolute;
+    z-index: 0;
+    @media (max-width: rem(992)) {
+      height: rem(200);
+      width: 100%;
+      display: none;
+    }
+  }
+  &__body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(60);
+    @media (max-width: rem(992)) {
+      flex-direction: column;
+      gap: rem(40);
+    }
+    > div {
+      width: calc(100% - rem(525));
+      @media (max-width: rem(992)) {
+        width: 100%;
+      }
+      h2 {
+        color: #1e1e1e;
+        font-size: rem(32);
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0 0 rem(25) 0;
+        @media (max-width: rem(992)) {
+          font-size: rem(24);
+        }
+      }
+      p {
+        color: #1e1e1e;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0 0 rem(40) 0;
+        @media (max-width: rem(992)) {
+          font-size: rem(14);
+        }
+      }
+      .buttons-wrap {
+        display: flex;
+        gap: rem(50);
+        @media (max-width: rem(992)) {
+          flex-direction: column;
+          gap: rem(20);
+        }
+        a,
+        button {
+          color: #1e1e1e;
+        }
+      }
+      a,
+      button {
+        color: #1e1e1e;
+      }
+    }
+    img {
+      @media (max-width: rem(992)) {
+        width: 100%;
+        height: auto;
+        display: none;
+      }
+    }
+  }
+}
+
+.careers-process {
+  padding-top: rem(100);
+  @media (max-width: rem(992)) {
+    padding-top: rem(70);
+    padding-bottom: rem(70);
+  }
+  h2 {
+    color: #1e1e1e;
+    font-size: rem(48);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0 0 rem(35) 0;
+    @media (max-width: rem(992)) {
+      margin: 0 0 rem(20) 0;
+      font-size: rem(32);
+    }
+  }
+  p {
+    color: #1e1e1e;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: left;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+    margin-top: rem(50);
+    .item {
+      padding-bottom: rem(40);
+      border-bottom: 1px solid #00000026;
+      display: flex;
+      align-items: center;
+      gap: rem(50);
+      @media (max-width: rem(992)) {
+        gap: rem(30);
+        align-items: flex-start;
+      }
+      &:last-child {
+        padding: 0;
+        border: none;
+      }
+      .number {
+        color: #a225ee;
+        font-size: rem(96);
+        font-weight: 600;
+        line-height: 1;
+        text-align: left;
+        width: 10%;
+        @media (max-width: rem(992)) {
+          width: 15%;
+          font-size: rem(48);
+        }
+      }
+      .details {
+        width: 90%;
+        @media (max-width: rem(992)) {
+          width: 85%;
+        }
+        h3 {
+          color: #1e1e1e;
+          font-size: rem(32);
+          font-weight: 600;
+          line-height: 1.2;
+          text-align: left;
+          margin: 0 0 rem(15) 0;
+          @media (max-width: rem(992)) {
+            font-size: rem(18);
+          }
+        }
+        p {
+          color: #1e1e1e;
+          font-size: rem(16);
+          font-weight: 400;
+          line-height: 1.2;
+          text-align: left;
+          margin: 0;
+          @media (max-width: rem(992)) {
+            font-size: rem(14);
+          }
+        }
+      }
+    }
+  }
+}
+
+.careers-last {
+  padding: rem(100) 0;
+  @media (max-width: rem(992)) {
+    padding: rem(70) 0;
+    background: #a225ee;
+  }
+  &__body {
+    display: flex;
+    background: #a225ee;
+    @media (max-width: rem(992)) {
+      flex-direction: column;
+    }
+    .left {
+      width: 70%;
+      padding: rem(60) rem(90);
+      @media (max-width: rem(992)) {
+        padding: 0;
+        width: 100%;
+      }
+      h2 {
+        color: #ffffff;
+        font-size: rem(32);
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0 0 rem(20) 0;
+      }
+      p {
+        color: #ffffff;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0 0 rem(30) 0;
+      }
+      a {
+        svg {
+          circle {
+            fill: #fff;
+          }
+          path {
+            fill: #a225ee;
+          }
+        }
+      }
+    }
+    .right {
+      width: 30%;
+      background-image: url(/images/hr/approach.webp);
+      background-size: cover;
+      background-position: center;
+      @media (max-width: rem(992)) {
+        width: 100%;
+        height: rem(250);
+        display: none;
+      }
+    }
+  }
+}
+
+.jobs-wrap {
+  background: #1e1e1e;
+  padding: rem(100) 0;
+  @media (max-width: rem(992)) {
+    padding: rem(70) 0;
+  }
+  h2 {
+    color: #fff;
+    font-size: rem(48);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0 0 rem(35) 0;
+    @media (max-width: rem(992)) {
+      font-size: rem(32);
+    }
+  }
+  p {
+    color: #fff;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0;
+  }
+  &__body {
+    margin-top: rem(60);
+    .careers-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: rem(50);
+      .item {
+        &.active {
+          .accordion-title {
+            img {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+        .accordion-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: rem(30);
+          @media (max-width: rem(992)) {
+            align-items: flex-start;
+          }
+          span {
+            &:first-child {
+              color: #fff;
+              font-size: rem(24);
+              font-weight: 600;
+              line-height: 1.2;
+              text-align: left;
+              @media (max-width: rem(992)) {
+                font-size: rem(20);
+              }
+            }
+            &.line {
+              display: block;
+              flex-grow: 1;
+              background: #ffffff26;
+              height: rem(1);
+              @media (max-width: rem(992)) {
+                display: none;
+              }
+            }
+          }
+          img {
+            transition: all 0.5s;
+            transform: rotate(0);
+          }
+        }
+        .accordion-content {
+          margin-top: rem(40);
+          h3 {
+            color: #fff;
+            font-size: rem(16);
+            font-weight: 600;
+            line-height: 1.2;
+            text-align: left;
+            margin: rem(40) 0 rem(20) 0;
+          }
+          p {
+            color: #fff;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: 1.2;
+            text-align: left;
+            margin: 0 0 rem(20) 0;
+          }
+          ul {
+            margin: 0 0 rem(20) 0;
+            padding: 0 0 0 rem(16);
+            li {
+              color: #fff;
+              font-size: rem(16);
+              font-weight: 400;
+              line-height: 1.2;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.careers-why {
+  background-color: #1e1e1e;
+  padding: rem(100) 0 0 0;
+  @media (max-width: rem(992)) {
+    padding: rem(70) 0 0 0;
+  }
+  h2 {
+    color: #fff;
+    font-size: rem(48);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0 0 rem(50) 0;
+    @media (max-width: rem(992)) {
+      font-size: rem(32);
+    }
+  }
+  &__body {
+    display: flex;
+    gap: rem(80);
+    margin-bottom: -40px;
+    @media (max-width: rem(992)) {
+      flex-direction: column;
+      gap: rem(30);
+    }
+    > div {
+      width: calc(50% - rem(40));
+      margin-bottom: -40px;
+      @media (max-width: rem(992)) {
+        width: 100%;
+        &:first-child {
+          margin-bottom: 0;
+        }
+      }
+      &:last-child {
+        background: #a225ee;
+        padding: rem(50);
+
+        @media (max-width: rem(992)) {
+          padding: rem(40) rem(20);
+        }
+      }
+      h3 {
+        color: #fff;
+        font-size: rem(24);
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0 0 rem(25) 0;
+      }
+      p {
+        color: #fff;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.careers-benefits {
+  padding: rem(140) 0 rem(100) 0;
+  h2 {
+    color: #1e1e1e;
+    font-size: rem(48);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0 0 rem(50) 0;
+    @media (max-width: rem(992)) {
+      font-size: rem(32);
+    }
+  }
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    @media (max-width: rem(992)) {
+        flex-direction: column;
+
+    }
+    > div {
+      width: 25%;
+      background: #a225ee;
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+      padding: rem(30) rem(20);
+      min-height: rem(280);
+      flex-grow: 1;
+      border: none;
+      outline: none;
+      &:nth-child(even){
+        background: #1E1E1E;
+        margin-top: rem(100);
+        @media (max-width: rem(992)) {
+            margin: 0;
+        }
+      }
+      @media (max-width: rem(992)) {
+        width: 100%;
+      }
+      h3 {
+        color: #fff;
+        font-size: rem(24);
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0;
+      }
+      p {
+        color: #fff;
+        font-size: rem(14);
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0;
+      }
+    }
+  }
+}
