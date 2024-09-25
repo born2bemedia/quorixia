@@ -5,6 +5,7 @@ import PricingSecond from "./_components/PricingSecond";
 import AdditionalSolution from "./_components/AdditionalSolution";
 import CareerSolution from "./_components/CareerSolution";
 import OrderPopup from "@/global_components/OrderPopup";
+import PackagesWrap from "./_components/PackagesWrap";
 
 export const metadata = {
   title: "Transparent Pricing for HR & Employment Services | Quorixia",
@@ -24,7 +25,7 @@ const Pricing = () => {
       <PricingHero />
       <PricingSecond />
       <AdditionalSolution />
-      <CareerSolution />
+      <PackagesWrap />
       <OrderPopup />
     </>
   );

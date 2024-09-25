@@ -7,32 +7,16 @@ import OrderButton from "@/global_components/OrderButton";
 import { getProductsByCategory } from "@/utils/products_strapi";
 import ReactMarkdown from "react-markdown";
 
-const CareerSolution = () => {
+const CareerSolution = ({ products }) => {
   const swiperRef = useRef(null);
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const data = await getProductsByCategory("package");
-        setProducts(data);
-      } catch (error) {
-        console.error(
-          "Error fetching products:",
-          error.response?.data || error.message
-        );
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
 
   useEffect(() => {
     // Check if Swiper instance and navigation are available
-    if (swiperRef.current && swiperRef.current.swiper && swiperRef.current.swiper.navigation) {
+    if (
+      swiperRef.current &&
+      swiperRef.current.swiper &&
+      swiperRef.current.swiper.navigation
+    ) {
       swiperRef.current.swiper.navigation.update();
     }
   }, [products]);
