@@ -19,7 +19,6 @@ export async function generateMetadata({ params: { slug } }) {
 
 const BlogInner = async ({ params: { slug } }) => {
   const post = await getPost(slug);
-  console.log(post);
   return (
     <section className="blog-inner">
       <div className="_container">

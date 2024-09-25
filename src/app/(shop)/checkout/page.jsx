@@ -91,7 +91,6 @@ const CartPage = () => {
   const { currentUser, setCurrentUser, getToken } = useAuth();
   const router = useRouter();
 
-  console.log(getCountryOptionByCode(currentUser?.country));
 
   useEffect(() => {
     setIsMounted(true);

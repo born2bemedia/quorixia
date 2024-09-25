@@ -61,7 +61,8 @@ const BlogSlider = ({ posts }) => {
               >
                 <div className="thumb">
                   <Image
-                    src={`/images/blog/${post.attributes.slug}.png`}
+                    //src={`/images/blog/${post.attributes.slug}.png`} // Fallback image if no URL
+                    src={`${process.env.NEXT_PUBLIC_CMS_URL}${post.attributes.image.data.attributes.url}`} // Fallback image if no URL
                     alt={post.attributes.title}
                     fill
                   />
