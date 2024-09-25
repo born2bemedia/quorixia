@@ -68,7 +68,7 @@ function AvailableFiles() {
                             {order.attributes.files.data.map((file) => (
                               <Link
                                 key={file.id}
-                                href={`https://quorixia-cms.onrender.com${file.attributes.url}`} // URL of the file
+                                href={`${process.env.NEXT_PUBLIC_CMS_URL}${file.attributes.url}`} // URL of the file
                                 target="_blank"
                                 className=""
                               >

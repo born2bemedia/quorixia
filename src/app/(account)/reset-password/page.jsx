@@ -22,7 +22,7 @@ export default function PasswordResetRequest() {
     { setSubmitting, resetForm, setStatus }
   ) => {
     try {
-      const response = await axios.post(`https://quorixia-cms.onrender.com/api/auth/forgot-password`, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_REST_API_URL}auth/forgot-password`, {
         email: values.email,
       });
 
