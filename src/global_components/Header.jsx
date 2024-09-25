@@ -56,16 +56,16 @@ const Header = () => {
                 )}
               </div>
               <div>
-                {/*<Link
+                <Link
                   href="/cart"
                   className={`cart-icon ${cartQuantity > 0 && "not-empty"}`}
                 >
                   {!menuOpened ? (
                     <img src="/images/cart-icon.svg" alt="cart-icon" />
                   ) : (
-                    <img src="/images/cart-icon.svg" alt="cart-icon" />
+                    <img src="/images/cart-icon-white.svg" alt="cart-icon" />
                   )}
-                </Link>*/}
+                </Link>
                 <span onClick={() => menuOpen()} className="menu-btn">
                   {!menuOpened ? <MenuIcon /> : <MenuIconClose />}
                 </span>

@@ -43,7 +43,7 @@ header {
       align-items: center;
       gap: 30px;
       @media (max-width: rem(992)) {
-        gap: 20px;
+        gap: rem(15);
       }
 
       > div {
@@ -51,7 +51,7 @@ header {
         align-items: center;
         gap: 30px;
         @media (max-width: rem(992)) {
-          gap: 20px;
+          gap: rem(15);
         }
         &.head-account {
           display: flex;
@@ -59,7 +59,7 @@ header {
           align-items: center;
           @media (max-width: rem(992)) {
             display: flex;
-            gap: rem(15);
+            gap: rem(10);
           }
           a {
             color: #1e1e1e;
@@ -67,6 +67,9 @@ header {
             font-weight: 600;
             line-height: 1.2;
             text-align: right;
+            @media (max-width: rem(992)) {
+              font-size: rem(14);
+            }
           }
           span {
             display: block;
@@ -80,9 +83,16 @@ header {
           display: flex;
           cursor: pointer;
           width: rem(35);
+          @media (max-width: rem(992)) {
+            width: rem(25);
+          }
           svg {
             width: rem(35);
             height: rem(30);
+            @media (max-width: rem(992)) {
+              width: rem(25);
+              height: auto;
+            }
           }
         }
 
@@ -92,8 +102,8 @@ header {
           img {
             position: relative;
             z-index: 1;
-            width: rem(30);
-            height: rem(30);
+            width: rem(25);
+            height: rem(25);
           }
           &.not-empty {
             &:before {
@@ -151,7 +161,7 @@ header {
   pointer-events: none;
   backdrop-filter: blur(10px);
   @media (max-width: rem(992)) {
-    padding-top: 100px;
+    padding-top: rem(150);
   }
   &.opened {
     left: 0;
