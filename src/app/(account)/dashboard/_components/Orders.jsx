@@ -9,6 +9,15 @@ function Orders() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat("en-US", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    }).format(date);
+  };
+
   useEffect(() => {
     if (!currentUser) return;
 
@@ -64,7 +73,7 @@ function Orders() {
                             </Link>
                           ))}
                       </td>
-                      <td className="">{order.attributes.createdAt}</td>
+                      <td className="">{formatDate(order.attributes.createdAt)}</td>
 
                       <td className="">$ {order.attributes.amount}</td>
                       <td className="">Bank Transfer</td>
