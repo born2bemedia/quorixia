@@ -91,6 +91,7 @@ const CartPage = () => {
   const { currentUser, setCurrentUser, getToken } = useAuth();
   const router = useRouter();
 
+  console.log(getCountryOptionByCode(currentUser?.country));
 
   useEffect(() => {
     setIsMounted(true);
@@ -106,7 +107,7 @@ const CartPage = () => {
     city: currentUser?.city || "",
     state: currentUser?.state || "",
     zip: currentUser?.zip || "",
-    country: getCountryOptionByCode(currentUser?.country) || "",
+    country: getCountryOptionByCode(currentUser?.country) || null,
     terms: false,
   };
 
@@ -492,12 +493,7 @@ const CartPage = () => {
                                         ? "invalid"
                                         : ""
                                     }`}
-                                    value={countryList()
-                                      .getData()
-                                      .find(
-                                        (option) =>
-                                          option.value === values.country
-                                      )}
+                                    value={values.country?.value}
                                     onChange={(option) =>
                                       setFieldValue("country", option.value)
                                     }

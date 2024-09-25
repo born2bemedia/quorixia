@@ -57,6 +57,7 @@ export default function SignIn() {
         throw new Error("JWT not found");
       }
     } catch (error) {
+      console.log(error.message);
       setErrors({ submit: error.message || "An unexpected error occurred" });
     }
   };

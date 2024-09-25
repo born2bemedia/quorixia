@@ -149,6 +149,7 @@ const PersonalData = () => {
         setCurrentUser(updatedUser);
         localStorage.setItem("user", JSON.stringify(updatedUser));
         setBillingSuccess("Your information has been updated successfully.");
+        window.location.reload();
       } else {
         const errorData = await response.json();
         setBillingError(errorData.message);
@@ -345,7 +346,7 @@ const PersonalData = () => {
                                   option.value === values.country.value
                               )}
                             onChange={(option) =>
-                              setFieldValue("country", option.value)
+                              setFieldValue("country", option)
                             }
                           />
                         )}

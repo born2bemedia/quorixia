@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     fetchCurrentUser();
+    console.log(currentUser);
   }, []);
 
   const fetchCurrentUser = () => {
