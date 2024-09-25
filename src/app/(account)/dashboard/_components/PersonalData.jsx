@@ -345,7 +345,7 @@ const PersonalData = () => {
                                   option.value === values.country.value
                               )}
                             onChange={(option) =>
-                              setFieldValue("country", option)
+                              setFieldValue("country", option.value)
                             }
                           />
                         )}

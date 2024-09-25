@@ -118,7 +118,6 @@ const CartPage = () => {
       .email("Please provide a valid email address.")
       .required("This field is required."),
     phone: Yup.string()
-      .matches(/^\d+$/, "Please provide a valid phone number.")
       .required("This field is required."),
     street: Yup.string().required("This field is required."),
     address: Yup.string().required("This field is required."),
@@ -501,7 +500,7 @@ const CartPage = () => {
                                           option.value === values.country
                                       )}
                                     onChange={(option) =>
-                                      setFieldValue("country", option)
+                                      setFieldValue("country", option.value)
                                     }
                                   />
                                 )}
