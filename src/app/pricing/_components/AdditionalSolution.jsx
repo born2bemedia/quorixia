@@ -15,7 +15,7 @@ const AdditionalSolution = () => {
               Quorixia can provide. We offer a full suite of HR and employment
               solutions designed to be flexible and personalised to your career
               path. We have many services to meet your unique needs, from
-              advanced coaching to tailored job search strategies. 
+              advanced coaching to tailored job search strategies.
               <br />
               <br />
               Download our comprehensive price list for a detailed look at all
@@ -23,7 +23,11 @@ const AdditionalSolution = () => {
               your career growth, no matter where you are on your journey.
             </p>
             <div className="buttons-wrap">
-              <Link href="#" className="main-button">
+              <Link
+                href="/Quorixia_Pricing.pdf"
+                className="main-button"
+                target="_blank"
+              >
                 <span>Download Complete Price List</span>
                 <ButtonArrow />
               </Link>
