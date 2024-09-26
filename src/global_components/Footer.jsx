@@ -63,18 +63,20 @@ const Footer = () => {
             <h3>Support</h3>
             <div>
               <Link href="/contact-us">Contact Us</Link>
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Terms of Use</Link>
+              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/terms-of-use">Terms of Use</Link>
               <Link href="/refund-policy">Refund Policy</Link>
-              <Link href="#">Cookies & Tracking</Link>
+              <Link href="/cookies-and-tracking">Cookies & Tracking</Link>
             </div>
           </div>
           <div>
             <h3>Stay Connected</h3>
             <div>
-              <Link href="#">EMAIL</Link>
-              <Link href="#">NUMBER</Link>
-              <Link href="#">ADDRESS</Link>
+              <Link href="mailto:info@quorixia.com">info@quorixia.com</Link>
+              <Link href="#">
+                Registered address: Nissi, 68m Agia Napa, 5330, Famagusta,
+                Cyprus
+              </Link>
             </div>
           </div>
         </div>

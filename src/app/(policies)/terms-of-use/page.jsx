@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata() {
-  const page = await getPageBySlug("refund-policy");
+  const page = await getPageBySlug("terms-of-use");
 
   return {
     title: `${page.title} | Quorixia`,
@@ -18,7 +18,7 @@ export async function generateMetadata() {
 }
 
 const BlogInner = async () => {
-  const page = await getPageBySlug(slug);
+  const page = await getPageBySlug("terms-of-use");
   return (
     <section className="policy-inner">
       <div className="_container">
