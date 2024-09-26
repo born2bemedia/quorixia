@@ -18,7 +18,7 @@ export async function generateMetadata() {
 }
 
 const BlogInner = async () => {
-  const page = await getPageBySlug(slug);
+  const page = await getPageBySlug("refund-policy");
   return (
     <section className="policy-inner">
       <div className="_container">
