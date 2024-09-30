@@ -73,6 +73,7 @@ const Footer = () => {
             <h3>Stay Connected</h3>
             <div>
               <Link href="mailto:info@quorixia.com">info@quorixia.com</Link>
+              <Link href="tel:+35723030297">+35723030297</Link>
               <Link href="#">
                 Registered address: Nissi, 68m Agia Napa, 5330, Famagusta,
                 Cyprus

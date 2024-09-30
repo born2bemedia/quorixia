@@ -7,10 +7,10 @@ const ContactDetails = () => {
       <div className="_container">
         <div className="contact-details__top">
           <h2 className="fadeInUp">Contact Information</h2>
-          {/* <Link href="#">
+          <Link href="tel:+35723030297">
             <img src="/images/contact/phone.svg" />
-            <span>Phone</span>
-          </Link>*/}
+            <span>+35723030297</span>
+          </Link>
           <Link href="mailto:info@quorixia.com">
             <img src="/images/contact/mail.svg" />
             <span>info@quorixia.com</span>
