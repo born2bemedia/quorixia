@@ -31,20 +31,22 @@ const ContactDetails = () => {
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          {/*<div className="address fadeInUp">
+          <div className="address fadeInUp">
             <div>
               <h2>Office Address</h2>
-              <p>INFO</p>
+              <p>
+                1st floor, office number 8, Georgiou Averof, 3-5, Larnaka 6052
+              </p>
             </div>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.58519602238!2d-0.2664050245106186!3d51.52852620113952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sua!4v1727123907996!5m2!1sen!2sua"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.030892689567!2d33.617867775600274!3d34.930762172838804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de2806d60cb429%3A0xb84ae309413a7842!2sGeorgiou%20Averof%203%2C%20Larnaca%206052%2C%20Cyprus!5e0!3m2!1sen!2sua!4v1727799544390!5m2!1sen!2sua"
               width="600"
               height="450"
-              allowFullScreen=""
+              allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
-          </div>*/}
+          </div>
         </div>
       </div>
     </section>
