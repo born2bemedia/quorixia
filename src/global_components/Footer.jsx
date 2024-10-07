@@ -17,13 +17,13 @@ const Footer = () => {
             </p>
           </div>
           <div className="soc">
-            <Link href="#">
+            <Link href="https://www.facebook.com/quorixia" target="_blank">
               <img alt="facebook" src="/images/facebook.svg" />
             </Link>
-            <Link href="#">
+            {/*<Link href="#">
               <img alt="instagram" src="/images/instagram.svg" />
-            </Link>
-            <Link href="#">
+            </Link>*/}
+            <Link href="https://x.com/quorixia" target="_blank">
               <img alt="x" src="/images/x.svg" />
             </Link>
           </div>
