@@ -6,6 +6,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
 import { PopupsProvider } from "@/context/PopupsContext";
 import Preloader from "@/global_components/Preloader";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={urbanist.className}>
+        <GoogleAnalytics gaId="G-7HK6J8ENSS" />
         <AuthProvider>
           <CartProvider>
             <PopupsProvider>

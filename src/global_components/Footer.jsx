@@ -79,7 +79,8 @@ const Footer = () => {
                 Cyprus
               </Link>
               <Link href="#">
-                Office address: 1st floor, office number 8, Georgiou Averof,<br/>
+                Office address: 1st floor, office number 8, Georgiou Averof,
+                <br />
                 3-5, Larnaka 6052
               </Link>
             </div>
