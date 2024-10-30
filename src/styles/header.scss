@@ -53,6 +53,12 @@ header {
         @media (max-width: rem(992)) {
           gap: rem(15);
         }
+        &.lang-switcher{
+          gap: rem(15);
+          @media (max-width: rem(992)) {
+            display: none;
+          }
+        }
         &.head-account {
           display: flex;
           gap: rem(20);

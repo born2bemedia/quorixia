@@ -8,7 +8,7 @@ import "react-phone-input-2/lib/style.css";
 import ThanksPopup from "./ThanksPopup";
 import ButtonArrow from "@/icons/ButtonArrow";
 import CheckboxIcon from "@/icons/CheckboxIcon";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 const ConnectForm = () => {
   const { setThanksPopupDisplay } = usePopup();

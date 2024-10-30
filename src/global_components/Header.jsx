@@ -1,14 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "@/styles/header.scss";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { useCart } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
 import { usePathname } from "next/navigation";
 import MenuIcon from "@/icons/MenuIcon";
 import MenuIconClose from "@/icons/MenuIconClose";
+import LanguageChanger from "@/app/[locale]/_global/LanguageChanger";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
+  const t = useTranslations("header");
   const { cart, cartQuantity } = useCart();
   const { currentUser } = useAuth();
   const [menuOpened, setMenuOpened] = useState(false);
@@ -38,19 +41,20 @@ const Header = () => {
             </Link>
 
             <div className="header-right">
+              <LanguageChanger />
               <div className="head-account">
                 {currentUser ? (
                   <Link className="white-button" href="/dashboard">
-                    Account
+                    {t("account")}
                   </Link>
                 ) : (
                   <>
                     <Link className="white-button" href="/log-in">
-                      Log in
+                    {t("login")}
                     </Link>
                     <span></span>
                     <Link className="white-button" href="/sign-up">
-                      Sign up
+                    {t("signup")}
                     </Link>
                   </>
                 )}
@@ -78,19 +82,18 @@ const Header = () => {
         <div className="_container">
           <nav>
             <div className="left-col">
-              <Link href="/hr">HR</Link>
-              <Link href="/employment">Employment</Link>
-              <Link href="/pricing">Pricing</Link>
-              <Link href="/about-us">About Us</Link>
-              <Link href="/why-quorixia">Why Quorixia</Link>
+              <Link href="/hr">{t("hr")}</Link>
+              <Link href="/employment">{t("employment")}</Link>
+              <Link href="/pricing">{t("pricing")}</Link>
+              <Link href="/about-us">{t("aboutUs")}</Link>
+              <Link href="/why-quorixia">{t("whyQuorixia")}</Link>
             </div>
             <div className="right-col">
-              
-              <Link href="/careers">Careers</Link>
-              <Link href="/blog">Blog</Link>
-              <Link href="/case-studies">Case Studies</Link>
-              <Link href="/glossary">Glossary</Link>
-              <Link href="/contact-us">Contact Us</Link>
+              <Link href="/careers">{t("careers")}</Link>
+              <Link href="/blog">{t("blog")}</Link>
+              <Link href="/case-studies">{t("caseStudies")}</Link>
+              <Link href="/glossary">{t("glossary")}</Link>
+              <Link href="/contact-us">{t("contactUs")}</Link>
             </div>
           </nav>
         </div>

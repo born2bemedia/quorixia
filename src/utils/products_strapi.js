@@ -1,20 +1,22 @@
 import qs from 'qs';
 import axiosClient from './GlobalApi';
 
-const PRODUCTS_URL = `products?` + qs.stringify({
+const getProductsUrl = (locale) => 
+  `products?` + qs.stringify({
     fields: ['id', 'slug', 'title', 'description', 'price', 'category', 'includes'],
-    pagination: { pageSize: 9999},
-});
+    pagination: { pageSize: 9999 },
+    locale: locale // Add locale parameter here
+  });
 
-export const getProducts = () => {
-    return axiosClient.get(PRODUCTS_URL).then(res => res.data.data);
+export const getProducts = (locale = 'en') => {
+    return axiosClient.get(getProductsUrl(locale)).then(res => res.data.data);
 };
 
-export const getProductsByCategory = async (category) => {
-    const products = await getProducts();
+export const getProductsByCategory = async (category, locale = 'en') => {
+    const products = await getProducts(locale); // Pass locale to getProducts
     const categoryProducts = products.filter(product => product.attributes.category === category);
     return categoryProducts;
-}
+};
 
 export const getProduct = async (slug) => {
     const products = await getProducts();

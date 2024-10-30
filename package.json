@@ -13,6 +13,7 @@
     "axios": "^1.7.7",
     "formik": "^2.4.6",
     "next": "14.2.11",
+    "next-intl": "^3.23.0",
     "nodemailer": "^6.9.15",
     "qs": "^6.13.0",
     "react": "^18",
@@ -24,5 +25,8 @@
     "sass": "^1.78.0",
     "swiper": "^11.1.14",
     "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "i18nexus-cli": "^3.5.0"
   }
 }

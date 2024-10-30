@@ -1,8 +1,10 @@
 import React from "react";
 import "@/styles/footer.scss";
-import Link from "next/link";
+import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+  const t = useTranslations("footer");
   return (
     <footer>
       <div className="foot-top">
@@ -11,10 +13,7 @@ const Footer = () => {
             <Link href="/">
               <img src="/images/logo_white.svg" alt="logo" />
             </Link>
-            <p>
-              Personalised HR and employment solutions designed to <br />
-              help you confidently navigate your career journey.
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t("description") }} />
           </div>
           <div className="soc">
             <Link href="https://www.facebook.com/quorixia" target="_blank">
@@ -27,59 +26,58 @@ const Footer = () => {
               <img alt="x" src="/images/x.svg" />
             </Link>
           </div>
-          <div className="description">
-            Personalised HR and employment solutions designed to help you
-            confidently navigate your career journey.
-          </div>
+          <div
+            className="description"
+            dangerouslySetInnerHTML={{ __html: t("description") }}
+          />
         </div>
       </div>
       <div className="foot-bottom">
         <div className="_container">
           <div>
-            <h3>Solutions</h3>
+            <h3>{t("solutions")}</h3>
             <div>
-              <Link href="/hr">HR</Link>
-              <Link href="/employment">Employment</Link>
-              <Link href="/pricing">Pricing</Link>
+              <Link href="/hr">{t("hr")}</Link>
+              <Link href="/employment">{t("employment")}</Link>
+              <Link href="/pricing">{t("pricing")}</Link>
             </div>
           </div>
           <div>
-            <h3>Platform</h3>
+            <h3>{t("platform")}</h3>
             <div>
-              <Link href="/about-us">About Us</Link>
-              <Link href="/why-quorixia">Why Quorixia</Link>
-              <Link href="/careers">Careers</Link>
+              <Link href="/about-us">{t("aboutUs")}</Link>
+              <Link href="/why-quorixia">{t("whyQuorixia")}</Link>
+              <Link href="/careers">{t("careers")}</Link>
             </div>
           </div>
           <div>
-            <h3>Resources</h3>
+            <h3>{t("resources")}</h3>
             <div>
-              <Link href="/blog">Blog</Link>
-              <Link href="/case-studies">Case Studies</Link>
-              <Link href="/glossary">Glossary</Link>
+              <Link href="/blog">{t("blog")}</Link>
+              <Link href="/case-studies">{t("caseStudies")}</Link>
+              <Link href="/glossary">{t("glossary")}</Link>
             </div>
           </div>
           <div>
-            <h3>Support</h3>
+            <h3>{t("support")}</h3>
             <div>
-              <Link href="/contact-us">Contact Us</Link>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-of-use">Terms of Use</Link>
-              <Link href="/refund-policy">Refund Policy</Link>
-              <Link href="/cookies-and-tracking">Cookies & Tracking</Link>
+              <Link href="/contact-us">{t("contactUs")}</Link>
+              <Link href="/privacy-policy">{t("privacy")}</Link>
+              <Link href="/terms-of-use">{t("terms")}</Link>
+              <Link href="/refund-policy">{t("refund")}</Link>
+              <Link href="/cookies-and-tracking">{t("cookies")}</Link>
             </div>
           </div>
           <div>
-            <h3>Stay Connected</h3>
+            <h3>{t("stayConnected")}</h3>
             <div>
               <Link href="mailto:info@quorixia.com">info@quorixia.com</Link>
               <Link href="tel:+35723030297">+35723030297</Link>
               <Link href="#">
-                Registered address: Nissi, 68m Agia Napa, 5330, Famagusta,
-                Cyprus
+                {t("registered")}: Nissi, 68m Agia Napa, 5330, Famagusta, Cyprus
               </Link>
               <Link href="#">
-                Office address: 1st floor, office number 8, Georgiou Averof,
+                {t("office")}: 1st floor, office number 8, Georgiou Averof,
                 <br />
                 3-5, Larnaka 6052
               </Link>
