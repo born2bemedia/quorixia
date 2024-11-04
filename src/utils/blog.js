@@ -4,7 +4,7 @@ import axiosClient from "./GlobalApi";
 const cmsUrl = process.env.NEXT_PUBLIC_CMS_URL;
 
 // Function to build the query string with an optional count parameter
-const buildPostsUrl = (count) => {
+const buildPostsUrl = (count, locale) => {
   return (
     `posts?` +
     qs.stringify({
@@ -20,14 +20,15 @@ const buildPostsUrl = (count) => {
       populate: { image: { fields: ["url"] } },
       pagination: { pageSize: count || 9999 },
       sort: ["id:asc"],
+      locale: locale,
     })
   );
 };
 
 // Fetch posts from Strapi with an optional count parameter
-export const getPosts = async (count) => {
+export const getPosts = async (count, locale = "en") => {
   try {
-    const url = buildPostsUrl(count);
+    const url = buildPostsUrl(count, locale);
     const response = await axiosClient.get(url);
 
     // Add full URL to image paths
@@ -52,9 +53,9 @@ export const getPosts = async (count) => {
   }
 };
 
-export const getSlugs = async (count) => {
+export const getSlugs = async (count, locale = "en") => {
   try {
-    const url = buildPostsUrl(count);
+    const url = buildPostsUrl(count, locale);
     const response = await axiosClient.get(url);
 
     // Extract and return only the slugs
@@ -78,8 +79,8 @@ export const getPostsByCategory = async (category, count) => {
 };
 
 // Fetch a single post by slug
-export const getPost = async (slug) => {
-  const posts = await getPosts();
+export const getPost = async (slug, locale) => {
+  const posts = await getPosts(undefined, locale);
   const post = posts.find((post) => post.attributes.slug === slug);
   return post;
 };

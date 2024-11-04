@@ -1,26 +1,21 @@
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const HomeWhy = () => {
+  const t = useTranslations("home");
   return (
     <section className="home-why">
       <div className="_container">
         <div className="home-why__body">
           <div className="left fadeInUp">
             <span></span>
-            <h2>
-              Why
-              <br />
-              Quorixia?
-            </h2>
+            <h2 dangerouslySetInnerHTML={{ __html: t("HomeWhy.title") }}
+        />
           </div>
           <div className="right fadeInUp">
-            <h3>Fueling Your Ambition with Expert Guidance</h3>
+            <h3>{t("HomeWhy.subtitle")}</h3>
             <p>
-              Our crew doesn’t see you as just another client. You are a
-              professional with dreams, goals, and aspirations. With over a
-              decade of expertise in the HR and employment space, we specialise
-              in designing customised strategies that put you at the centre of
-              your career story.
+              {t("HomeWhy.text")}
             </p>
           </div>
         </div>

@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { usePopup } from "@/context/PopupsContext";
+import { useTranslations } from "next-intl";
 
 function ThanksPopup() {
+  const t = useTranslations("thanks_popup");
   const { thanksPopupDisplay, setThanksPopupDisplay } = usePopup();
   const [resetFormFunction, setResetFormFunction] = useState(() => () => {});
 
@@ -34,12 +36,8 @@ function ThanksPopup() {
         <div>
           <div className="form-wrap">
             <div className="success">
-              <h3>THANK YOU!</h3>
-              <p>
-                Your request has been received successfully!
-                <br />
-                One of our team members will get in touch with you shortly.
-              </p>
+              <h3>{t("title")}</h3>
+              <p dangerouslySetInnerHTML={{ __html: t("text") }} />
             </div>
           </div>
         </div>

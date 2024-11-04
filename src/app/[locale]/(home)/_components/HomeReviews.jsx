@@ -6,7 +6,7 @@ import ButtonArrow from "@/icons/ButtonArrow";
 import React from "react";
 import { Link } from "@/navigation";
 
-const HomeReviews = ({ reviews }) => {
+const HomeReviews = ({ reviews, buttonText }) => {
   return (
     <section className="home-reviews">
       <div className="_container">
@@ -45,7 +45,7 @@ const HomeReviews = ({ reviews }) => {
                     <img src="/images/home/quote.svg" alt="quote" />
                     <p>{review.quote}</p>
                     <Link href="/case-studies" className="main-button">
-                      <span>Read More Success Stories</span>
+                      <span>{buttonText}</span>
                       <ButtonArrow />
                     </Link>
                   </div>

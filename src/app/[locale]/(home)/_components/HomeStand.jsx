@@ -1,49 +1,35 @@
 import ButtonArrow from "@/icons/ButtonArrow";
 import { Link } from "@/navigation";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const HomeStand = () => {
+  const t = useTranslations("home");
   return (
     <section className="home-stand">
       <div className="_container">
-        <h2 className="fadeInUp">What Makes Us Stand Out:</h2>
+        <h2 className="fadeInUp">{t("HomeStand.title")}</h2>
         <div className="home-stand__body">
           <div>
             <div className="fadeInUp">
-              <img src="/images/home/dots.svg" alt="dot"/>
-              <h3>Years of Expertise, Fresh Perspective</h3>
-              <p>
-                While Quorixia is a young, forward-thinking company, our team of
-                seasoned HR experts carries decades of rich, diverse experience
-                across various industries. We combine a powerful blend of
-                insight, creativity, and real-world expertise.
-              </p>
+              <img src="/images/home/dots.svg" alt="dot" />
+              <h3>{t("HomeStand.block1.title")}</h3>
+              <p>{t("HomeStand.block1.text")}</p>
             </div>
             <div className="fadeInUp">
               <img src="/images/home/dots.svg" alt="dot" />
-              <h3>Precision-Crafted Solutions, Tailored to You</h3>
-              <p>
-                At Quorixia, we don’t believe in one-size-fits-all approaches.
-                Your career is a story in progress, full of potential and unique
-                challenges. That’s why we take the time to listen carefully and
-                understand the depth of your professional aspirations.
-              </p>
+              <h3>{t("HomeStand.block2.title")}</h3>
+              <p>{t("HomeStand.block2.text")}</p>
             </div>
             <div className="fadeInUp">
               <img src="/images/home/dots.svg" alt="dot" />
-              <h3>Empathy and Empowerment at the Core</h3>
-              <p>
-                Our approach goes beyond standard consulting. It’s about
-                building a deep partnership rooted in trust, compassion, and
-                mutual growth. The Quorixia team sees every interaction as an
-                opportunity to inspire confidence, unlock potential, and drive
-                transformation.
-              </p>
+              <h3>{t("HomeStand.block3.title")}</h3>
+              <p>{t("HomeStand.block3.text")}</p>
             </div>
           </div>
         </div>
         <Link href="/why-quorixia" className="main-button">
-          <span>See Why Clients Trust Quorixia</span>
+          <span>{t("HomeStand.button")}</span>
           <ButtonArrow />
         </Link>
       </div>

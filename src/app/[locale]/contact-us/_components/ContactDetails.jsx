@@ -1,12 +1,14 @@
 import { Link } from "@/navigation";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const ContactDetails = () => {
+  const t = useTranslations("contact");
   return (
     <section className="contact-details">
       <div className="_container">
         <div className="contact-details__top">
-          <h2 className="fadeInUp">Contact Information</h2>
+          <h2 className="fadeInUp">{t("ContactDetails.title")}</h2>
           <Link href="tel:+35723030297">
             <img src="/images/contact/phone.svg" />
             <span>+35723030297</span>
@@ -19,7 +21,7 @@ const ContactDetails = () => {
         <div className="contact-details__body">
           <div className="address fadeInUp">
             <div>
-              <h2>Registered Address</h2>
+              <h2>{t("ContactDetails.registered")}</h2>
               <p>Nissi, 68m Agia Napa, 5330, Famagusta, Cyprus</p>
             </div>
             <iframe
@@ -33,7 +35,7 @@ const ContactDetails = () => {
           </div>
           <div className="address fadeInUp">
             <div>
-              <h2>Office Address</h2>
+              <h2>{t("ContactDetails.office")}</h2>
               <p>
                 1st floor, office number 8, Georgiou Averof, 3-5, Larnaka 6052
               </p>

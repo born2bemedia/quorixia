@@ -3,22 +3,18 @@ import { getPosts } from "@/utils/blog";
 import Image from "next/image";
 import { Link } from "@/navigation";
 import React from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 const HomeResources = async () => {
-  // Fetch the latest 3 posts
-  const posts = await getPosts(3);
+  const t = useTranslations("home");
+  const locale = useLocale();
+  const posts = await getPosts(3, locale);
   return (
     <section className="home-resources">
       <div className="_container">
-        <h3 className="fadeInUp">Career Resources</h3>
-        <h2 className="fadeInUp">Empowering You With Knowledge</h2>
-        <p className="fadeInUp">
-          Your career doesn’t come with a manual, but Quorixia’s resources are
-          the next best thing. Stay ahead of the curve with expert insights,
-          guides, and practical advice crafted by HR professionals. Our blog,
-          case studies, and glossary help you stay informed and inspired, giving
-          you the tools to navigate your career confidently.
-        </p>
+        <h3 className="fadeInUp">{t("HomeResources.title")}</h3>
+        <h2 className="fadeInUp">{t("HomeResources.subtitle")}</h2>
+        <p className="fadeInUp">{t("HomeResources.text")}</p>
         <div className="home-resources__body">
           <div className="blog">
             {posts.map((post, index) => (
@@ -45,7 +41,7 @@ const HomeResources = async () => {
           </div>
         </div>
         <Link href="/blog" className="main-button">
-          <span>Visit Our Resources</span>
+          <span>{t("HomeResources.button")}</span>
           <ButtonArrow />
         </Link>
       </div>

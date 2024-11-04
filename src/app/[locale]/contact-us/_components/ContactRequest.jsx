@@ -1,20 +1,19 @@
 "use client";
 import ConnectForm from "@/global_components/ConnectForm";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const ContactRequest = () => {
+  const t = useTranslations("contact");
   return (
     <section className="contact-request">
       <div className="_container">
         <div className="contact-request__body">
-          <h2 className="fadeInUp">Let’s Start a Conversation</h2>
-          <p className="fadeInUp">
-            If you have any questions or inquiries, please use the form below to
-            contact us. Whether you seek career advice, more information about
-            our services, or want to collaborate, we’re here to listen and
-            respond. Simply fill out the form, and one of our team members will
-            reply shortly.
-          </p>
+          <h2 className="fadeInUp">{t("ContactRequest.title")}</h2>
+          <p
+            className="fadeInUp"
+            dangerouslySetInnerHTML={{ __html: t("ContactRequest.text") }}
+          />
           <ConnectForm />
         </div>
       </div>

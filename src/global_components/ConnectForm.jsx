@@ -9,35 +9,37 @@ import ThanksPopup from "./ThanksPopup";
 import ButtonArrow from "@/icons/ButtonArrow";
 import CheckboxIcon from "@/icons/CheckboxIcon";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 const ConnectForm = () => {
+  const t = useTranslations("connect_form");
   const { setThanksPopupDisplay } = usePopup();
 
   const jobRoles = [
-    { value: "Finance", label: "Finance & Accounting" },
-    { value: "AdminSupport", label: "Administrative Support" },
-    { value: "Marketing", label: "Marketing & Communications" },
-    { value: "Engineering", label: "Engineering & Construction" },
-    { value: "FoodBeverage", label: "Food & Beverage" },
-    { value: "Healthcare", label: "Healthcare & Biotechnology" },
-    { value: "Hospitality", label: "Hospitality & Tourism" },
-    { value: "HumanResources", label: "Human Resources & Talent Management" },
-    { value: "ITSoftware", label: "Information Technology & Software" },
-    { value: "Sales", label: "Sales & Business Development" },
+    { value: "Finance", label: t("jobRole.label1") },
+    { value: "AdminSupport", label: t("jobRole.label2") },
+    { value: "Marketing", label: t("jobRole.label3") },
+    { value: "Engineering", label: t("jobRole.label4") },
+    { value: "FoodBeverage", label: t("jobRole.label5") },
+    { value: "Healthcare", label: t("jobRole.label6") },
+    { value: "Hospitality", label: t("jobRole.label7") },
+    { value: "HumanResources", label: t("jobRole.label8") },
+    { value: "ITSoftware", label: t("jobRole.label9") },
+    { value: "Sales", label: t("jobRole.label10") },
   ];
 
   const expertiseLevels = [
-    { value: "EntryLevel", label: "Entry-Level" },
-    { value: "MidLevel", label: "Mid-Level" },
-    { value: "SeniorLevel", label: "Senior-Level" },
+    { value: "EntryLevel", label: t("expertiseLevel.label1") },
+    { value: "MidLevel", label: t("expertiseLevel.label2") },
+    { value: "SeniorLevel", label: t("expertiseLevel.label3") },
   ];
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("First Name is required"),
-    lastName: Yup.string().required("Last Name is required"),
+    firstName: Yup.string().required(t("validationSchema.firstName")),
+    lastName: Yup.string().required(t("validationSchema.lastName")),
     email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
+      .email(t("validationSchema.invalidEmail"))
+      .required(t("validationSchema.requiredEmail")),
     phone: Yup.string(),
     desiredRole: Yup.string(),
     sector: Yup.string(),
@@ -46,7 +48,7 @@ const ConnectForm = () => {
     salaryRange: Yup.string(),
     startDate: Yup.string(),
     workLocation: Yup.string(),
-    linkedInProfile: Yup.string().url("Invalid URL"),
+    linkedInProfile: Yup.string().url(t("validationSchema.invalidURL")),
     additionalInfo: Yup.string(),
   });
 
@@ -128,7 +130,6 @@ const ConnectForm = () => {
       });
 
       const result = await response.json();
-
 
       if (response.ok) {
         setTimeout(() => {
@@ -224,7 +225,7 @@ const ConnectForm = () => {
                 <Field
                   name="firstName"
                   type="text"
-                  placeholder="First Name "
+                  placeholder={t("formFields.firstName")}
                   className={
                     touched.firstName && errors.firstName ? "invalid" : ""
                   }
@@ -240,7 +241,7 @@ const ConnectForm = () => {
                 <Field
                   name="lastName"
                   type="text"
-                  placeholder="Last Name "
+                  placeholder={t("formFields.lastName")}
                   className={
                     touched.lastName && errors.lastName ? "invalid" : ""
                   }
@@ -256,7 +257,7 @@ const ConnectForm = () => {
                 <Field
                   name="email"
                   type="email"
-                  placeholder="Email "
+                  placeholder={t("formFields.email")}
                   className={touched.email && errors.email ? "invalid" : ""}
                 />
                 <ErrorMessage name="email" component="div" className="error" />
@@ -266,7 +267,7 @@ const ConnectForm = () => {
                 <PhoneInput
                   country={"us"}
                   value=""
-                  placeholder="Phone Number "
+                  placeholder={t("formFields.phone")}
                   onChange={(phone) => setFieldValue("phone", phone)}
                   className={touched.phone && errors.phone ? "invalid" : ""}
                 />
@@ -277,7 +278,7 @@ const ConnectForm = () => {
                 <Field
                   name="desiredRole"
                   type="text"
-                  placeholder="Desired Job Role "
+                  placeholder={t("formFields.desiredRole")}
                   className={
                     touched.desiredRole && errors.desiredRole ? "invalid" : ""
                   }
@@ -295,7 +296,7 @@ const ConnectForm = () => {
                   options={jobRoles}
                   styles={customSelectStyles}
                   onChange={(option) => setFieldValue("sector", option.value)}
-                  placeholder="Sector of Interest"
+                  placeholder={t("formFields.sector")}
                 />
                 <ErrorMessage name="sector" component="div" className="error" />
               </div>
@@ -308,7 +309,7 @@ const ConnectForm = () => {
                   onChange={(option) =>
                     setFieldValue("expertiseLevel", option.value)
                   }
-                  placeholder="Level of Expertise"
+                  placeholder={t("formFields.expertiseLevel")}
                 />
                 <ErrorMessage
                   name="expertiseLevel"
@@ -321,7 +322,7 @@ const ConnectForm = () => {
                 <Field
                   name="coreCompetencies"
                   type="text"
-                  placeholder="Core Competencies "
+                  placeholder={t("formFields.coreCompetencies")}
                   className={
                     touched.coreCompetencies && errors.coreCompetencies
                       ? "invalid"
@@ -339,7 +340,7 @@ const ConnectForm = () => {
                 <Field
                   name="salaryRange"
                   type="text"
-                  placeholder="Expected Salary Range "
+                  placeholder={t("formFields.salaryRange")}
                   className={
                     touched.salaryRange && errors.salaryRange ? "invalid" : ""
                   }
@@ -355,7 +356,7 @@ const ConnectForm = () => {
                 <Field
                   name="startDate"
                   type="text"
-                  placeholder="Earliest Start Date "
+                  placeholder={t("formFields.startDate")}
                   className={
                     touched.startDate && errors.startDate ? "invalid" : ""
                   }
@@ -371,7 +372,7 @@ const ConnectForm = () => {
                 <Field
                   name="workLocation"
                   type="text"
-                  placeholder="Preferred Work Location "
+                  placeholder={t("formFields.workLocation")}
                   className={
                     touched.workLocation && errors.workLocation ? "invalid" : ""
                   }
@@ -387,7 +388,7 @@ const ConnectForm = () => {
                 <Field
                   name="linkedInProfile"
                   type="url"
-                  placeholder="LinkedIn Profile Link "
+                  placeholder={t("formFields.linkedInProfile")}
                   className={
                     touched.linkedInProfile && errors.linkedInProfile
                       ? "invalid"
@@ -408,7 +409,9 @@ const ConnectForm = () => {
                     onClick={() => document.getElementById("resume").click()}
                   >
                     <span>
-                      {values.resume ? values.resume.name : "Attach Resume"}
+                      {values.resume
+                        ? values.resume.name
+                        : t("formFields.resume")}
                     </span>
                     <img src="/images/upload.svg" alt="upload" />
                   </span>
@@ -418,7 +421,6 @@ const ConnectForm = () => {
                     type="file"
                     onChange={(event) => {
                       setFieldValue("resume", event.currentTarget.files[0]);
-  
                     }}
                     style={{ display: "none" }}
                   />
@@ -437,7 +439,7 @@ const ConnectForm = () => {
                     <span>
                       {values.coverLetter
                         ? values.coverLetter.name
-                        : "Cover Letter"}
+                        : t("formFields.coverLetter")}
                     </span>
                     <img src="/images/upload.svg" alt="upload" />
                   </span>
@@ -461,7 +463,7 @@ const ConnectForm = () => {
                 <Field
                   name="additionalInfo"
                   as="textarea"
-                  placeholder="Additional Information "
+                  placeholder={t("formFields.additionalInfo")}
                   className={
                     touched.additionalInfo && errors.additionalInfo
                       ? "invalid"
@@ -485,9 +487,10 @@ const ConnectForm = () => {
                 <label htmlFor="terms">
                   <CheckboxIcon />
                   <span>
-                    I have read and agree to the{" "}
-                    <Link href="#">Terms of Use</Link> and{" "}
-                    <Link href="#">Privacy Policy</Link>.
+                    {t("formFields.terms1")}{" "}
+                    <Link href="#">{t("formFields.terms2")}</Link>{" "}
+                    {t("formFields.terms3")}{" "}
+                    <Link href="#">{t("formFields.terms4")}</Link>.
                   </span>
                 </label>
                 <ErrorMessage name="terms" component="div" className="error" />
@@ -498,7 +501,7 @@ const ConnectForm = () => {
                 className="main-button"
                 disabled={isSubmitting}
               >
-                Submit
+                {t("formFields.submit")}
                 <ButtonArrow />
               </button>
             </Form>
