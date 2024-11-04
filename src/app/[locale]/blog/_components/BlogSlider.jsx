@@ -73,7 +73,7 @@ const BlogSlider = ({ posts }) => {
                   <h4>{post.attributes.title}</h4>
                   <p>{post.attributes.excerpt}</p>
                   <span className="main-button">
-                    <span>Read now</span>
+                    <span>{t("BlogSlider.read")}</span>
                     <ButtonArrow />
                   </span>
                 </div>
