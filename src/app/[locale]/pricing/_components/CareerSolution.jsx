@@ -6,8 +6,10 @@ import "swiper/swiper-bundle.css"; // Swiper styles
 import OrderButton from "@/global_components/OrderButton";
 import { getProductsByCategory } from "@/utils/products_strapi";
 import ReactMarkdown from "react-markdown";
+import { useTranslations } from "next-intl";
 
 const CareerSolution = ({ products }) => {
+  const t = useTranslations("pricing");
   const swiperRef = useRef(null);
 
   useEffect(() => {
@@ -37,19 +39,17 @@ const CareerSolution = ({ products }) => {
         <div className="career-solution__body">
           <div className="top">
             <div>
-              <h3>Tailored Career Solutions</h3>
-              <h2>Choose the Perfect Package for Your Journey</h2>
-              <p>
-                At Quorixia, we understand that every career path is unique.
-                That’s why we’ve created a range of carefully curated service
-                packages designed to support you at every stage of your
-                professional journey. If you’re just starting, looking to
-                progress in your field, navigating a career transition, or
-                preparing for leadership roles, our packages provide
-                comprehensive, personalised support tailored to your specific
-                goals. Explore our packages below and find the one that fits
-                your career aspirations.
-              </p>
+              <h3
+                dangerouslySetInnerHTML={{ __html: t("CareerSolution.title") }}
+              />
+              <h2
+                dangerouslySetInnerHTML={{
+                  __html: t("CareerSolution.subtitle"),
+                }}
+              />
+              <p
+                dangerouslySetInnerHTML={{ __html: t("CareerSolution.text") }}
+              />
             </div>
             <div className="arrows">
               <img
@@ -114,9 +114,11 @@ const CareerSolution = ({ products }) => {
                   </div>
                   <div>
                     <h4>{product.attributes.title}</h4>
-                    <h5>From €{product.attributes.price}</h5>
+                    <h5>
+                      {t("CareerSolution.from")} €{product.attributes.price}
+                    </h5>
                     <OrderButton
-                      text={"Buy"}
+                      text={t("CareerSolution.buy")}
                       packageItem={product.attributes.title}
                     />
                   </div>

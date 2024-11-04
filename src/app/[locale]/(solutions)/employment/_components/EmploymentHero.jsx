@@ -1,8 +1,10 @@
 "use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const EmploymentHero = () => {
+  const t = useTranslations("employment");
   return (
     <section className="employment-hero">
       <div className="employment-hero__body">
@@ -11,16 +13,11 @@ const EmploymentHero = () => {
           <div></div>
         </div>
         <div>
-          <h1 className="fadeInUp">
-            Elevating Your Career Journey <br />
-            with Our Employment Services
-          </h1>
-          <p>
-            At Quorixia, we provide tailored employment <br />
-            solutions designed to help you navigate the <br />
-            job market, sharpen your skills, and secure <br />
-            the right opportunities.
-          </p>
+          <h1
+            className="fadeInUp"
+            dangerouslySetInnerHTML={{ __html: t("EmploymentHero.title") }}
+          />
+          <p dangerouslySetInnerHTML={{ __html: t("EmploymentHero.text") }} />
         </div>
       </div>
     </section>

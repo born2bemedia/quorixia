@@ -9,6 +9,7 @@ import HrExpertise from "./_components/HrExpertise";
 import OrderPopup from "@/global_components/OrderPopup";
 import ThanksPopup from "@/global_components/ThanksPopup";
 import RequestPopup from "@/global_components/RequestPopup";
+import { useLocale } from "next-intl";
 
 export const metadata = {
   title: "Expert HR Solutions for Career Success | Quorixia",
@@ -23,6 +24,8 @@ export const metadata = {
 };
 
 const HrPage = () => {
+  const locale = useLocale();
+
   const reviews = [
     {
       name: "Sarah J.",
@@ -54,12 +57,82 @@ const HrPage = () => {
     },
   ];
 
+  const reviewsDe = [
+    {
+      name: "Sarah J.",
+      title: "Marketing Manager",
+      quote:
+        "“Quorixia hat mir geholfen, eine schwierige Vertragsverhandlung zu meistern und bessere Konditionen zu sichern. Ich bin jetzt sicherer in meinen beruflichen Entscheidungen!”",
+      link: "#",
+    },
+    {
+      name: "Daniel R.",
+      title: "Engineering Lead",
+      quote:
+        "“Das Führungstraining, das ich erhielt, war außergewöhnlich. Es hat mir geholfen, mit Selbstvertrauen eine neue Führungsrolle anzunehmen.”",
+      link: "#",
+    },
+    {
+      name: "Laura M.",
+      title: "Projektkoordinatorin",
+      quote:
+        "“Ich hatte Konflikte am Arbeitsplatz und der Mediationsdienst von Quorixia half mir, das Problem schnell und professionell zu lösen.”",
+      link: "#",
+    },
+    {
+      name: "Mike T.",
+      title: "IT-Spezialist",
+      quote:
+        "“Ihre Unterstützung bei der Austrittsstrategie war von unschätzbarem Wert. Quorixia hat mir geholfen, eine toxische Arbeitsumgebung zu verlassen und eine neue Möglichkeit zu finden.”",
+      link: "#",
+    },
+  ];
+
+  const reviewsIt = [
+    {
+      name: "Sarah J.",
+      title: "Responsabile Marketing",
+      quote:
+        "“Quorixia mi ha aiutato a gestire una difficile negoziazione contrattuale e a ottenere condizioni migliori. Ora sono più sicura delle mie decisioni di carriera!”",
+      link: "#",
+    },
+    {
+      name: "Daniel R.",
+      title: "Capo dell'Ingegneria",
+      quote:
+        "“Il coaching di leadership che ho ricevuto è stato eccezionale. Mi ha aiutato ad assumere un nuovo ruolo di gestione con fiducia.”",
+      link: "#",
+    },
+    {
+      name: "Laura M.",
+      title: "Coordinatrice di Progetto",
+      quote:
+        "“Avevo difficoltà con conflitti sul lavoro e il servizio di mediazione di Quorixia mi ha aiutato a risolverli rapidamente e professionalmente.”",
+      link: "#",
+    },
+    {
+      name: "Mike T.",
+      title: "Specialista IT",
+      quote:
+        "“Il loro supporto nella strategia di uscita è stato inestimabile. Quorixia mi ha aiutato a uscire da un ambiente di lavoro tossico e a trovare una nuova opportunità.”",
+      link: "#",
+    },
+  ];
+
   return (
     <>
       <HrHero />
       <HrExpertise />
       <HrPricing />
-      <HomeReviews reviews={reviews} />
+      {locale == "en" && (
+        <HomeReviews reviews={reviews} />
+      )}
+      {locale == "de" && (
+        <HomeReviews reviews={reviewsDe} />
+      )}
+      {locale == "it" && (
+        <HomeReviews reviews={reviewsIT} />
+      )}
       <HrPersonalisedApproach />
       <HrRequest />
       <RequestPopup />

@@ -1,21 +1,19 @@
 import ButtonArrow from "@/icons/ButtonArrow";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const AboutLast = () => {
+  const t = useTranslations("about");
   return (
     <section className="about-last">
       <div className="_container">
         <div className="about-last__body fadeInUp">
           <div className="left">
-            <h2>Ready to Learn More About Why Quorixia?</h2>
-            <p>
-              Curious about what sets Quorixia apart from other HR firms?
-              Explore our unique approach and discover how we create
-              personalised solutions tailored to your needs.
-            </p>
+            <h2 dangerouslySetInnerHTML={{ __html: t("AboutLast.title") }} />
+            <p dangerouslySetInnerHTML={{ __html: t("AboutLast.text") }} />
             <Link href="/why-quorixia" className="main-button">
-              <span>Why Choose Quorixia?</span>
+              <span>{t("AboutLast.button")}</span>
               <ButtonArrow />
             </Link>
           </div>

@@ -1,24 +1,18 @@
 "use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const HrHero = () => {
+  const t = useTranslations("hr");
   return (
     <section className="hr-hero">
       <div className="hr-hero__body">
         <div></div>
         <div><div></div></div>
         <div>
-          <h1 className="fadeInUp">
-            Transforming Your Professional Path <br />
-            with Tailored HR Solutions
-          </h1>
-          <p>
-            At Quorixia, we specialise in providing <br />
-            personalised HR solutions to help you overcome <br />
-            career challenges, navigate transitions, and <br />
-            confidently achieve your goals.
-          </p>
+          <h1 className="fadeInUp" dangerouslySetInnerHTML={{ __html: t("HrHero.title") }} />
+          <p dangerouslySetInnerHTML={{ __html: t("HrHero.text") }} />
         </div>
       </div>
     </section>

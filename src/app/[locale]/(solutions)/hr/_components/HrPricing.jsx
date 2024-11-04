@@ -2,24 +2,20 @@ import ButtonArrow from "@/icons/ButtonArrow";
 import Image from "next/image";
 import { Link } from "@/navigation";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const HrPricing = () => {
+  const t = useTranslations("hr");
   return (
     <section className="hr-pricing">
       <div className="_container">
         <div className="hr-pricing__body">
           <div className="fadeInUp">
-            <h2>Transparent Pricing, Tailored Packages</h2>
-            <p>
-              We offer clear and flexible pricing to meet your specific needs.
-              Whether you’re looking for one-time consultations or ongoing HR
-              support, our service packages are designed to fit your career
-              goals and budget. Explore our detailed pricing options to find the
-              right package for you.
-            </p>
+            <h2 dangerouslySetInnerHTML={{ __html: t("HrPricing.title") }} />
+            <p dangerouslySetInnerHTML={{ __html: t("HrPricing.text") }} />
             <div className="buttons-wrap">
               <Link href="/pricing" className="main-button">
-                <span>View Pricing & Packages</span>
+                <span>{t("HrPricing.button")}</span>
                 <ButtonArrow />
               </Link>
             </div>

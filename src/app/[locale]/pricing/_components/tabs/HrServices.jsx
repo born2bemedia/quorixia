@@ -2,12 +2,13 @@
 import AddToCartButton from "@/global_components/AddToCartButton";
 import { getProductsByCategory } from "@/utils/products_strapi";
 import React, { useEffect, useState } from "react";
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 const HrServices = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const locale = useLocale();
+  const t = useTranslations("pricing");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -35,7 +36,7 @@ const HrServices = () => {
             <div className="product-top">
               <div>
                 <h2>{product.attributes.title}</h2>
-                <h2>Price: €{product.attributes.price}</h2>
+                <h2>{t("CareerSolution.price")}: €{product.attributes.price}</h2>
               </div>
               <AddToCartButton product={product} />
             </div>

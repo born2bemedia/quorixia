@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import HrServices from "./tabs/HrServices";
 import EmploymentServices from "./tabs/EmploymentServices";
+import { useTranslations } from "next-intl";
 
 const PricingSecond = () => {
+  const t = useTranslations("pricing");
   const [activeTab, setActiveTab] = useState("hr");
   const handleTabs = (id) => {
     setActiveTab(id);
@@ -17,13 +19,13 @@ const PricingSecond = () => {
               className={`${activeTab == "hr" ? "active" : ""}`}
               onClick={() => handleTabs("hr")}
             >
-              HR Services
+              {t("PricingSecond.hr")}
             </div>
             <div
               className={`${activeTab == "employment" ? "active" : ""}`}
               onClick={() => handleTabs("employment")}
             >
-              Employment Services
+              {t("PricingSecond.employment")}
             </div>
           </div>
           <div className="tabs-content">

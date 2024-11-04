@@ -1,18 +1,22 @@
 "use client";
 import ConnectForm from "@/global_components/ConnectForm";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const HrRequest = () => {
+  const t = useTranslations("hr");
   return (
     <section className="hr-request">
       <div className="_container">
         <div className="hr-request__body">
-          <h2 className="fadeInUp">Unlock Your Personalised HR Strategy</h2>
-          <p className="fadeInUp">
-            Our experts bring decades of collective HR experience to guide you
-            with empathy, precision, and care. You won’t just get advice –
-            you’ll get a partner dedicated to your success.
-          </p>
+          <h2
+            className="fadeInUp"
+            dangerouslySetInnerHTML={{ __html: t("HrRequest.title") }}
+          />
+          <p
+            className="fadeInUp"
+            dangerouslySetInnerHTML={{ __html: t("HrRequest.text") }}
+          />
           <ConnectForm />
         </div>
       </div>

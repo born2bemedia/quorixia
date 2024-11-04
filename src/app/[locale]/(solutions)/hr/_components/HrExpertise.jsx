@@ -7,12 +7,16 @@ import "swiper/css/pagination";
 import ButtonArrow from "@/icons/ButtonArrow";
 import { Link } from "@/navigation";
 import OrderButton from "@/global_components/OrderButton";
+import { useLocale, useTranslations } from "next-intl";
 
 const HrExpertise = () => {
   const [isMobile, setIsMobile] = useState(false);
+  
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null);
+  const locale = useLocale();
+  const t = useTranslations("hr");
 
   const handlePrev = useCallback(() => {
     if (!swiperRef.current) return;
@@ -24,16 +28,7 @@ const HrExpertise = () => {
     swiperRef.current.swiper.slideNext();
   }, []);
 
-  useEffect(() => {
-    // Check if the window width is less than 992px
-    const checkMobile = () => setIsMobile(window.innerWidth <= 992);
-    checkMobile();
-
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const expertiseData = [
+  const expertiseDataEn = [
     {
       title: "Contract Negotiation <br>& Review",
       description:
@@ -140,6 +135,202 @@ const HrExpertise = () => {
     },
   ];
 
+  const expertiseDataDe = [
+    {
+      title: "Vertragsverhandlung <br>& Überprüfung",
+      description: "Sichern Sie sich vorteilhafte Konditionen in Ihren Arbeitsverträgen, um Ihre Interessen zu schützen.",
+    },
+    {
+      title: "Leistungs<Br>management",
+      description: "Erhalten Sie professionelle Unterstützung, um in Ihrer aktuellen Rolle erfolgreich zu sein und beruflich zu wachsen.",
+    },
+    {
+      title: "Rechtliche <br>HR-Beratung",
+      description: "Navigieren Sie sicher durch komplexe Arbeitsgesetze und Arbeitsplatzrechte.",
+    },
+    {
+      title: "Konfliktlösung <br>am Arbeitsplatz",
+      description: "Erhalten Sie professionelle Beratung zur Lösung von Streitigkeiten und zur Schaffung eines harmonischen Arbeitsumfelds.",
+    },
+    {
+      title: "Führungs<Br>coaching",
+      description: "Entfalten Sie Ihr Führungspotenzial mit individuellem Coaching, um in Ihrer Karriere voranzukommen.",
+    },
+    {
+      title: "Beratung zu <br>Vergütung und Leistungen",
+      description: "Stellen Sie sicher, dass Sie fair bezahlt werden und die richtigen Leistungen für Ihre Rolle erhalten.",
+    },
+    {
+      title: "Ausstiegsstrategie & Karriere<Br>übergang",
+      description: "Erhalten Sie Unterstützung für einen reibungslosen Übergang in neue berufliche Chancen.",
+    },
+    {
+      title: "Strategien für <br>Work-Life-Balance",
+      description: "Individuelle Strategien, um ein gesundes Gleichgewicht zwischen Arbeit und Privatleben zu erreichen.",
+    },
+    {
+      title: "Onboarding <Br>Unterstützung",
+      description: "Erleichtern Sie den Übergang in neue Rollen mit maßgeschneiderter Onboarding-Beratung.",
+    },
+    {
+      title: "Talententwicklung <br>& Kompetenzbewertung",
+      description: "Erkennen Sie Ihre Stärken und Wachstumsbereiche mit einer individuellen Kompetenzbewertung.",
+    },
+    {
+      title: "Beratung zu <br>Diversität & Inklusion",
+      description: "Erhalten Sie Beratung zur Navigation in diversen und inklusiven Arbeitsumgebungen.",
+    },
+    {
+      title: "Planung für <br>Remote-Arbeit & Flexibilität",
+      description: "Entwickeln Sie Strategien, um in flexiblen oder Remote-Arbeitsumgebungen erfolgreich zu sein.",
+    },
+    {
+      title: "Karriere<Br>planung",
+      description: "Entwickeln Sie einen klaren, strategischen Plan für Ihren beruflichen Fortschritt.",
+    },
+    {
+      title: "HR-<br>Richtlinienüberprüfung",
+      description: "Stellen Sie sicher, dass Ihre Beschäftigung fairen und aktuellen HR-Richtlinien entspricht.",
+    },
+    {
+      title: "Persönliche <br>Entwicklungspläne",
+      description: "Erstellen Sie einen langfristigen Plan für persönliche und berufliche Entwicklung.",
+    },
+    {
+      title: "Mediation <br>bei Konflikten",
+      description: "Erhalten Sie professionelle Mediation, um interne Konflikte am Arbeitsplatz zu lösen.",
+    },
+    {
+      title: "Analyse & Klärung der <br>Job-Rolle",
+      description: "Klären Sie Ihre Rollenanforderungen und optimieren Sie Ihre Leistung.",
+    },
+    {
+      title: "Mitarbeiterrechte <br>Vertretung",
+      description: "Unterstützung, um sicherzustellen, dass Ihre Mitarbeiterrechte am Arbeitsplatz gewahrt werden.",
+    },
+    {
+      title: "Anpassung an die <br>Unternehmenskultur",
+      description: "Erhalten Sie Unterstützung, um sich in die Unternehmenskultur einzufügen und erfolgreich zu sein.",
+    },
+    {
+      title: "Mentoring <br>Matching",
+      description: "Wir helfen Ihnen, mit Mentoren in Ihrer Branche für Wachstum und Entwicklung in Kontakt zu treten.",
+    },
+    {
+      title: "Wellness & <br>psychische Unterstützung",
+      description: "Entwickeln Sie Strategien zur Verbesserung des mentalen Wohlbefindens und für ein gesünderes Arbeitsleben.",
+    },
+  ];
+  
+  const expertiseDataIt = [
+    {
+      title: "Negoziazione e Revisione <br>dei Contratti",
+      description: "Garantisci condizioni favorevoli nei tuoi contratti di lavoro per proteggere i tuoi interessi.",
+    },
+    {
+      title: "Gestione delle <br>Prestazioni",
+      description: "Ricevi consulenza esperta per eccellere nel tuo ruolo attuale e crescere professionalmente.",
+    },
+    {
+      title: "Consulenza Legale <br>HR",
+      description: "Naviga con sicurezza le complesse leggi sul lavoro e i diritti sul posto di lavoro.",
+    },
+    {
+      title: "Risoluzione dei Conflitti <br>sul Lavoro",
+      description: "Ottieni consulenza professionale per risolvere conflitti e creare un ambiente di lavoro armonioso.",
+    },
+    {
+      title: "Coaching <br>di Leadership",
+      description: "Sblocca il tuo potenziale di leadership con un coaching personalizzato per avanzare nella carriera.",
+    },
+    {
+      title: "Consulenza su <br>Retribuzione e Benefici",
+      description: "Assicurati di essere equamente compensato e di ricevere i benefici giusti per il tuo ruolo.",
+    },
+    {
+      title: "Strategia di Uscita & Supporto <br>alla Transizione di Carriera",
+      description: "Ricevi supporto per una transizione fluida verso nuove opportunità professionali.",
+    },
+    {
+      title: "Strategie di <br>Equilibrio Vita-Lavoro",
+      description: "Strategie personalizzate per mantenere un equilibrio sano tra lavoro e vita personale.",
+    },
+    {
+      title: "Supporto <br>all'Inserimento",
+      description: "Rendi la transizione in nuovi ruoli più semplice con consigli personalizzati sull'inserimento.",
+    },
+    {
+      title: "Sviluppo del Talento <br>& Valutazione delle Competenze",
+      description: "Identifica i tuoi punti di forza e le aree di crescita con una valutazione delle competenze su misura.",
+    },
+    {
+      title: "Consulenza su <br>Diversità e Inclusione",
+      description: "Ottieni consigli per navigare in ambienti di lavoro diversi e inclusivi.",
+    },
+    {
+      title: "Pianificazione per il Lavoro <br>Remoto & Flessibilità",
+      description: "Sviluppa strategie per prosperare in ambienti di lavoro flessibili o remoti.",
+    },
+    {
+      title: "Pianificazione della <br>Carriera",
+      description: "Elabora un piano chiaro e strategico per la tua crescita professionale.",
+    },
+    {
+      title: "Revisione delle <br>Politiche HR",
+      description: "Assicurati che il tuo impiego sia in linea con politiche HR eque e aggiornate.",
+    },
+    {
+      title: "Piani di <br>Sviluppo Personale",
+      description: "Crea un piano a lungo termine per lo sviluppo personale e professionale.",
+    },
+    {
+      title: "Mediazione dei <br>Conflitti",
+      description: "Ricevi mediazione professionale per risolvere conflitti interni sul posto di lavoro.",
+    },
+    {
+      title: "Analisi e Chiarimento <br>del Ruolo",
+      description: "Chiarisci le aspettative del ruolo e massimizza le tue prestazioni.",
+    },
+    {
+      title: "Difesa dei Diritti dei <br>Lavoratori",
+      description: "Supporto per garantire che i tuoi diritti di lavoratore siano rispettati sul posto di lavoro.",
+    },
+    {
+      title: "Cultura Aziendale <br>& Adattamento",
+      description: "Ottieni consigli su come adattarti e prosperare nella cultura aziendale.",
+    },
+    {
+      title: "Abbinamento al <br>Mentoring",
+      description: "Ti aiutiamo a connetterti con mentori nel tuo settore per crescita e sviluppo.",
+    },
+    {
+      title: "Benessere sul Lavoro <br>& Supporto Mentale",
+      description: "Sviluppa strategie per migliorare il benessere mentale e creare un ambiente lavorativo più sano.",
+    },
+  ];
+  
+  const [expertiseData, setExpertiseData] = useState(expertiseDataEn);
+
+  useEffect(() => {
+
+    if(locale == 'de'){
+      setExpertiseData(expertiseDataDe);
+    } else if(locale == 'it'){
+      setExpertiseData(expertiseDataIt);
+    } else {
+      setExpertiseData(expertiseDataEn)
+    }
+
+    const checkMobile = () => setIsMobile(window.innerWidth <= 992);
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+
+  
+
   // Function to split the data into chunks of 3 items each
   const chunkArray = (array, chunkSize) => {
     const results = [];
@@ -155,15 +346,8 @@ const HrExpertise = () => {
     <section className="hr-expertise">
       <div className="_container">
         <div className="hr-expertise__top">
-          <h2 className="fadeInUp">Discover Our HR Expertise</h2>
-          <p className="fadeInUp">
-            No two career paths are alike. Our range of HR solutions is designed
-            to address your issues, whether navigating a career transition,
-            enhancing your leadership skills, or seeking personalised HR advice.
-            Focusing on customised strategies and one-on-one support, we offer
-            services that empower you to take control of your professional
-            future.
-          </p>
+          <h2 className="fadeInUp" dangerouslySetInnerHTML={{ __html: t("HrExpertise.title") }} />
+          <p className="fadeInUp" dangerouslySetInnerHTML={{ __html: t("HrExpertise.text") }} />
         </div>
         {isMobile ? (
           <>
@@ -218,8 +402,8 @@ const HrExpertise = () => {
         )}
         <div className="buttons-wrap">
           <OrderButton
-            packageItem={"HR Service"}
-            text={"Order HR Service Now"}
+            packageItem={t("HrExpertise.service")}
+            text={t("HrExpertise.button")}
           />
         </div>
       </div>

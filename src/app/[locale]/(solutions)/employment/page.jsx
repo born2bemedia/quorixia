@@ -10,6 +10,7 @@ import EmploymentPersonalisedApproach from "./_components/EmploymentPersonalised
 import EmploymentRequest from "./_components/EmploymentRequest";
 import EmploymentHowWork from "./_components/EmploymentHowWork";
 import RequestPopup from "@/global_components/RequestPopup";
+import { useLocale } from "next-intl";
 
 export const metadata = {
   title: "Employment Services to Elevate Your Career | Quorixia",
@@ -24,6 +25,8 @@ export const metadata = {
 };
 
 const EmploymentPage = () => {
+  const locale = useLocale();
+
   const reviews = [
     {
       name: "Alex G.",
@@ -55,13 +58,83 @@ const EmploymentPage = () => {
     },
   ];
 
+  const reviewsDe = [
+    {
+      name: "Alex G.",
+      title: "Softwareentwickler",
+      quote:
+        "“Quorixia hat mir geholfen, meinen Lebenslauf und mein LinkedIn-Profil zu optimieren, und innerhalb weniger Wochen bekam ich Einladungen zu Interviews für Positionen, die ich wollte.”",
+      link: "#",
+    },
+    {
+      name: "Maria L.",
+      title: "Marketing-Spezialistin",
+      quote:
+        "“Ihr Interview-Coaching gab mir das Selbstvertrauen, um in einem hochkompetitiven Markt erfolgreich zu sein. Ich habe schnell einen Job gefunden.”",
+      link: "#",
+    },
+    {
+      name: "John D.",
+      title: "Projektmanager",
+      quote:
+        "“Die personalisierte Jobsuchstrategie hat meine Herangehensweise bei der Suche nach neuen Möglichkeiten völlig verändert. Quorixia war entscheidend für meinen Karriereschritt.”",
+      link: "#",
+    },
+    {
+      name: "Emma W.",
+      title: "HR-Spezialistin",
+      quote:
+        "“Die Unterstützung, die ich von Quorixia erhielt, war von unschätzbarem Wert. Von der Verfeinerung meines Anschreibens bis zur Verhandlung meines Jobangebots haben sie mich durch jeden Schritt begleitet. Ich habe eine Stelle gefunden, die perfekt zu meinen Karrierezielen passt.”",
+      link: "#",
+    },
+  ];
+
+  const reviewsIt = [
+    {
+      name: "Alex G.",
+      title: "Sviluppatore Software",
+      quote:
+        "“Quorixia mi ha aiutato a ottimizzare il mio curriculum e il profilo LinkedIn e, nel giro di poche settimane, ho iniziato a ricevere colloqui per posizioni che desideravo.”",
+      link: "#",
+    },
+    {
+      name: "Maria L.",
+      title: "Specialista in Marketing",
+      quote:
+        "“Il loro coaching per i colloqui mi ha dato la fiducia per avere successo in un mercato altamente competitivo. Ho trovato lavoro in poco tempo.”",
+      link: "#",
+    },
+    {
+      name: "John D.",
+      title: "Project Manager",
+      quote:
+        "“La strategia personalizzata di ricerca del lavoro ha completamente trasformato il mio approccio alla ricerca di nuove opportunità. Quorixia è stata fondamentale nella mia transizione di carriera.”",
+      link: "#",
+    },
+    {
+      name: "Emma W.",
+      title: "Specialista HR",
+      quote:
+        "“Il supporto che ho ricevuto da Quorixia è stato inestimabile. Dal perfezionamento della lettera di presentazione alla negoziazione dell'offerta di lavoro, mi hanno guidato in ogni fase. Ho ottenuto un ruolo che si allinea perfettamente con i miei obiettivi di carriera.”",
+      link: "#",
+    },
+  ];
+
   return (
     <>
       <EmploymentHero />
       <EmploymentExpertise />
       <EmploymentPricing />
       <EmploymentHowWork />
-      <HomeReviews reviews={reviews} />
+      {locale == "en" && (
+        <HomeReviews reviews={reviews} />
+      )}
+      {locale == "de" && (
+        <HomeReviews reviews={reviewsDe} />
+      )}
+      {locale == "it" && (
+        <HomeReviews reviews={reviewsIT} />
+      )}
       <EmploymentRequest />
       <RequestPopup />
       <ThanksPopup />

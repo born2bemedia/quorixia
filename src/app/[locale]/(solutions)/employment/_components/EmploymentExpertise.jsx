@@ -7,12 +7,15 @@ import "swiper/css/pagination";
 import ButtonArrow from "@/icons/ButtonArrow";
 import { Link } from "@/navigation";
 import OrderButton from "@/global_components/OrderButton";
+import { useLocale, useTranslations } from "next-intl";
 
 const EmploymentExpertise = () => {
+  const t = useTranslations("employment");
   const [isMobile, setIsMobile] = useState(false);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null);
+  const locale = useLocale();
 
   const handlePrev = useCallback(() => {
     if (!swiperRef.current) return;
@@ -24,16 +27,7 @@ const EmploymentExpertise = () => {
     swiperRef.current.swiper.slideNext();
   }, []);
 
-  useEffect(() => {
-    // Check if the window width is less than 992px
-    const checkMobile = () => setIsMobile(window.innerWidth <= 992);
-    checkMobile();
-
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const expertiseData = [
+  const expertiseDataEn = [
     {
       title: "Resume & CV <br>Building",
       description:
@@ -141,6 +135,239 @@ const EmploymentExpertise = () => {
     },
   ];
 
+  const expertiseDataDe = [
+    {
+      title: "Lebenslauf & CV <br>Erstellung",
+      description:
+        "Erstellen Sie maßgeschneiderte Lebensläufe, die Ihre einzigartigen Stärken und Erfolge hervorheben.",
+    },
+    {
+      title: "Vorbereitung auf das <br>Vorstellungsgespräch",
+      description:
+        "Gewinnen Sie Selbstvertrauen und üben Sie Techniken, um in Ihren Interviews zu glänzen.",
+    },
+    {
+      title: "Strategie für die <br>Jobsuche",
+      description:
+        "Navigieren Sie den Arbeitsmarkt mit einem maßgeschneiderten Plan, der zu Ihren Karrierezielen passt.",
+    },
+    {
+      title: "LinkedIn Profil <br>Optimierung",
+      description:
+        "Verbessern Sie Ihre digitale Präsenz mit einem auffälligen LinkedIn-Profil, um Arbeitgeber anzuziehen.",
+    },
+    {
+      title: "Netzwerkstrategie",
+      description:
+        "Erfahren Sie, wie Sie Ihr berufliches Netzwerk erweitern und wichtige Kontakte nutzen können.",
+    },
+    {
+      title: "Anschreiben <br>Erstellung",
+      description:
+        "Erstellen Sie überzeugende Anschreiben, die potenziellen Arbeitgebern auffallen.",
+    },
+    {
+      title: "Arbeitsmarkttrends <br>& Einblicke",
+      description:
+        "Bleiben Sie über Branchentrends und Marktveränderungen informiert, um Ihre Jobsuche zu optimieren.",
+    },
+    {
+      title: "Coaching für Gehalts<Br>verhandlung",
+      description:
+        "Lernen Sie, wie Sie Gehalt und Leistungen effektiv und selbstbewusst verhandeln.",
+    },
+    {
+      title: "Unterstützung bei <br>Karrieretransitionen",
+      description:
+        "Wechseln Sie reibungslos in eine neue Branche oder Rolle mit personalisierter Beratung.",
+    },
+    {
+      title: "Beratung zur <br>persönlichen Marke",
+      description:
+        "Bauen Sie eine starke persönliche Marke auf, die Sie im Arbeitsmarkt abhebt.",
+    },
+    {
+      title: "Unterstützung bei <br>Bewerbungen",
+      description:
+        "Erhalten Sie Unterstützung beim Ausfüllen von Bewerbungen, die das Interesse der Personalverantwortlichen wecken.",
+    },
+    {
+      title: "Entwicklung eines <br>professionellen Portfolios",
+      description:
+        "Präsentieren Sie Ihre Arbeit und Fähigkeiten mit einem gut gestalteten professionellen Portfolio.",
+    },
+    {
+      title: "Strategien für <br>Freiberufliche & Vertragsarbeit",
+      description:
+        "Maßgeschneiderte Unterstützung für diejenigen, die freiberufliche oder vertragliche Chancen suchen.",
+    },
+    {
+      title: "Coaching für <br>virtuelle Interviews",
+      description:
+        "Meistern Sie die Besonderheiten virtueller Interviews mit gezieltem Coaching.",
+    },
+    {
+      title: "Analyse der <br>Unternehmenskultur",
+      description:
+        "Finden Sie ein Arbeitsumfeld, das zu Ihren Werten und Ihrer Persönlichkeit passt.",
+    },
+    {
+      title: "Suche nach Praktika & <br>Lehrstellen",
+      description:
+        "Spezialisierte Unterstützung bei der Suche nach Praktika und Ausbildungsstellen.",
+    },
+    {
+      title: "Planung einer <br>zweiten Karriere",
+      description:
+        "Individuelle Strategien für Fachkräfte, die eine komplette Karriereänderung anstreben.",
+    },
+    {
+      title: "Strategie für <br>Follow-Up nach Interviews",
+      description:
+        "Erfahren Sie, wie Sie nach Interviews nachfassen, um Ihre Erfolgschancen zu erhöhen.",
+    },
+    {
+      title: "Optimierung des <br>Freiberuflerprofils",
+      description:
+        "Verbessern Sie Ihr Profil auf Freiberufler-Plattformen, um bessere Kunden und Projekte anzuziehen.",
+    },
+    {
+      title: "Beratung im <br>Arbeitsrecht",
+      description:
+        "Verstehen Sie Ihre Rechte und Pflichten, während Sie Ihre Jobsuche vorantreiben.",
+    },
+    {
+      title: "Bewertung von <br>Jobangeboten",
+      description:
+        "Erhalten Sie Expertenrat zur Bewertung und Annahme der besten Jobangebote für Ihr berufliches Wachstum.",
+    },
+  ];
+
+  const expertiseDataIt = [
+    {
+      title: "Creazione del <br>Curriculum Vitae",
+      description:
+        "Crea curriculum personalizzati che mettano in risalto le tue competenze e successi unici.",
+    },
+    {
+      title: "Preparazione al <br>Colloquio",
+      description:
+        "Acquisisci fiducia e pratica le tecniche per eccellere nei colloqui.",
+    },
+    {
+      title: "Strategia di <br>Ricerca Lavoro",
+      description:
+        "Naviga il mercato del lavoro con un piano su misura che si adatta ai tuoi obiettivi di carriera.",
+    },
+    {
+      title: "Ottimizzazione del <br>Profilo LinkedIn",
+      description:
+        "Migliora la tua presenza digitale con un profilo LinkedIn efficace per attrarre i datori di lavoro.",
+    },
+    {
+      title: "Strategia di <br>Networking",
+      description:
+        "Scopri come espandere la tua rete professionale e sfruttare contatti strategici.",
+    },
+    {
+      title: "Scrittura della <br>Lettera di Presentazione",
+      description:
+        "Crea lettere di presentazione convincenti che catturino l'attenzione dei potenziali datori di lavoro.",
+    },
+    {
+      title: "Tendenze e <br>Approfondimenti del Mercato del Lavoro",
+      description:
+        "Rimani aggiornato sulle tendenze di settore e sui cambiamenti di mercato per ottimizzare la ricerca di lavoro.",
+    },
+    {
+      title: "Coaching per <br>Negoziazione Salariale",
+      description:
+        "Impara a negoziare efficacemente il tuo stipendio e i benefici con fiducia.",
+    },
+    {
+      title: "Supporto per la <br>Transizione di Carriera",
+      description:
+        "Passa agevolmente a una nuova industria o ruolo con consulenze personalizzate.",
+    },
+    {
+      title: "Consulenza per il <br>Brand Personale",
+      description:
+        "Costruisci un solido brand personale che ti distingua nel mercato del lavoro.",
+    },
+    {
+      title: "Assistenza per le <br>Candidature",
+      description:
+        "Ricevi assistenza per compilare candidature che attirino l'attenzione dei selezionatori.",
+    },
+    {
+      title: "Sviluppo del <br>Portfolio Professionale",
+      description:
+        "Mostra il tuo lavoro e le tue competenze con un portfolio professionale ben progettato.",
+    },
+    {
+      title: "Strategie per <br>Lavoro Freelance & Contratti",
+      description:
+        "Supporto personalizzato per chi cerca opportunità freelance o a contratto.",
+    },
+    {
+      title: "Coaching per Colloqui <br>Virtuali",
+      description:
+        "Impara le sfumature dei colloqui virtuali con un coaching mirato.",
+    },
+    {
+      title: "Analisi dell'Adattamento <br>alla Cultura Aziendale",
+      description:
+        "Trova un ambiente di lavoro che rispecchi i tuoi valori e la tua personalità.",
+    },
+    {
+      title: "Ricerca di Stage & <br>Apprendistati",
+      description:
+        "Assistenza specializzata per trovare stage e apprendistati.",
+    },
+    {
+      title: "Pianificazione della <br>Seconda Carriera",
+      description:
+        "Strategie su misura per professionisti che cercano un cambiamento completo di carriera.",
+    },
+    {
+      title: "Strategia di Follow-Up <br>dopo il Colloquio",
+      description:
+        "Impara a seguire i colloqui per aumentare le tue possibilità di successo.",
+    },
+    {
+      title: "Ottimizzazione del <br>Profilo Freelance",
+      description:
+        "Migliora il tuo profilo sulle piattaforme freelance per attrarre clienti e progetti migliori.",
+    },
+    {
+      title: "Consulenza sul <br>Diritto del Lavoro",
+      description: "Comprendi i tuoi diritti e doveri mentre cerchi lavoro.",
+    },
+    {
+      title: "Valutazione delle <br>Offerte di Lavoro",
+      description:
+        "Ottieni consulenza per valutare e accettare le migliori offerte di lavoro per la tua crescita professionale.",
+    },
+  ];
+
+  const [expertiseData, setExpertiseData] = useState(expertiseDataEn);
+
+  useEffect(() => {
+    if (locale == "de") {
+      setExpertiseData(expertiseDataDe);
+    } else if (locale == "it") {
+      setExpertiseData(expertiseDataIt);
+    } else {
+      setExpertiseData(expertiseDataEn);
+    }
+
+    const checkMobile = () => setIsMobile(window.innerWidth <= 992);
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   // Function to split the data into chunks of 3 items each
   const chunkArray = (array, chunkSize) => {
     const results = [];
@@ -156,18 +383,14 @@ const EmploymentExpertise = () => {
     <section className="employment-expertise">
       <div className="_container">
         <div className="employment-expertise__top">
-          <h2 className="fadeInUp">
-            Explore the Full List <br />
-            of Offerings
-          </h2>
-          <p className="fadeInUp">
-            Unlock a world of opportunities with Quorixia’s employment services.
-            From refining your resume to crafting a winning interview strategy,
-            our solutions are designed to help you stand out in the competitive
-            job market. Let us guide you through every step of your job search,
-            providing the tools, insights, and support needed to achieve your
-            career goals confidently.
-          </p>
+          <h2
+            className="fadeInUp"
+            dangerouslySetInnerHTML={{ __html: t("EmploymentExpertise.title") }}
+          />
+          <p
+            className="fadeInUp"
+            dangerouslySetInnerHTML={{ __html: t("EmploymentExpertise.text") }}
+          />
         </div>
         {isMobile ? (
           <>
@@ -222,8 +445,8 @@ const EmploymentExpertise = () => {
         )}
         <div className="buttons-wrap">
           <OrderButton
-            packageItem={"Order Employment"}
-            text={"Order Employment Service Now"}
+            packageItem={t("EmploymentExpertise.service")}
+            text={t("EmploymentExpertise.button")}
           />
         </div>
       </div>

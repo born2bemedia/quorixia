@@ -13,17 +13,19 @@ import { usePopup } from "@/context/PopupsContext";
 import ButtonArrow from "@/icons/ButtonArrow";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { useTranslations } from "next-intl";
 
 function OrderPopup() {
+  const t = useTranslations("pricing");
   const { orderPopupDisplay, setOrderPopupDisplay, serviceValue } = usePopup();
 
   const validationSchema = Yup.object({
-    fullName: Yup.string().required("This field is required."),
+    fullName: Yup.string().required(t("OrderPopup.validationSchema.required")),
     email: Yup.string()
-      .email("Please provide a correct email address.")
-      .required("This field is required."),
-    phone: Yup.string().required("This field is required."),
-    service: Yup.string().required("This field is required."),
+      .email(t("OrderPopup.validationSchema.email"))
+      .required(t("OrderPopup.validationSchema.required")),
+    phone: Yup.string().required(t("OrderPopup.validationSchema.required")),
+    service: Yup.string().required(t("OrderPopup.validationSchema.required")),
   });
 
   const initialValues = {
@@ -105,12 +107,8 @@ function OrderPopup() {
                   <Form>
                     {!status && (
                       <div className="form-inner">
-                        <h2>Complete Package Request</h2>
-                        <p>
-                          Interested in our ready-made package? Please fill out
-                          the form below so our representative can contact you
-                          shortly with all the necessary details.
-                        </p>
+                        <h2>{t("OrderPopup.title")}</h2>
+                        <p>{t("OrderPopup.text")}</p>
 
                         <span className="service">{serviceValue}</span>
 
@@ -119,7 +117,7 @@ function OrderPopup() {
                           <Field
                             name="fullName"
                             type="text"
-                            placeholder={"Full Name "}
+                            placeholder={t("OrderPopup.form.fullName")}
                             className={
                               touched.fullName && errors.fullName
                                 ? "invalid"
@@ -137,7 +135,7 @@ function OrderPopup() {
                           <PhoneInput
                             country={"us"}
                             value=""
-                            placeholder="Phone Number "
+                            placeholder={t("OrderPopup.form.phone")}
                             onChange={(phone) => setFieldValue("phone", phone)}
                             className={
                               touched.phone && errors.phone ? "invalid" : ""
@@ -154,7 +152,7 @@ function OrderPopup() {
                           <Field
                             name="email"
                             type="email"
-                            placeholder={"Email"}
+                            placeholder={t("OrderPopup.form.email")}
                             className={
                               touched.email && errors.email ? "invalid" : ""
                             }
@@ -170,7 +168,7 @@ function OrderPopup() {
                           <Field
                             name="message"
                             type="text"
-                            placeholder="Your Message"
+                            placeholder={t("OrderPopup.form.message")}
                             className={
                               touched.message && errors.message ? "invalid" : ""
                             }
@@ -187,20 +185,19 @@ function OrderPopup() {
                           className="main-button"
                           disabled={isSubmitting}
                         >
-                          <span>Send</span>
+                          <span>{t("OrderPopup.form.send")}</span>
                           <ButtonArrow />
                         </button>
                       </div>
                     )}
                     {status && status.success && (
                       <div className="success">
-                        <h3>THANK YOU!</h3>
-                        <p>
-                          Your request has been received successfully!
-                          <br />
-                          One of our team members will get in touch with you
-                          shortly.
-                        </p>
+                        <h3>{t("OrderPopup.thanks.title")}</h3>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: t("OrderPopup.thanks.text"),
+                          }}
+                        />
                       </div>
                     )}
                   </Form>

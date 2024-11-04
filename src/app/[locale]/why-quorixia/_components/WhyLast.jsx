@@ -1,21 +1,19 @@
 import ButtonArrow from "@/icons/ButtonArrow";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const WhyLast = () => {
+  const t = useTranslations("why");
   return (
     <section className="why-last">
       <div className="_container">
         <div className="why-last__body fadeInUp">
           <div className="left">
-            <h2>Curious to Know What Drives Us?</h2>
-            <p>
-              Explore the values, passion, and dedication behind Quorixia. Learn
-              more about how we’re shaping careers and guiding individuals to
-              success with every step.
-            </p>
+            <h2 dangerouslySetInnerHTML={{ __html: t("WhyLast.title") }} />
+            <p dangerouslySetInnerHTML={{ __html: t("WhyLast.text") }} />
             <Link href="/about-us" className="main-button">
-              <span>Discover Our Approach</span>
+              <span>{t("WhyLast.button")}</span>
               <ButtonArrow />
             </Link>
           </div>

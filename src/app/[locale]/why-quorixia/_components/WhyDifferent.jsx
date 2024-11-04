@@ -1,56 +1,67 @@
 import ButtonArrow from "@/icons/ButtonArrow";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const WhyDifferent = () => {
+  const t = useTranslations("why");
   return (
     <section className="why-different">
       <div className="_container">
-        <h2 className="fadeInUp">Why We’re Different</h2>
+        <h2
+          className="fadeInUp"
+          dangerouslySetInnerHTML={{ __html: t("WhyDifferent.title") }}
+        />
         <div className="why-different__body">
           <div>
             <div className="fadeInUp">
               <img src="/images/home/dots.svg" />
-              <h3>
-                Customization <br />
-                at Every Turn
-              </h3>
-              <p>
-                Every strategy is as unique as your career path. We reject the
-                idea of one-size-fits-all approaches.
-              </p>
+              <h3
+                dangerouslySetInnerHTML={{
+                  __html: t("WhyDifferent.block1.title"),
+                }}
+              />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: t("WhyDifferent.block1.text"),
+                }}
+              />
             </div>
             <div className="fadeInUp">
               <img src="/images/home/dots.svg" />
-              <h3>
-                Industry-Spanning <br />
-                Expertise
-              </h3>
-              <p>
-                We cover multiple industries, ensuring you get advice that’s
-                relevant and actionable.
-              </p>
+              <h3
+                dangerouslySetInnerHTML={{
+                  __html: t("WhyDifferent.block2.title"),
+                }}
+              />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: t("WhyDifferent.block2.text"),
+                }}
+              />
             </div>
             <div className="fadeInUp">
               <img src="/images/home/dots.svg" />
-              <h3>
-                Proactive Problem <br />
-                Solving
-              </h3>
-              <p>
-                We don’t just react to challenges — we anticipate and plan for
-                them, so you’re always ahead.
-              </p>
+              <h3
+                dangerouslySetInnerHTML={{
+                  __html: t("WhyDifferent.block3.title"),
+                }}
+              />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: t("WhyDifferent.block3.text"),
+                }}
+              />
             </div>
           </div>
         </div>
         <div className="buttons-wrap fadeInUp">
           <Link href="/hr" className="main-button">
-            <span>Explore Our HR Solutions</span>
+            <span>{t("WhyDifferent.button1")}</span>
             <ButtonArrow />
           </Link>
           <Link href="/employment" className="main-button">
-            <span>Unlock Employment Opportunities</span>
+            <span>{t("WhyDifferent.button2")}</span>
             <ButtonArrow />
           </Link>
         </div>
