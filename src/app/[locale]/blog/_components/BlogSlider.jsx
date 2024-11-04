@@ -6,12 +6,14 @@ import "swiper/swiper-bundle.css";
 import { Link } from "@/navigation";
 import Image from "next/image";
 import ButtonArrow from "@/icons/ButtonArrow";
+import { useTranslations } from "next-intl";
 
 const BlogSlider = ({ posts }) => {
+  const t = useTranslations("blog");
   return (
     <>
       <div className="slider-top">
-        <h2>Featured Blog Topics</h2>
+        <h2>{t("BlogSlider.title")}</h2>
         <div className="arrows">
           <img
             src="/images/prev.svg"
