@@ -1,31 +1,20 @@
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const CareersWhy = () => {
+  const t = useTranslations("careers");
   return (
     <section className="careers-why">
       <div className="_container">
-        <h2 className="fadeInUp">Why Work with Quorixia?</h2>
+        <h2 className="fadeInUp">{t("CareersWhy.title")}</h2>
         <div className="careers-why__body">
           <div className="fadeInUp">
-            <h3>Our Mission</h3>
-            <p>
-              We are driven by a simple mission: to empower individuals to
-              achieve their career goals with personalised HR and employment
-              solutions. When you work with us, you contribute to changing lives
-              and making a real difference in how people shape their
-              professional futures.
-            </p>
+            <h3>{t("CareersWhy.subtitle1")}</h3>
+            <p>{t("CareersWhy.text1")}</p>
           </div>
           <div className="fadeInUp">
-            <h3>Our Culture</h3>
-            <p>
-              We believe in fostering a supportive, dynamic work environment
-              where creativity and collaboration thrive. At Quorixia, you’ll
-              find a culture that values continuous learning, innovative
-              thinking, and team spirit. We encourage our employees to grow
-              professionally and personally, offering opportunities for skill
-              development and career advancement.
-            </p>
+            <h3>{t("CareersWhy.subtitle2")}</h3>
+            <p>{t("CareersWhy.text2")}</p>
           </div>
         </div>
       </div>

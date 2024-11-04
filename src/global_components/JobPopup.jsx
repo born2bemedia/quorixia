@@ -14,17 +14,19 @@ import ButtonArrow from "@/icons/ButtonArrow";
 import Select from "react-select";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { useTranslations } from "next-intl";
 
 function JobPopup() {
+  const t = useTranslations("careers");
   const { jobPopupDisplay, setJobPopupDisplay, jobValue } = usePopup();
 
   const validationSchema = Yup.object({
-    fullName: Yup.string().required("This field is required."),
+    fullName: Yup.string().required(t("JobPopup.validationSchema.required")),
     email: Yup.string()
-      .email("Please provide a correct email address.")
-      .required("This field is required."),
-    phone: Yup.string().required("This field is required."),
-    position: Yup.string().required("This field is required."),
+      .email(t("JobPopup.validationSchema.email"))
+      .required(t("JobPopup.validationSchema.required")),
+    phone: Yup.string().required(t("JobPopup.validationSchema.required")),
+    position: Yup.string().required(t("JobPopup.validationSchema.required")),
     message: Yup.string().optional(),
   });
 
@@ -46,15 +48,15 @@ function JobPopup() {
   };
 
   const desiredPositions = [
-    { value: "HR Consultant", label: "HR Consultant" },
+    { value: t("JobPopup.desiredPositions.label1"), label: t("JobPopup.desiredPositions.label1") },
     {
-      value: "Digital Marketing Specialist",
-      label: "Digital Marketing Specialist",
+      value: t("JobPopup.desiredPositions.label2"),
+      label: t("JobPopup.desiredPositions.label2"),
     },
-    { value: "Career Coach", label: "Career Coach" },
+    { value: t("JobPopup.desiredPositions.label3"), label: t("JobPopup.desiredPositions.label3") },
     {
-      value: "Client Relationship Manager",
-      label: "Client Relationship Manager",
+      value: t("JobPopup.desiredPositions.label4"),
+      label: t("JobPopup.desiredPositions.label4"),
     },
   ];
 
@@ -234,18 +236,14 @@ function JobPopup() {
                   <Form>
                     {!status && (
                       <div className="form-inner job">
-                        <h2>Application form</h2>
-                        <p>
-                          Ready to join the Quorixia crew?
-                          <br />
-                          Fill out the form below to submit your application!
-                        </p>
+                        <h2>{t("JobPopup.title")}</h2>
+                        <p dangerouslySetInnerHTML={{ __html: t("JobPopup.subtitle") }} />
 
                         <div>
                           <Field
                             name="fullName"
                             type="text"
-                            placeholder={"Full Name "}
+                            placeholder={t("JobPopup.form.fullName")}
                             className={
                               touched.fullName && errors.fullName
                                 ? "invalid"
@@ -263,7 +261,7 @@ function JobPopup() {
                           <Field
                             name="email"
                             type="email"
-                            placeholder={"Email"}
+                            placeholder={t("JobPopup.form.email")}
                             className={
                               touched.email && errors.email ? "invalid" : ""
                             }
@@ -279,7 +277,7 @@ function JobPopup() {
                           <PhoneInput
                             country={"us"}
                             value=""
-                            placeholder="Phone Number "
+                            placeholder={t("JobPopup.form.phone")}
                             onChange={(phone) => setFieldValue("phone", phone)}
                             className={
                               touched.phone && errors.phone ? "invalid" : ""
@@ -300,7 +298,7 @@ function JobPopup() {
                             onChange={(option) =>
                               setFieldValue("position", option.value)
                             }
-                            placeholder="Choose Service"
+                            placeholder={t("JobPopup.form.position")}
                           />
                           <ErrorMessage
                             name="position"
@@ -320,7 +318,7 @@ function JobPopup() {
                               <span>
                                 {values.resume
                                   ? values.resume.name
-                                  : "Attach Resume"}
+                                  : t("JobPopup.form.resume")}
                               </span>
                               <img src="/images/upload.svg" />
                             </span>
@@ -351,7 +349,7 @@ function JobPopup() {
                               <span>
                                 {values.portfolio
                                   ? values.portfolio.name
-                                  : "Cover Letter"}
+                                  : t("JobPopup.form.portfolio")}
                               </span>
                               <img src="/images/upload.svg" />
                             </span>
@@ -375,7 +373,7 @@ function JobPopup() {
                           <Field
                             name="message"
                             type="text"
-                            placeholder="Your Message"
+                            placeholder={t("JobPopup.form.message")}
                             className={
                               touched.message && errors.message ? "invalid" : ""
                             }
@@ -392,20 +390,15 @@ function JobPopup() {
                           className="main-button"
                           disabled={isSubmitting}
                         >
-                          <span>Send</span>
+                          <span>{t("JobPopup.form.send")}</span>
                           <ButtonArrow />
                         </button>
                       </div>
                     )}
                     {status && status.success && (
                       <div className="success">
-                        <h3>THANK YOU!</h3>
-                        <p>
-                          Your request has been received successfully!
-                          <br />
-                          One of our team members will get in touch with you
-                          shortly.
-                        </p>
+                        <h3>{t("JobPopup.thanks.title")}</h3>
+                        <p dangerouslySetInnerHTML={{ __html: t("JobPopup.thanks.text") }} />
                       </div>
                     )}
                   </Form>

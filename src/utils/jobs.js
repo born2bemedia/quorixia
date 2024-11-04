@@ -4,19 +4,20 @@ import axiosClient from "./GlobalApi";
 const cmsUrl = process.env.NEXT_PUBLIC_CMS_URL;
 
 // Function to build the query string with an optional count parameter
-const buildJobsUrl = () => {
+const buildJobsUrl = (locale) => {
   return (
     `jobs?` +
     qs.stringify({
       fields: ["id", "title", "content"],
       sort: ["id:asc"],
+      locale: locale,
     })
   );
 };
 
-export const getJobs = async () => {
+export const getJobs = async (locale = "en") => {
   try {
-    const url = buildJobsUrl();
+    const url = buildJobsUrl(locale);
     const response = await axiosClient.get(url);
 
     const jobs = response.data.data;
