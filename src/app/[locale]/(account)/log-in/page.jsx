@@ -8,8 +8,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Link } from "@/navigation";
 import ButtonArrow from "@/icons/ButtonArrow";
+import { useTranslations } from "next-intl";
 
 export default function SignIn() {
+  const t = useTranslations("login");
   const router = useRouter();
   const { fetchCurrentUser, currentUser } = useAuth();
 
@@ -26,9 +28,9 @@ export default function SignIn() {
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
-    password: Yup.string().required("Password is required"),
+      .email(t("validationSchema.email"))
+      .required(t("validationSchema.requiredEmail")),
+    password: Yup.string().required(t("validationSchema.password")),
   });
 
   const handleSubmit = async (
@@ -65,13 +67,8 @@ export default function SignIn() {
   return (
     <section className="log-in">
       <div className="_container">
-        <h1>Welcome Back to Quorixia!</h1>
-        <h2>
-          Log in to your account by entering your username or email and
-          password. <br />
-          If you’ve forgotten your password, use the “Forgot password?” link to
-          reset it.
-        </h2>
+        <h1 dangerouslySetInnerHTML={{ __html: t("title") }} />
+        <h2 dangerouslySetInnerHTML={{ __html: t("text") }} />
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -83,7 +80,7 @@ export default function SignIn() {
                 <Field
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder={t("form.email")}
                   className={touched.email && errors.email ? "invalid" : ""}
                 />
                 <ErrorMessage name="email" component="div" className="error" />
@@ -92,7 +89,7 @@ export default function SignIn() {
                 <Field
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder={t("form.password")}
                   className={
                     touched.password && errors.password ? "invalid" : ""
                   }
@@ -108,11 +105,11 @@ export default function SignIn() {
                 type="submit"
                 disabled={isSubmitting}
               >
-                <span>Log in</span>
+                <span>{t("form.button")}</span>
                 <ButtonArrow />
               </button>
               <Link className="reset" href="/reset-password">
-                Forgot password?
+                {t("form.forgot")}
               </Link>
             </Form>
           )}

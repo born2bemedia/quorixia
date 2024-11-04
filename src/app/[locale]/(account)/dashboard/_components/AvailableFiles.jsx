@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { getOrdersByUser } from "@/app/[locale]/api/orders";
 import { useAuth } from "@/context/AuthContext";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 function AvailableFiles() {
+  const t = useTranslations("dashboard");
   const { currentUser, fetchCurrentUser } = useAuth();
   const [orders, setOrders] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -31,7 +33,7 @@ function AvailableFiles() {
   return (
     <>
       <div>
-        {loading && <p className="">Loading orders...</p>}
+        {loading && <p className="">{t("orders.loading")}</p>}
         {error && <p className="">{error}</p>}
         {orders && (
           <div className="">
@@ -39,9 +41,9 @@ function AvailableFiles() {
               <table className="orders">
                 <thead className="">
                   <tr>
-                    <th className="">Order ID</th>
-                    <th className="">Service Purchased</th>
-                    <th className="">Available Files</th>
+                    <th className="">{t("orders.id")}</th>
+                    <th className="">{t("orders.service")}</th>
+                    <th className="">{t("orders.files")}</th>
                   </tr>
                 </thead>
                 <tbody className="">

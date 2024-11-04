@@ -1,14 +1,13 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const ThankyouPage = () => {
+  const t = useTranslations("thankyou");
   return (
     <section className="thankyou-page">
       <div className="_container">
-        <h1>Thank you for choosing Quorixia!</h1>
-        <h2>
-          We appreciate your order, and our team will be in touch <br />
-          shortly to confirm the details.
-        </h2>
+        <h1 dangerouslySetInnerHTML={{ __html: t("title") }} />
+        <h2 dangerouslySetInnerHTML={{ __html: t("text") }} />
       </div>
     </section>
   );

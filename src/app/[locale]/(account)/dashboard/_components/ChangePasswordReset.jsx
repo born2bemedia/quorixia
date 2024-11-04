@@ -5,8 +5,10 @@ import * as Yup from "yup";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import ButtonArrow from "@/icons/ButtonArrow";
+import { useTranslations } from "next-intl";
 
 const ChangePasswordReset = ({ token }) => {
+  const t = useTranslations("login");
   const [changePasswordError, setChangePasswordError] = useState("");
   const [passwordChanged, setPasswordChanged] = useState(false);
   const router = useRouter();
@@ -24,10 +26,10 @@ const ChangePasswordReset = ({ token }) => {
   };
 
   const validationSchema = Yup.object().shape({
-    newPassword: Yup.string().required("New password is required"),
+    newPassword: Yup.string().required(t("reset.validationSchema.newPassword")),
     confirmPassword: Yup.string()
-      .oneOf([Yup.ref("newPassword"), null], "Passwords must match")
-      .required("Confirm password is required"),
+      .oneOf([Yup.ref("newPassword"), null], t("reset.validationSchema.oneOf"))
+      .required(t("reset.validationSchema.confirmPassword")),
   });
 
   const handleSubmit = async (values, { setSubmitting }) => {
@@ -72,8 +74,8 @@ const ChangePasswordReset = ({ token }) => {
   return (
     <section className="change-password">
       <div className="_container">
-        <h2>Change Password</h2>
-        <p>Update your password to keep your account secure.</p>
+        <h2>{t("reset.title")}</h2>
+        <p>{t("reset.subtitle")}</p>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -85,7 +87,7 @@ const ChangePasswordReset = ({ token }) => {
                 <div>
                   <label>
                     <Field
-                      placeholder="New password"
+                      placeholder={t("reset.newPassword")}
                       type="password"
                       name="newPassword"
                       className={
@@ -104,7 +106,7 @@ const ChangePasswordReset = ({ token }) => {
                 <div>
                   <label>
                     <Field
-                      placeholder="Confirm password"
+                      placeholder={t("reset.confirmPassword")}
                       type="password"
                       name="confirmPassword"
                       className={
@@ -126,11 +128,11 @@ const ChangePasswordReset = ({ token }) => {
                 className="main-button"
                 disabled={isSubmitting}
               >
-                <span>Set new password</span>
+                <span>{t("reset.button")}</span>
                 <ButtonArrow />
               </button>
               {passwordChanged && (
-                <div className="success">Password changed successfully!</div>
+                <div className="success">{t("reset.success")}</div>
               )}
               {changePasswordError && (
                 <div className="error">{changePasswordError}</div>

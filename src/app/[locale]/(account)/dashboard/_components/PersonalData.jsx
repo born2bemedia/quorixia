@@ -9,6 +9,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import ChangePassword from "./ChangePassword";
 import ButtonArrow from "@/icons/ButtonArrow";
+import { useTranslations } from "next-intl";
 
 const getCountryOptionByCode = (code) => {
   const countries = countryList().getData();
@@ -79,6 +80,7 @@ const customStyles = {
 };
 
 const PersonalData = () => {
+  const t = useTranslations("dashboard");
   const { currentUser, setCurrentUser, getToken } = useAuth();
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
@@ -103,18 +105,18 @@ const PersonalData = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required("This field is required."),
-    lastName: Yup.string().required("This field is required."),
+    firstName: Yup.string().required(t("PersonalData.validationSchema.required")),
+    lastName: Yup.string().required(t("PersonalData.validationSchema.required")),
     email: Yup.string()
-      .email("Please provide a valid email address.")
-      .required("This field is required."),
-    phone: Yup.string().required("This field is required."),
-    street: Yup.string().required("This field is required."),
+      .email(t("PersonalData.validationSchema.email"))
+      .required(t("PersonalData.validationSchema.required")),
+    phone: Yup.string().required(t("PersonalData.validationSchema.required")),
+    street: Yup.string().required(t("PersonalData.validationSchema.required")),
     address: Yup.string(),
-    city: Yup.string().required("This field is required."),
+    city: Yup.string().required(t("PersonalData.validationSchema.required")),
     state: Yup.string(),
-    zip: Yup.string().required("This field is required."),
-    country: Yup.object().required("This field is required."),
+    zip: Yup.string().required(t("PersonalData.validationSchema.required")),
+    country: Yup.object().required(t("PersonalData.validationSchema.required")),
   });
 
   const handleSubmit = async (values, { setSubmitting }) => {
@@ -148,7 +150,7 @@ const PersonalData = () => {
         const updatedUser = await response.json();
         setCurrentUser(updatedUser);
         localStorage.setItem("user", JSON.stringify(updatedUser));
-        setBillingSuccess("Your information has been updated successfully.");
+        setBillingSuccess(t("PersonalData.success"));
         window.location.reload();
       } else {
         const errorData = await response.json();
@@ -156,7 +158,7 @@ const PersonalData = () => {
       }
     } catch (error) {
       console.error("Failed to update user data", error);
-      setBillingError("An error occurred while updating your information.");
+      setBillingError(t("PersonalData.error"));
     } finally {
       setSubmitting(false);
     }
@@ -166,7 +168,7 @@ const PersonalData = () => {
     <>
       <section className="personal-data">
         <div className="_container">
-          <h2>Personal Information</h2>
+          <h2>{t("PersonalData.title")}</h2>
           {isMounted && (
             <Formik
               initialValues={initialValues}
@@ -179,7 +181,7 @@ const PersonalData = () => {
                     <div>
                       <label>
                         <Field
-                          placeholder="First name"
+                          placeholder={t("PersonalData.form.firstName")}
                           type="text"
                           name="firstName"
                           className={
@@ -198,7 +200,7 @@ const PersonalData = () => {
                     <div>
                       <label>
                         <Field
-                          placeholder="Last name"
+                          placeholder={t("PersonalData.form.lastName")}
                           type="text"
                           name="lastName"
                           className={
@@ -215,7 +217,7 @@ const PersonalData = () => {
                     <div>
                       <label>
                         <Field
-                          placeholder="Email"
+                          placeholder={t("PersonalData.form.email")}
                           type="email"
                           name="email"
                           className={
@@ -232,7 +234,7 @@ const PersonalData = () => {
                     <div>
                       <label>
                         <Field
-                          placeholder="Phone"
+                          placeholder={t("PersonalData.form.phone")}
                           type="text"
                           name="phone"
                           className={
@@ -249,7 +251,7 @@ const PersonalData = () => {
                     <div>
                       <label>
                         <Field
-                          placeholder="Street"
+                          placeholder={t("PersonalData.form.street")}
                           type="text"
                           name="street"
                           className={
@@ -266,7 +268,7 @@ const PersonalData = () => {
                     <div>
                       <label>
                         <Field
-                          placeholder="Address"
+                          placeholder={t("PersonalData.form.address")}
                           type="text"
                           name="address"
                           className={
@@ -283,7 +285,7 @@ const PersonalData = () => {
                     <div>
                       <label>
                         <Field
-                          placeholder="City"
+                          placeholder={t("PersonalData.form.city")}
                           type="text"
                           name="city"
                           className={
@@ -300,7 +302,7 @@ const PersonalData = () => {
                     <div>
                       <label>
                         <Field
-                          placeholder="State/Province"
+                          placeholder={t("PersonalData.form.state")}
                           type="text"
                           name="state"
                           className={
@@ -317,7 +319,7 @@ const PersonalData = () => {
                     <div>
                       <label>
                         <Field
-                          placeholder="ZIP"
+                          placeholder={t("PersonalData.form.zip")}
                           type="text"
                           name="zip"
                           className={touched.zip && errors.zip ? "invalid" : ""}
@@ -334,6 +336,7 @@ const PersonalData = () => {
                         {({ field }) => (
                           <Select
                             {...field}
+                            placeholder={t("PersonalData.form.country")}
                             options={countryList().getData()}
                             styles={customStyles}
                             className={`form-field ${
@@ -363,7 +366,7 @@ const PersonalData = () => {
                     className="main-button"
                     disabled={isSubmitting}
                   >
-                    <span>Save changes</span>
+                    <span>{t("PersonalData.form.button")}</span>
                     <ButtonArrow />
                   </button>
                 </Form>

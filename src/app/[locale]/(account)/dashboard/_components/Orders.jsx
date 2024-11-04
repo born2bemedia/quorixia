@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { getOrdersByUser } from "@/app/[locale]/api/orders";
 import { useAuth } from "@/context/AuthContext";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 function Orders() {
+  const t = useTranslations("dashboard");
   const { currentUser, fetchCurrentUser } = useAuth();
   const [orders, setOrders] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -40,7 +42,7 @@ function Orders() {
   return (
     <>
       <div>
-        {loading && <p className="">Loading orders...</p>}
+        {loading && <p className="">{t("orders.loading")}</p>}
         {error && <p className="">{error}</p>}
         {orders && (
           <div className="">
@@ -48,12 +50,12 @@ function Orders() {
               <table className="orders">
                 <thead className="">
                   <tr>
-                    <th className="">Order ID</th>
-                    <th className="">Service Purchased</th>
-                    <th className="">Date</th>
-                    <th className="">Total Price</th>
-                    <th className="">Payment Method</th>
-                    <th className="">Order Status</th>
+                    <th className="">{t("orders.id")}</th>
+                    <th className="">{t("orders.service")}</th>
+                    <th className="">{t("orders.date")}</th>
+                    <th className="">{t("orders.total")}</th>
+                    <th className="">{t("orders.payment")}</th>
+                    <th className="">{t("orders.status")}</th>
                   </tr>
                 </thead>
                 <tbody className="">
@@ -73,15 +75,17 @@ function Orders() {
                             </Link>
                           ))}
                       </td>
-                      <td className="">{formatDate(order.attributes.createdAt)}</td>
+                      <td className="">
+                        {formatDate(order.attributes.createdAt)}
+                      </td>
 
                       <td className="">$ {order.attributes.amount}</td>
-                      <td className="">Bank Transfer</td>
+                      <td className="">{t("orders.method")}</td>
                       <td className="">
                         {order.attributes.status == "cancelled" ? (
-                          <div className="">Cancelled</div>
+                          <div className="">{t("orders.cancelled")}</div>
                         ) : (
-                          <div className="">Completed</div>
+                          <div className="">{t("orders.completed")}</div>
                         )}
                       </td>
                     </tr>

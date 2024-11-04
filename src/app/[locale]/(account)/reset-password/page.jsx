@@ -5,16 +5,18 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import ButtonArrow from "@/icons/ButtonArrow";
+import { useTranslations } from "next-intl";
 
 export default function PasswordResetRequest() {
+  const t = useTranslations("login");
   const initialValues = {
     email: "",
   };
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
+      .email(t("validationSchema.email"))
+      .required(t("validationSchema.requiredEmail")),
   });
 
   const handleSubmit = async (
@@ -42,12 +44,8 @@ export default function PasswordResetRequest() {
   return (
     <section className="log-in ">
       <div className="_container">
-        <h1>Forgot Your Password?</h1>
-        <h2>
-          Please provide your username or email address.
-          <br />
-          We’ll send you a link to create a new password via email.
-        </h2>
+        <h1>{t("forgot.title")}</h1>
+        <h2 dangerouslySetInnerHTML={{ __html: t("forgot.subtitle") }} />
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -59,7 +57,7 @@ export default function PasswordResetRequest() {
                 <Field
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder={t("form.email")}
                   className={touched.email && errors.email ? "invalid" : ""}
                 />
                 <ErrorMessage name="email" component="div" className="error" />
@@ -69,17 +67,17 @@ export default function PasswordResetRequest() {
                 type="submit"
                 disabled={isSubmitting}
               >
-                <span>Reset now</span>
+                <span>{t("forgot.button")}</span>
                 <ButtonArrow />
               </button>
               {status && status.success && (
                 <div className="success">
-                  <p>Reset link was sent to your email!</p>
+                  <p>{t("forgot.success")}</p>
                 </div>
               )}
               {status && status.success === false && (
                 <div className="error">
-                  <p>An error occurred. Please try again.</p>
+                  <p>{t("forgot.error")}</p>
                 </div>
               )}
             </Form>

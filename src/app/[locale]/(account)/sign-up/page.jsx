@@ -9,8 +9,10 @@ import * as Yup from "yup";
 import { Link } from "@/navigation";
 import CheckboxIcon from "@/icons/CheckboxIcon";
 import ButtonArrow from "@/icons/ButtonArrow";
+import { useTranslations } from "next-intl";
 
 export default function SignUp() {
+  const t = useTranslations("register");
   const [thanksPopupShow, setThanksPopupShow] = useState(false);
   const router = useRouter();
   const { fetchCurrentUser } = useAuth();
@@ -29,20 +31,20 @@ export default function SignUp() {
   };
 
   const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required("First name is required"),
-    lastName: Yup.string().required("Lame name is required"),
-    username: Yup.string().required("Lame name is required"),
-    phone: Yup.string().required("Phone number is required"),
+    firstName: Yup.string().required(t("validationSchema.required")),
+    lastName: Yup.string().required(t("validationSchema.required")),
+    username: Yup.string().required(t("validationSchema.required")),
+    phone: Yup.string().required(t("validationSchema.required")),
     email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
-    password: Yup.string().required("Password is required"),
+      .email(t("validationSchema.email"))
+      .required(t("validationSchema.required")),
+    password: Yup.string().required(t("validationSchema.required")),
     confirmPassword: Yup.string()
-      .oneOf([Yup.ref("password"), null], "Passwords must match")
-      .required("Confirm password is required"),
-    terms: Yup.bool().oneOf([true], "You must accept the terms and conditions"),
-    privacy: Yup.bool().oneOf([true], "You must accept the privacy policy"),
-    age: Yup.bool().oneOf([true], "You must accept age"),
+      .oneOf([Yup.ref("password"), null], t("validationSchema.oneOf"))
+      .required(t("validationSchema.required")),
+    terms: Yup.bool().oneOf([true], t("validationSchema.terms")),
+    privacy: Yup.bool().oneOf([true], t("validationSchema.privacy")),
+    age: Yup.bool().oneOf([true], t("validationSchema.age")),
   });
 
   const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
@@ -66,9 +68,8 @@ export default function SignUp() {
           body: JSON.stringify(values),
         });
         if (response.ok) {
-          setTimeout(() => {
-          }, 400);
-        } 
+          setTimeout(() => {}, 400);
+        }
       } catch (error) {
         console.error(error);
       }
@@ -92,13 +93,8 @@ export default function SignUp() {
     <>
       <section className="log-in">
         <div className="_container">
-          <h1>Join the Quorixia Community</h1>
-          <h2>
-            Register to gain access to tailored career support, stay informed
-            about the latest job <br />
-            opportunities, and receive expert guidance to help you reach your
-            professional goals.
-          </h2>
+          <h1>{t("title")}</h1>
+          <h2 dangerouslySetInnerHTML={{ __html: t("subtitle") }} />
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -110,7 +106,7 @@ export default function SignUp() {
                   <Field
                     type="text"
                     name="firstName"
-                    placeholder="First name"
+                    placeholder={t("form.firstName")}
                     className={
                       touched.firstName && errors.firstName ? "invalid" : ""
                     }
@@ -125,7 +121,7 @@ export default function SignUp() {
                   <Field
                     type="text"
                     name="lastName"
-                    placeholder="Last name"
+                    placeholder={t("form.lastName")}
                     className={
                       touched.lastName && errors.lastName ? "invalid" : ""
                     }
@@ -140,7 +136,7 @@ export default function SignUp() {
                   <Field
                     type="text"
                     name="username"
-                    placeholder="Username"
+                    placeholder={t("form.username")}
                     className={
                       touched.username && errors.username ? "invalid" : ""
                     }
@@ -155,7 +151,7 @@ export default function SignUp() {
                   <Field
                     type="text"
                     name="phone"
-                    placeholder="Phone number"
+                    placeholder={t("form.phone")}
                     className={touched.phone && errors.phone ? "invalid" : ""}
                   />
                   <ErrorMessage
@@ -168,7 +164,7 @@ export default function SignUp() {
                   <Field
                     type="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder={t("form.email")}
                     className={touched.email && errors.email ? "invalid" : ""}
                   />
                   <ErrorMessage
@@ -182,7 +178,7 @@ export default function SignUp() {
                   <Field
                     type="password"
                     name="password"
-                    placeholder="Password"
+                    placeholder={t("form.password")}
                     className={
                       touched.password && errors.password ? "invalid" : ""
                     }
@@ -197,7 +193,7 @@ export default function SignUp() {
                   <Field
                     type="password"
                     name="confirmPassword"
-                    placeholder="Confirm password"
+                    placeholder={t("form.confirmPassword")}
                     className={
                       touched.confirmPassword && errors.confirmPassword
                         ? "invalid"
@@ -220,9 +216,9 @@ export default function SignUp() {
                   <label htmlFor="terms">
                     <CheckboxIcon />
                     <span>
-                      I agree to the{" "}
+                    {t("form.agree")}{" "}
                       <Link href="/terms-and-conditions">
-                        Terms and Conditions
+                      {t("form.terms")}
                       </Link>
                     </span>
                   </label>
@@ -244,8 +240,8 @@ export default function SignUp() {
                   <label htmlFor="privacy">
                     <CheckboxIcon />
                     <span>
-                      I agree to the{" "}
-                      <Link href="/privacy-policy">Privacy Policy</Link>.
+                    {t("form.agree")}{" "}
+                      <Link href="/privacy-policy">{t("form.privacy")}</Link>.
                     </span>
                   </label>
                   <ErrorMessage
@@ -264,8 +260,7 @@ export default function SignUp() {
                   <label htmlFor="age">
                     <CheckboxIcon />
                     <span>
-                      I am over 18 years old, and I have read and accepted all
-                      of the above
+                    {t("form.age")}
                     </span>
                   </label>
                   <ErrorMessage name="age" component="div" className="error" />
@@ -276,7 +271,7 @@ export default function SignUp() {
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    <span>Join Quorixia</span>
+                    <span>{t("form.button")}</span>
                     <ButtonArrow />
                   </button>
                 </div>
@@ -292,13 +287,8 @@ export default function SignUp() {
             <div>
               <div className="form-wrap">
                 <div className="success">
-                  <h3>Congratulations!</h3>
-                  <p>
-                    Your account has been successfully created. A confirmation
-                    email has been sent to your inbox.
-                    <br />
-                    Welcome aboard!
-                  </p>
+                  <h3 dangerouslySetInnerHTML={{ __html: t("success.title") }} />
+                  <p dangerouslySetInnerHTML={{ __html: t("success.text") }} />
                 </div>
               </div>
             </div>

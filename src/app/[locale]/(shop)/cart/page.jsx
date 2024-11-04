@@ -6,8 +6,10 @@ import DeleteIcon from "@/icons/DeleteIcon";
 import { Link } from "@/navigation";
 import { useRouter } from "next/navigation";
 import ButtonArrow from "@/icons/ButtonArrow";
+import { useTranslations } from "next-intl";
 
 const CartPage = () => {
+  const t = useTranslations("cart");
   const { cart, deleteFromCart, clearCart, totalAmount } = useCart();
   const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
@@ -23,15 +25,15 @@ const CartPage = () => {
             <div>
               <section className="cart-wrap">
                 <div className="_container">
-                  <h1>Cart</h1>
+                  <h1>{t("title")}</h1>
 
                   <div className="cart">
                     <div className="cart-head">
-                      <div>Service Name</div>
-                      <div>Price</div>
-                      <div>Quantity</div>
+                      <div>{t("serviceName")}</div>
+                      <div>{t("price")}</div>
+                      <div>{t("quantity")}</div>
 
-                      <div>Subtotal</div>
+                      <div>{t("subtotal")}</div>
                     </div>
                     <div className="cart-content">
                       {cart.map((item) => (
@@ -50,10 +52,10 @@ const CartPage = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="total">Total: €{totalAmount}</div>
+                  <div className="total">{t("total")}: €{totalAmount}</div>
                   <div className="button-wrap">
                     <Link className="main-button" href="/checkout">
-                      <span>Proceed to checkout</span>
+                      <span>{t("proceed")}</span>
                       <ButtonArrow />
                     </Link>
                   </div>
@@ -64,15 +66,10 @@ const CartPage = () => {
             <div>
               <section className="cart-wrap empty">
                 <div className="_container">
-                  <h1>It seems your cart is currently empty</h1>
-                  <h2>
-                    Browse our selection of HR and employment services to help
-                    boost <br />
-                    your career growth and advance your professional
-                    development.
-                  </h2>
+                  <h1>{t("empty.title")}</h1>
+                  <h2 dangerouslySetInnerHTML={{ __html: t("empty.text") }} />
                   <Link href="/" className="main-button">
-                    <span>Get started</span>
+                    <span>{t("empty.button")}</span>
                     <ButtonArrow />
                   </Link>
                 </div>

@@ -7,8 +7,10 @@ import { useAuth } from "@/context/AuthContext";
 import PersonalData from "./_components/PersonalData";
 import ThanksPopup from "@/global_components/ThanksPopup";
 import AvailableFiles from "./_components/AvailableFiles";
+import { useTranslations } from "next-intl";
 
 export default function Account() {
+  const t = useTranslations("dashboard");
   const { currentUser, fetchCurrentUser } = useAuth();
 
   const [openIndex, setOpenIndex] = useState(1);
@@ -26,7 +28,7 @@ export default function Account() {
     return (
       <section className="account-wrap">
         <div className="_container">
-          <p>Please log in.</p>
+          <p dangerouslySetInnerHTML={{ __html: t("pleaseLogIn") }} />
         </div>
       </section>
     );
@@ -37,7 +39,7 @@ export default function Account() {
       <section className="account-wrap">
         <div className="_container">
           <h1>
-            Welcome,{" "}
+            {t("welcome")},{" "}
             <span className="font-bold">
               {currentUser.name ? currentUser.name : currentUser.username}
             </span>
@@ -51,7 +53,7 @@ export default function Account() {
                 onClick={() => toggleItem(1)}
                 className={`${openIndex === 1 && "active"}`}
               >
-                <span>Recent Orders</span>
+                <span>{t("recentOrders")}</span>
               </li>
               <li
                 data-id={openIndex}
@@ -59,7 +61,7 @@ export default function Account() {
                 onClick={() => toggleItem(2)}
                 className={`${openIndex === 2 && "active"}`}
               >
-                <span>Available Files</span>
+                <span>{t("availableFiles")}</span>
               </li>
               <li
                 data-id={openIndex}
@@ -67,7 +69,7 @@ export default function Account() {
                 onClick={() => toggleItem(3)}
                 className={`${openIndex === 3 && "active"}`}
               >
-                <span>Personal Data</span>
+                <span>{t("personalData")}</span>
               </li>
               <LogoutButton />
             </ul>

@@ -16,6 +16,7 @@ import axiosClient from "@/utils/GlobalApi";
 import { createOrder } from "@/app/[locale]/api/orders";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { useTranslations } from "next-intl";
 
 const getCountryOptionByCode = (code) => {
   const countries = countryList().getData();
@@ -86,6 +87,8 @@ const customStyles = {
 };
 
 const CartPage = () => {
+  const t = useTranslations("checkout");
+  const tC = useTranslations("cart");
   const { cart, deleteFromCart, clearCart, totalAmount } = useCart();
   const [isMounted, setIsMounted] = useState(false);
   const { currentUser, setCurrentUser, getToken } = useAuth();
@@ -112,23 +115,19 @@ const CartPage = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required("This field is required."),
-    lastName: Yup.string().required("This field is required."),
+    firstName: Yup.string().required(t("validationSchema.required")),
+    lastName: Yup.string().required(t("validationSchema.required")),
     email: Yup.string()
-      .email("Please provide a valid email address.")
-      .required("This field is required."),
-    phone: Yup.string()
-      .required("This field is required."),
-    street: Yup.string().required("This field is required."),
-    address: Yup.string().required("This field is required."),
-    city: Yup.string().required("This field is required."),
-    state: Yup.string().required("This field is required."),
-    zip: Yup.string().required("This field is required."),
-    country: Yup.string().required("This field is required."),
-    terms: Yup.bool().oneOf(
-      [true],
-      "You must accept the terms and conditions."
-    ),
+      .email(t("validationSchema.email"))
+      .required(t("validationSchema.required")),
+    phone: Yup.string().required(t("validationSchema.required")),
+    street: Yup.string().required(t("validationSchema.required")),
+    address: Yup.string().required(t("validationSchema.required")),
+    city: Yup.string().required(t("validationSchema.required")),
+    state: Yup.string().required(t("validationSchema.required")),
+    zip: Yup.string().required(t("validationSchema.required")),
+    country: Yup.string().required(t("validationSchema.required")),
+    terms: Yup.bool().oneOf([true], t("validationSchema.terms")),
   });
 
   const generateRandomPassword = (length = 12) => {
@@ -311,12 +310,12 @@ const CartPage = () => {
                         values,
                       }) => (
                         <Form>
-                          <h2>Billing Information</h2>
+                          <h2>{t("pageTitle")}</h2>
                           <div className="billing-data">
                             <div>
                               <label>
                                 <Field
-                                  placeholder="First name"
+                                  placeholder={t("form.firstName")}
                                   type="text"
                                   name="firstName"
                                   className={
@@ -335,7 +334,7 @@ const CartPage = () => {
                             <div>
                               <label>
                                 <Field
-                                  placeholder="Last name"
+                                  placeholder={t("form.lastName")}
                                   type="text"
                                   name="lastName"
                                   className={
@@ -354,7 +353,7 @@ const CartPage = () => {
                             <div>
                               <label>
                                 <Field
-                                  placeholder="Email"
+                                  placeholder={t("form.email")}
                                   type="email"
                                   name="email"
                                   className={
@@ -376,7 +375,7 @@ const CartPage = () => {
                                 value={
                                   currentUser?.phone ? currentUser?.phone : ""
                                 }
-                                placeholder="Phone Number "
+                                placeholder={t("form.phone")}
                                 onChange={(phone) =>
                                   setFieldValue("phone", phone)
                                 }
@@ -393,7 +392,7 @@ const CartPage = () => {
                             <div>
                               <label>
                                 <Field
-                                  placeholder="Street"
+                                  placeholder={t("form.street")}
                                   type="text"
                                   name="street"
                                   className={
@@ -412,7 +411,7 @@ const CartPage = () => {
                             <div>
                               <label>
                                 <Field
-                                  placeholder="Address"
+                                  placeholder={t("form.address")}
                                   type="text"
                                   name="address"
                                   className={
@@ -431,7 +430,7 @@ const CartPage = () => {
                             <div>
                               <label>
                                 <Field
-                                  placeholder="City"
+                                  placeholder={t("form.city")}
                                   type="text"
                                   name="city"
                                   className={
@@ -448,7 +447,7 @@ const CartPage = () => {
                             <div>
                               <label>
                                 <Field
-                                  placeholder="State/Province"
+                                  placeholder={t("form.state")}
                                   type="text"
                                   name="state"
                                   className={
@@ -467,7 +466,7 @@ const CartPage = () => {
                             <div>
                               <label>
                                 <Field
-                                  placeholder="ZIP"
+                                  placeholder={t("form.zip")}
                                   type="text"
                                   name="zip"
                                   className={
@@ -486,6 +485,7 @@ const CartPage = () => {
                                 {({ field }) => (
                                   <Select
                                     {...field}
+                                    placeholder={t("form.country")}
                                     options={countryList().getData()}
                                     styles={customStyles}
                                     className={`form-field ${
@@ -507,26 +507,19 @@ const CartPage = () => {
                               />
                             </div>
                             <div className="full">
-                              <p>
-                                * An email containing payment instructions,
-                                including our bank details, will be sent shortly
-                                after placing an order. This email will also
-                                include a summary of your order details.
-                              </p>
+                              <p>{t("countryDescription")}</p>
                             </div>
                           </div>
 
-                          <h2>Payment Method</h2>
+                          <h2>{t("payment.title")}</h2>
                           <div className="payment">
-                            <div>Bank Transfer*</div>
-                            <p>
-                              * You will soon receive an email with payment
-                              instructions, including our bank details and a
-                              summary of your order details.
-                            </p>
+                            <div>{t("payment.name")}</div>
+                            <p>{t("payment.text")}</p>
                           </div>
 
-                          <h2 className="total">Total: €{totalAmount}</h2>
+                          <h2 className="total">
+                            {t("total")}: €{totalAmount}
+                          </h2>
 
                           <div className="place-order">
                             <div className="checkbox">
@@ -541,9 +534,9 @@ const CartPage = () => {
                               <label for="terms">
                                 <CheckboxIcon />
                                 <span>
-                                  I have read and agree to the website's{" "}
+                                  {t("terms.text")}{" "}
                                   <Link href="/terms-and-conditions">
-                                    Terms and Conditions
+                                    {t("terms.name")}
                                   </Link>
                                 </span>
                               </label>
@@ -568,9 +561,9 @@ const CartPage = () => {
                               <label for="refund">
                                 <CheckboxIcon />
                                 <span>
-                                  I have read and agree to the{" "}
+                                  {t("refund.text")}{" "}
                                   <Link href="/refund-policy">
-                                    Refund Policy
+                                    {t("refund.name")}
                                   </Link>
                                 </span>
                               </label>
@@ -586,16 +579,16 @@ const CartPage = () => {
                               type="submit"
                               disabled={isSubmitting}
                             >
-                              <span>Submit</span>
+                              <span>{t("submit")}</span>
                               <ButtonArrow />
                             </button>
 
                             <div className="privacy">
-                              We will utilise your personal information to
-                              process your order, improve your browsing
-                              experience on our website, and perform other
-                              purposes detailed in our{" "}
-                              <Link href="/privacy-policy">Privacy Policy</Link>
+                              {t("privacy.text")}{" "}
+                              <Link href="/privacy-policy">
+                                {" "}
+                                {t("privacy.name")}
+                              </Link>
                               .
                             </div>
                           </div>
@@ -610,13 +603,10 @@ const CartPage = () => {
             <div>
               <section className="cart-wrap empty">
                 <div className="_container">
-                  <h1>Your cart is empty</h1>
-                  <h2>
-                    Discover our wide array of business and marketing consulting
-                    services!
-                  </h2>
+                  <h1>{tC("empty.title")}</h1>
+                  <h2 dangerouslySetInnerHTML={{ __html: tC("empty.text") }} />
                   <Link href="/" className="main-button">
-                    <span>Go home</span>
+                    <span>{tC("empty.button")}</span>
                     <ButtonArrow />
                   </Link>
                 </div>
