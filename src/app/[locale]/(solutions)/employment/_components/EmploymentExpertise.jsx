@@ -445,7 +445,7 @@ const EmploymentExpertise = () => {
         )}
         <div className="buttons-wrap">
           <OrderButton
-            packageItem={t("EmploymentExpertise.service")}
+            packageItem={"Order Employment"}
             text={t("EmploymentExpertise.button")}
           />
         </div>

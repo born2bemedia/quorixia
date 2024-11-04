@@ -402,7 +402,7 @@ const HrExpertise = () => {
         )}
         <div className="buttons-wrap">
           <OrderButton
-            packageItem={t("HrExpertise.service")}
+            packageItem={"HR Service"}
             text={t("HrExpertise.button")}
           />
         </div>

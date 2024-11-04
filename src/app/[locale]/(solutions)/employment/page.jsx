@@ -133,7 +133,7 @@ const EmploymentPage = () => {
         <HomeReviews reviews={reviewsDe} />
       )}
       {locale == "it" && (
-        <HomeReviews reviews={reviewsIT} />
+        <HomeReviews reviews={reviewsIt} />
       )}
       <EmploymentRequest />
       <RequestPopup />

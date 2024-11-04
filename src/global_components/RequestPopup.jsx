@@ -14,129 +14,122 @@ import ButtonArrow from "@/icons/ButtonArrow";
 import Select from "react-select";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { useTranslations } from "next-intl";
 
 function RequestPopup() {
+  const t = useTranslations("request_popup");
   const { requestPopupDisplay, setRequestPopupDisplay, serviceValue } =
     usePopup();
 
   const hrServices = [
-    {
-      value: "Contract Negotiation & Review",
-      label: "Contract Negotiation & Review",
-    },
-    { value: "Performance Management", label: "Performance Management" },
-    { value: "Legal HR Consultation", label: "Legal HR Consultation" },
-    {
-      value: "Workplace Conflict Resolution",
-      label: "Workplace Conflict Resolution",
-    },
-    { value: "Leadership Coaching", label: "Leadership Coaching" },
-    {
-      value: "Compensation & Benefits Consultation",
-      label: "Compensation & Benefits Consultation",
-    },
-    {
-      value: "Exit Strategy & Career Transition Support",
-      label: "Exit Strategy & Career Transition Support",
-    },
-    {
-      value: "Work-Life Balance Strategies",
-      label: "Work-Life Balance Strategies",
-    },
-    { value: "Onboarding Support", label: "Onboarding Support" },
-    {
-      value: "Talent Development & Skills Assessment",
-      label: "Talent Development & Skills Assessment",
-    },
-    {
-      value: "Diversity & Inclusion Consultation",
-      label: "Diversity & Inclusion Consultation",
-    },
-    {
-      value: "Remote Work & Flexibility Planning",
-      label: "Remote Work & Flexibility Planning",
-    },
-    { value: "Career Path Planning", label: "Career Path Planning" },
-    { value: "HR Policy Review", label: "HR Policy Review" },
-    {
-      value: "Personal Development Plans",
-      label: "Personal Development Plans",
-    },
-    { value: "Conflict Mediation", label: "Conflict Mediation" },
-    {
-      value: "Job Role Analysis & Clarification",
-      label: "Job Role Analysis & Clarification",
-    },
-    { value: "Employee Rights Advocacy", label: "Employee Rights Advocacy" },
-    {
-      value: "Workplace Culture & Adaptation",
-      label: "Workplace Culture & Adaptation",
-    },
-    { value: "Mentorship Matching", label: "Mentorship Matching" },
-    {
-      value: "Workplace Wellness & Mental Health Support",
-      label: "Workplace Wellness & Mental Health Support",
-    },
+    { value: t("hrServices.label1"), label: t("hrServices.label1") },
+    { value: t("hrServices.label2"), label: t("hrServices.label2") },
+    { value: t("hrServices.label3"), label: t("hrServices.label3") },
+    { value: t("hrServices.label4"), label: t("hrServices.label4") },
+    { value: t("hrServices.label5"), label: t("hrServices.label5") },
+    { value: t("hrServices.label6"), label: t("hrServices.label6") },
+    { value: t("hrServices.label7"), label: t("hrServices.label7") },
+    { value: t("hrServices.label8"), label: t("hrServices.label8") },
+    { value: t("hrServices.label9"), label: t("hrServices.label9") },
+    { value: t("hrServices.label10"), label: t("hrServices.label10") },
+    { value: t("hrServices.label11"), label: t("hrServices.label11") },
+    { value: t("hrServices.label12"), label: t("hrServices.label12") },
+    { value: t("hrServices.label13"), label: t("hrServices.label13") },
+    { value: t("hrServices.label14"), label: t("hrServices.label14") },
+    { value: t("hrServices.label15"), label: t("hrServices.label15") },
+    { value: t("hrServices.label16"), label: t("hrServices.label16") },
+    { value: t("hrServices.label17"), label: t("hrServices.label17") },
+    { value: t("hrServices.label18"), label: t("hrServices.label18") },
+    { value: t("hrServices.label19"), label: t("hrServices.label19") },
+    { value: t("hrServices.label20"), label: t("hrServices.label20") },
+    { value: t("hrServices.label21"), label: t("hrServices.label21") },
   ];
 
   const employmentService = [
-    { value: "Resume & CV Building", label: "Resume & CV Building" },
-    { value: "Interview Preparation", label: "Interview Preparation" },
-    { value: "Job Search Strategy", label: "Job Search Strategy" },
     {
-      value: "LinkedIn Profile Optimization",
-      label: "LinkedIn Profile Optimization",
-    },
-    { value: "Networking Strategy", label: "Networking Strategy" },
-    { value: "Cover Letter Writing", label: "Cover Letter Writing" },
-    {
-      value: "Job Market Trends & Insights",
-      label: "Job Market Trends & Insights",
+      value: t("employmentService.label1"),
+      label: t("employmentService.label1"),
     },
     {
-      value: "Salary Negotiation Coaching",
-      label: "Salary Negotiation Coaching",
-    },
-    { value: "Career Transition Support", label: "Career Transition Support" },
-    {
-      value: "Personal Branding Consultation",
-      label: "Personal Branding Consultation",
+      value: t("employmentService.label2"),
+      label: t("employmentService.label2"),
     },
     {
-      value: "Job Application Assistance",
-      label: "Job Application Assistance",
+      value: t("employmentService.label3"),
+      label: t("employmentService.label3"),
     },
     {
-      value: "Professional Portfolio Development",
-      label: "Professional Portfolio Development",
+      value: t("employmentService.label4"),
+      label: t("employmentService.label4"),
     },
     {
-      value: "Freelance & Contract Job Strategies",
-      label: "Freelance & Contract Job Strategies",
+      value: t("employmentService.label5"),
+      label: t("employmentService.label5"),
     },
     {
-      value: "Virtual Interview Coaching",
-      label: "Virtual Interview Coaching",
+      value: t("employmentService.label6"),
+      label: t("employmentService.label6"),
     },
     {
-      value: "Workplace Culture Fit Analysis",
-      label: "Workplace Culture Fit Analysis",
+      value: t("employmentService.label7"),
+      label: t("employmentService.label7"),
     },
     {
-      value: "Internship & Apprenticeship Search",
-      label: "Internship & Apprenticeship Search",
-    },
-    { value: "Second Career Planning", label: "Second Career Planning" },
-    {
-      value: "Interview Follow-Up Strategy",
-      label: "Interview Follow-Up Strategy",
+      value: t("employmentService.label8"),
+      label: t("employmentService.label8"),
     },
     {
-      value: "Freelancer Profile Optimization",
-      label: "Freelancer Profile Optimization",
+      value: t("employmentService.label9"),
+      label: t("employmentService.label9"),
     },
-    { value: "Employment Law Advice", label: "Employment Law Advice" },
-    { value: "Job Offer Evaluation", label: "Job Offer Evaluation" },
+    {
+      value: t("employmentService.label10"),
+      label: t("employmentService.label10"),
+    },
+    {
+      value: t("employmentService.label11"),
+      label: t("employmentService.label11"),
+    },
+    {
+      value: t("employmentService.label12"),
+      label: t("employmentService.label12"),
+    },
+    {
+      value: t("employmentService.label13"),
+      label: t("employmentService.label13"),
+    },
+    {
+      value: t("employmentService.label14"),
+      label: t("employmentService.label14"),
+    },
+    {
+      value: t("employmentService.label15"),
+      label: t("employmentService.label15"),
+    },
+    {
+      value: t("employmentService.label16"),
+      label: t("employmentService.label16"),
+    },
+    {
+      value: t("employmentService.label17"),
+      label: t("employmentService.label17"),
+    },
+    {
+      value: t("employmentService.label18"),
+      label: t("employmentService.label18"),
+    },
+    {
+      value: t("employmentService.label19"),
+      label: t("employmentService.label19"),
+    },
+    {
+      value: t("employmentService.label20"),
+      label: t("employmentService.label20"),
+    },
+    {
+      value: t("employmentService.label21"),
+      label: t("employmentService.label21"),
+    },
   ];
 
   const customSelectStyles = {
@@ -203,12 +196,12 @@ function RequestPopup() {
   };
 
   const validationSchema = Yup.object({
-    fullName: Yup.string().required("This field is required."),
+    fullName: Yup.string().required(t("validationSchema.required")),
     email: Yup.string()
-      .email("Please provide a correct email address.")
-      .required("This field is required."),
-    phone: Yup.string().required("This field is required."),
-    service: Yup.string().required("This field is required."),
+      .email(t("validationSchema.email"))
+      .required(t("validationSchema.required")),
+    phone: Yup.string().required(t("validationSchema.required")),
+    service: Yup.string().required(t("validationSchema.required")),
   });
 
   const initialValues = {
@@ -297,11 +290,9 @@ function RequestPopup() {
                   <Form>
                     {!status && (
                       <div className="form-inner">
-                        <h2>Ready to Transform Your Professional Journey?</h2>
+                        <h2>{t("title")}</h2>
                         <p>
-                          Get started with our tailored {serviceValue} today.
-                          Schedule a consultation and take the first step toward
-                          achieving your career goals.
+                          {t("text1")} {serviceValue} {t("text2")}
                         </p>
 
                         <span className="service">{serviceValue}</span>
@@ -318,7 +309,7 @@ function RequestPopup() {
                             onChange={(option) =>
                               setFieldValue("service", option.value)
                             }
-                            placeholder="Choose Service"
+                            placeholder={t("form.service")}
                           />
                           <ErrorMessage
                             name="service"
@@ -330,7 +321,7 @@ function RequestPopup() {
                           <Field
                             name="fullName"
                             type="text"
-                            placeholder={"Full Name "}
+                            placeholder={t("form.fullName")}
                             className={
                               touched.fullName && errors.fullName
                                 ? "invalid"
@@ -348,7 +339,7 @@ function RequestPopup() {
                           <PhoneInput
                             country={"us"}
                             value=""
-                            placeholder="Phone Number "
+                            placeholder={t("form.phone")}
                             onChange={(phone) => setFieldValue("phone", phone)}
                             className={
                               touched.phone && errors.phone ? "invalid" : ""
@@ -365,7 +356,7 @@ function RequestPopup() {
                           <Field
                             name="email"
                             type="email"
-                            placeholder={"Email"}
+                            placeholder={t("form.email")}
                             className={
                               touched.email && errors.email ? "invalid" : ""
                             }
@@ -381,7 +372,7 @@ function RequestPopup() {
                           <Field
                             name="message"
                             type="text"
-                            placeholder="Your Message"
+                            placeholder={t("form.message")}
                             className={
                               touched.message && errors.message ? "invalid" : ""
                             }
@@ -398,20 +389,17 @@ function RequestPopup() {
                           className="main-button"
                           disabled={isSubmitting}
                         >
-                          <span>Send</span>
+                          <span>{t("form.send")}</span>
                           <ButtonArrow />
                         </button>
                       </div>
                     )}
                     {status && status.success && (
                       <div className="success">
-                        <h3>THANK YOU!</h3>
-                        <p>
-                          Your request has been received successfully!
-                          <br />
-                          One of our team members will get in touch with you
-                          shortly.
-                        </p>
+                        <h3>{t("thanks.title")}</h3>
+                        <p
+                          dangerouslySetInnerHTML={{ __html: t("thanks.text") }}
+                        />
                       </div>
                     )}
                   </Form>
