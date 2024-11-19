@@ -662,6 +662,9 @@ a {
     left: 0;
     top: 0;
     background: #a225ee;
+    @media (max-width: rem(992)) {
+      width: 38%;
+    }
   }
   h1 {
     color: #1e1e1e;

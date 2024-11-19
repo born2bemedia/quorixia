@@ -41,7 +41,7 @@ const Header = () => {
             </Link>
 
             <div className="header-right">
-              <LanguageChanger />
+              
               <div className="head-account">
                 {currentUser ? (
                   <Link className="white-button" href="/dashboard">
@@ -59,6 +59,7 @@ const Header = () => {
                   </>
                 )}
               </div>
+              <LanguageChanger />
               <div>
                 <Link
                   href="/cart"

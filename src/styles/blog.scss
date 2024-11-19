@@ -18,6 +18,9 @@
     background: #a225ee;
     top:0;
     left: 0;
+    @media (max-width: rem(992)) {
+      width: 38%;
+    }
   }
   &__body {
     position: relative;
@@ -155,6 +158,9 @@
     left: 0;
     top: 0;
     background: #a225ee;
+    @media (max-width: rem(992)) {
+      width: 38%;
+    }
   }
   &__body {
     h1 {

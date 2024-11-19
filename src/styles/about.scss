@@ -8,7 +8,7 @@
   padding: rem(150) 0;
   @media (max-width: rem(992)) {
     flex-direction: column;
-    padding: rem(150) rem(16) 0 0;
+    padding: rem(150) 0 0 0;
   }
   &::before {
     position: absolute;
@@ -19,6 +19,9 @@
     background: #a225ee;
     top: 0;
     left: 0;
+    @media (max-width: rem(992)) {
+      width: 38%;
+    }
   }
   .after {
     position: absolute;

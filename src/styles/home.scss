@@ -13,6 +13,9 @@
     width: 42%;
     height: 100%;
     background: #a225ee;
+    @media (max-width: rem(992)) {
+      width: 38%;
+    }
   }
   &__body {
     position: relative;
