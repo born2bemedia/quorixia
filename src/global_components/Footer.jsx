@@ -77,9 +77,9 @@ const Footer = () => {
                 {t("registered")}: Nissi, 68m Agia Napa, 5330, Famagusta, Cyprus
               </Link>
               <Link href="#">
-                {t("office")}: 1st floor, office number 8, Georgiou Averof,
-                <br />
-                3-5, Larnaka 6052
+                {t("office")}: 3rd floor, office number 48, Victory House,
+                Archbishop <br />
+                Makarios Avenue 205, Limassol 3030, Cyprus
               </Link>
             </div>
           </div>

@@ -37,11 +37,12 @@ const ContactDetails = () => {
             <div>
               <h2>{t("ContactDetails.office")}</h2>
               <p>
-                1st floor, office number 8, Georgiou Averof, 3-5, Larnaka 6052
+                3rd floor, office number 48, Victory House, Archbishop Makarios
+                Avenue 205, Limassol 3030, Cyprus
               </p>
             </div>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.030892689567!2d33.617867775600274!3d34.930762172838804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de2806d60cb429%3A0xb84ae309413a7842!2sGeorgiou%20Averof%203%2C%20Larnaca%206052%2C%20Cyprus!5e0!3m2!1sen!2sua!4v1727799544390!5m2!1sen!2sua"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.717802458108!2d33.04923767558909!3d34.68707107292447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14e7331495119c07%3A0x8e12971fec6fcada!2sRegus%20-%20Limassol%2C%20Victory%20House!5e0!3m2!1sen!2sua!4v1732629260214!5m2!1sen!2sua"
               width="600"
               height="450"
               allowfullscreen=""
