@@ -5,10 +5,15 @@ import ReactMarkdown from "react-markdown";
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
+const locales = ['en', 'it', 'de']; // Add other locales if necessary
+
 export async function generateStaticParams() {
   const slugs = await getPageSlugs();
-  return slugs.map((slug) => ({ slug }));
+  return locales.flatMap((locale) =>
+    slugs.map((slug) => ({ slug, locale }))
+  );
 }
+
 
 export async function generateMetadata({ params }) {
   try {
