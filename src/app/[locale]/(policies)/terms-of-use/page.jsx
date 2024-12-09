@@ -6,9 +6,10 @@ import { setRequestLocale } from "next-intl/server";
 
 export async function generateStaticParams() {
   const slugs = await getPageSlugs();
-
-  return slugs.map((slug) => ({ slug }));
+  const locales = ['en', 'de', 'it']; // Replace with your actual locales
+  return slugs.flatMap((slug) => locales.map((locale) => ({ slug, locale })));
 }
+
 
 export async function generateMetadata({ params }) {
   const page = await getPageBySlug(params.slug);
