@@ -4,14 +4,16 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 
 export async function generateStaticParams({ params: { locale } }) {
-  const slugs = await getPageSlugs(999, locale);
+  // Tell next-intl what the locale is, so it doesn't rely on dynamic headers
+  setRequestLocale(locale);
 
+  const slugs = await getPageSlugs(999, locale);
   return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params: { locale } }) {
+  setRequestLocale(locale);
   const page = await getPageBySlug("terms-of-use", locale);
-
   return {
     title: `${page.title} | Quorixia`,
   };
