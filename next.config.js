@@ -1,4 +1,4 @@
-import createNextIntlPlugin from 'next-intl/plugin';
+const createNextIntlPlugin = require('next-intl/plugin');
  
 const withNextIntl = createNextIntlPlugin();
 
