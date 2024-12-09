@@ -2,35 +2,29 @@ import "@/styles/policy.scss";
 import { getPageBySlug, getPageSlugs } from "@/utils/pages";
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { setRequestLocale } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-
-const locales = ['en', 'it', 'de']; // Add other locales if necessary
+import { setRequestLocale } from "next-intl/server";
 
 export async function generateStaticParams() {
   const slugs = await getPageSlugs();
-  return locales.flatMap((locale) =>
-    slugs.map((slug) => ({ slug, locale }))
-  );
+
+  return slugs.map((slug) => ({ slug }));
 }
 
-
 export async function generateMetadata({ params }) {
-  try {
-    const locale = await setRequestLocale(params.locale);
-    const page = await getPageBySlug('terms-of-use', { locale });
+  const page = await getPageBySlug(params.slug);
 
-    return {
-      title: `${page.title} | Quorixia`,
-    };
-  } catch (error) {
-    console.error('Error generating metadata:', error);
-    return notFound();
-  }
+  return {
+    title: `${page.title} | Quorixia`,
+  };
 }
 
 export default async function BlogInner({ params }) {
-  const page = await getPageBySlug('terms-of-use', { locale: params.locale });
+  const { slug } = params;
+
+  // Enable static rendering
+  setRequestLocale(slug);
+
+  const page = await getPageBySlug(slug);
 
   return (
     <section className="policy-inner">
@@ -38,7 +32,7 @@ export default async function BlogInner({ params }) {
         <div className="policy-inner__body">
           <div className="policy-title">
             <h1>{page.title}</h1>
-            <p>Last Updated: 20 September, 2024</p>
+            <p>Last Updated: {page.updatedAt}</p>
           </div>
           <ReactMarkdown>{page.content}</ReactMarkdown>
         </div>
