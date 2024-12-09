@@ -4,7 +4,9 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import { setRequestLocale } from "next-intl/server";
 
-export async function generateStaticParams({ params: { locale } }) {
+export async function generateStaticParams({ params }) {
+  const awaitedParams = await params; // Await the params
+  const { locale } = awaitedParams;
   setRequestLocale(locale);
   const slugs = await getPageSlugs(999, locale);
   return slugs.map((slug) => ({ slug }));
