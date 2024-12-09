@@ -4,7 +4,7 @@ import axiosClient from "./GlobalApi";
 const cmsUrl = process.env.NEXT_PUBLIC_CMS_URL;
 
 // Function to build URL for fetching posts/pages by slug
-const buildPageUrl = (slug) => {
+const buildPageUrl = (slug, locale) => {
   return (
     `pages?` +
     qs.stringify({
@@ -13,13 +13,14 @@ const buildPageUrl = (slug) => {
       filters: {
         slug: slug, // Filter by the slug parameter
       },
+      locale: locale,
     })
   );
 };
 
-export const getPageSlugs = async (count) => {
+export const getPageSlugs = async (count, locale = "en") => {
   try {
-    const url = buildPageUrl(count);
+    const url = buildPageUrl(count, locale);
     const response = await axiosClient.get(url);
 
     // Extract and return only the slugs
@@ -43,9 +44,9 @@ const formatDate = (dateString) => {
 };
 
 // Fetch a specific page from Strapi by slug
-export const getPageBySlug = async (slug) => {
+export const getPageBySlug = async (slug, locale = "en") => {
   try {
-    const url = buildPageUrl(slug);
+    const url = buildPageUrl(slug, locale);
     const response = await axiosClient.get(url);
 
     // Check if the response contains any data
