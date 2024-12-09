@@ -1,24 +1,28 @@
-import "@/styles/policy.scss";
-import { getPageBySlug, getPageSlugs } from "@/utils/pages";
-import React from "react";
-import ReactMarkdown from "react-markdown";
+import { setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   const slugs = await getPageSlugs();
-
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata() {
-  const page = await getPageBySlug("terms-of-use");
+export async function generateMetadata({ params }) {
+  try {
+    const locale = await setRequestLocale(params.locale);
+    const page = await getPageBySlug('terms-of-use', { locale });
 
-  return {
-    title: `${page.title} | Quorixia`,
-  };
+    return {
+      title: `${page.title} | Quorixia`,
+    };
+  } catch (error) {
+    console.error('Error generating metadata:', error);
+    return notFound();
+  }
 }
 
-const BlogInner = async () => {
-  const page = await getPageBySlug("terms-of-use");
+export default async function BlogInner({ params }) {
+  const page = await getPageBySlug('terms-of-use', { locale: params.locale });
+
   return (
     <section className="policy-inner">
       <div className="_container">
@@ -32,6 +36,4 @@ const BlogInner = async () => {
       </div>
     </section>
   );
-};
-
-export default BlogInner;
+}
