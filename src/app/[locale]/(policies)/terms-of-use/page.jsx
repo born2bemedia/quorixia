@@ -1,3 +1,7 @@
+import "@/styles/policy.scss";
+import { getPageBySlug, getPageSlugs } from "@/utils/pages";
+import React from "react";
+import ReactMarkdown from "react-markdown";
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
