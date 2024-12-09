@@ -3,11 +3,11 @@ import { getPost, getSlugs } from "@/utils/blog";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-export async function generateStaticParams({ params: { locale } }) {
+/*export async function generateStaticParams({ params: { locale } }) {
   const slugs = await getSlugs(locale);
 
   return slugs.map((slug) => ({ slug }));
-}
+}*/
 
 const adjustedSlug = (locale, slug) => {
   console.log("locale", locale);

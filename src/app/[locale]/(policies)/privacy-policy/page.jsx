@@ -2,23 +2,51 @@ import "@/styles/policy.scss";
 import { getPageBySlug, getPageSlugs } from "@/utils/pages";
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import { setRequestLocale } from "next-intl/server";
 
-export async function generateStaticParams() {
-  const slugs = await getPageSlugs();
-
+/*export async function generateStaticParams({ params }) {
+  const awaitedParams = await params; // Await the params
+  const { locale } = awaitedParams;
+  setRequestLocale(locale);
+  const slugs = await getPageSlugs(999, locale);
   return slugs.map((slug) => ({ slug }));
-}
+}*/
 
-export async function generateMetadata() {
-  const page = await getPageBySlug("privacy-policy");
+const adjustedSlug = (locale, slug) => {
+  console.log("locale", locale);
+  console.log("slug", slug);
 
+  if (locale === "de") {
+    return slug.endsWith("-de") ? slug : `${slug}-de`;
+  } else if (locale === "it") {
+    return slug.endsWith("-it") ? slug : `${slug}-it`;
+  } else {
+    if (slug.endsWith("-de")) {
+      return slug.slice(0, -3); // Remove '-de'
+    } else if (slug.endsWith("-it")) {
+      return slug.slice(0, -3); // Remove '-it'
+    }
+  }
+
+  return slug; // Return slug as is if no changes are needed
+};
+
+export async function generateMetadata({ params }) {
+  const awaitedParams = await params; // Await the params
+  const { slug, locale } = awaitedParams;
+  setRequestLocale(locale);
+  const slugs = adjustedSlug(locale, "privacy-policy");
+  const page = await getPageBySlug(slugs, locale);
   return {
     title: `${page.title} | Quorixia`,
   };
 }
 
-const BlogInner = async () => {
-  const page = await getPageBySlug("privacy-policy");
+const BlogInner = async ({ params }) => {
+  const awaitedParams = await params; // Await the params
+  const { slug, locale } = awaitedParams;
+  const slugs = adjustedSlug(locale, "privacy-policy");
+  const page = await getPageBySlug(slugs, locale);
   return (
     <section className="policy-inner">
       <div className="_container">
