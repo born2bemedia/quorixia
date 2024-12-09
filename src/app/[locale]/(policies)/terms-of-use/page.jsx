@@ -5,9 +5,7 @@ import ReactMarkdown from "react-markdown";
 import { setRequestLocale } from 'next-intl/server';
 
 export async function generateStaticParams({ params: { locale } }) {
-  
   setRequestLocale(locale);
-
   const slugs = await getPageSlugs(999, locale);
   return slugs.map((slug) => ({ slug }));
 }
@@ -19,6 +17,7 @@ export async function generateMetadata({ params: { locale } }) {
     title: `${page.title} | Quorixia`,
   };
 }
+
 
 const BlogInner = async ({ params: { locale } }) => {
   const page = await getPageBySlug("terms-of-use", locale);
