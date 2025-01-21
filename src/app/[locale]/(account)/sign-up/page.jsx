@@ -217,7 +217,7 @@ export default function SignUp() {
                     <CheckboxIcon />
                     <span>
                     {t("form.agree")}{" "}
-                      <Link href="/terms-and-conditions">
+                      <Link href="/terms-of-use">
                       {t("form.terms")}
                       </Link>
                     </span>
