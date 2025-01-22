@@ -36,7 +36,7 @@ export async function POST(request) {
         console.error('An error occurred:', error.response ? error.response.data : error.message);
 
         return new Response(JSON.stringify({
-            message: "COULD NOT CREATE USER",
+            message: error.response.data.error.message,
             error: error.response?.data?.message || error.message,
         }), {
             status: 500,

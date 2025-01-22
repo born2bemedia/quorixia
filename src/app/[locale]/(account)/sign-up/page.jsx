@@ -16,6 +16,7 @@ export default function SignUp() {
   const [thanksPopupShow, setThanksPopupShow] = useState(false);
   const router = useRouter();
   const { fetchCurrentUser } = useAuth();
+  const [globalError, setGlobalError] = useState("");
 
   const initialValues = {
     firstName: "",
@@ -48,6 +49,7 @@ export default function SignUp() {
   });
 
   const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
+    setGlobalError("");
     try {
       const response = await axios.post("/api/auth/sign-up", values, {
         headers: { "Content-Type": "application/json" },
@@ -83,7 +85,7 @@ export default function SignUp() {
       }, 3000);
     } catch (error) {
       console.error("Registration failed", error.response.data);
-      setFieldError("email", "An account with this email already exists");
+      setGlobalError(error.response?.data?.message || t("form.genericError"));
     } finally {
       setSubmitting(false);
     }
@@ -265,6 +267,9 @@ export default function SignUp() {
                   </label>
                   <ErrorMessage name="age" component="div" className="error" />
                 </div>
+
+                
+
                 <div className="button-wrap">
                   <button
                     className="main-button"
@@ -275,6 +280,7 @@ export default function SignUp() {
                     <ButtonArrow />
                   </button>
                 </div>
+                {globalError && <div className="global-error">{globalError}</div>}
               </Form>
             )}
           </Formik>
