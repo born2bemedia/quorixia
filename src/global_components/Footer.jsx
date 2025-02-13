@@ -74,7 +74,7 @@ const Footer = () => {
               <Link href="mailto:info@quorixia.com">info@quorixia.com</Link>
               <Link href="tel:+35723030297">+35723030297</Link>
               <Link href="#">
-                {t("registered")}: Nissi, 68m Agia Napa, 5330, Famagusta, Cyprus
+                {t("registered")}: Nissi, 68 Agia Napa, 5330, Famagusta, Cyprus
               </Link>
               <Link href="#">
                 {t("office")}: 3rd floor, office number 48, Victory House,
