@@ -16,6 +16,71 @@ const getCountryOptionByCode = (code) => {
   return countries.find((country) => country.value === code);
 };
 
+const excludedCountries = [
+  "IL",
+  "US",
+  "AL",
+  "BB",
+  "BA",
+  "GY",
+  "JM",
+  "LA",
+  "MU",
+  "MM",
+  "NI",
+  "UG",
+  "VU",
+  "AF",
+  "BS",
+  "BW",
+  "KH",
+  "ET",
+  "GH",
+  "IS",
+  "IQ",
+  "MN",
+  "PK",
+  "PA",
+  "LK",
+  "TT",
+  "TN",
+  "VI",
+  "YE",
+  "ZW",
+  "RU",
+  "BY",
+  "CU",
+  "KP",
+  "SD",
+  "SY",
+  "DZ",
+  "BD",
+  "BO",
+  "CN",
+  "KG",
+  "MK",
+  "NP",
+  "NG",
+  "TH",
+  "SO",
+  "VN",
+  "CO",
+  "EC",
+  "ID",
+  "JO",
+  "MA",
+  "SA",
+  "TW",
+  "UA",
+];
+
+const getFilteredCountries = () => {
+  const countries = countryList().getData();
+  return countries.filter(
+    (country) => !excludedCountries.includes(country.value)
+  );
+};
+
 const customStyles = {
   control: (provided, state) => ({
     ...provided,
@@ -105,8 +170,12 @@ const PersonalData = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required(t("PersonalData.validationSchema.required")),
-    lastName: Yup.string().required(t("PersonalData.validationSchema.required")),
+    firstName: Yup.string().required(
+      t("PersonalData.validationSchema.required")
+    ),
+    lastName: Yup.string().required(
+      t("PersonalData.validationSchema.required")
+    ),
     email: Yup.string()
       .email(t("PersonalData.validationSchema.email"))
       .required(t("PersonalData.validationSchema.required")),
@@ -337,7 +406,7 @@ const PersonalData = () => {
                           <Select
                             {...field}
                             placeholder={t("PersonalData.form.country")}
-                            options={countryList().getData()}
+                            options={getFilteredCountries()}
                             styles={customStyles}
                             className={`form-field ${
                               touched.country && errors.country ? "invalid" : ""
