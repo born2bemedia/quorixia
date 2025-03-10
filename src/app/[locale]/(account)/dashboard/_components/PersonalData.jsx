@@ -10,69 +10,12 @@ import { useRouter } from "next/navigation";
 import ChangePassword from "./ChangePassword";
 import ButtonArrow from "@/icons/ButtonArrow";
 import { useTranslations } from "next-intl";
+import { excludedCountries } from "@/utils/excludedCountries";
 
 const getCountryOptionByCode = (code) => {
   const countries = countryList().getData();
   return countries.find((country) => country.value === code);
 };
-
-const excludedCountries = [
-  "IL",
-  "US",
-  "AL",
-  "BB",
-  "BA",
-  "GY",
-  "JM",
-  "LA",
-  "MU",
-  "MM",
-  "NI",
-  "UG",
-  "VU",
-  "AF",
-  "BS",
-  "BW",
-  "KH",
-  "ET",
-  "GH",
-  "IS",
-  "IQ",
-  "MN",
-  "PK",
-  "PA",
-  "LK",
-  "TT",
-  "TN",
-  "VI",
-  "YE",
-  "ZW",
-  "RU",
-  "BY",
-  "CU",
-  "KP",
-  "SD",
-  "SY",
-  "DZ",
-  "BD",
-  "BO",
-  "CN",
-  "KG",
-  "MK",
-  "NP",
-  "NG",
-  "TH",
-  "SO",
-  "VN",
-  "CO",
-  "EC",
-  "ID",
-  "JO",
-  "MA",
-  "SA",
-  "TW",
-  "UA",
-];
 
 const getFilteredCountries = () => {
   const countries = countryList().getData();
