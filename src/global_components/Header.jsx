@@ -9,6 +9,7 @@ import MenuIcon from "@/icons/MenuIcon";
 import MenuIconClose from "@/icons/MenuIconClose";
 import LanguageChanger from "@/app/[locale]/_global/LanguageChanger";
 import { useTranslations } from "next-intl";
+import LangSwitcher from "./LangSwitcher";
 
 const Header = () => {
   const t = useTranslations("header");
@@ -59,7 +60,7 @@ const Header = () => {
                   </>
                 )}
               </div>
-              <LanguageChanger />
+              <LangSwitcher />
               <div>
                 <Link
                   href="/cart"
