@@ -42,7 +42,6 @@ const Header = () => {
             </Link>
 
             <div className="header-right">
-              
               <div className="head-account">
                 {currentUser ? (
                   <Link className="white-button" href="/dashboard">
@@ -51,16 +50,16 @@ const Header = () => {
                 ) : (
                   <>
                     <Link className="white-button" href="/log-in">
-                    {t("login")}
+                      {t("login")}
                     </Link>
                     <span></span>
                     <Link className="white-button" href="/sign-up">
-                    {t("signup")}
+                      {t("signup")}
                     </Link>
                   </>
                 )}
               </div>
-              <LangSwitcher />
+              <LanguageChanger />
               <div>
                 <Link
                   href="/cart"
