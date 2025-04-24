@@ -22,7 +22,7 @@ export default function LanguageChanger() {
   return (
     <div className="lang-wrap">
       <button className="current-lang" onClick={() => handlePopup()}>
-        <img src={`/images/${locale}.svg`} />
+        <img src={`/images/${locale}_Lang.svg`} />
       </button>
       {langDisplay && (
         <div className="lang-switcher">
@@ -30,21 +30,21 @@ export default function LanguageChanger() {
             onClick={() => handleChange("en")}
             className={locale === "en" ? "active" : ""}
           >
-            <img src="/images/en.svg" />
+            <img src="/images/EN_Lang.svg" />
             <span>English</span>
           </button>
           <button
             onClick={() => handleChange("de")}
             className={locale === "de" ? "active" : ""}
           >
-            <img src="/images/de.svg" />
+            <img src="/images/DE_Lang.svg" />
             <span>German</span>
           </button>
           <button
             onClick={() => handleChange("it")}
             className={locale === "it" ? "active" : ""}
           >
-            <img src="/images/it.svg" />
+            <img src="/images/IT_Lang.svg" />
             <span>Italian</span>
           </button>
 
