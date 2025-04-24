@@ -2,7 +2,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 
 const LangSwitcher = () => {
-  const [currentLang, setCurrentLang] = useState("EL");
+  const [currentLang, setCurrentLang] = useState("EN");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLanguageChange = (language, languageCode) => {
