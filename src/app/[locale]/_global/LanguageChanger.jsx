@@ -9,6 +9,7 @@ export default function LanguageChanger() {
   const router = useRouter();
   const pathname = usePathname();
   const [langDisplay, setLangDisplay] = useState(false);
+  const [langName, setLangName] = useState("");
 
   const handleChange = (lang) => {
     router.push(pathname, { locale: lang });
@@ -19,10 +20,22 @@ export default function LanguageChanger() {
     setLangDisplay(!langDisplay);
   };
 
+  useEffect(() => {
+    const langNameNew =
+    locale === "en"
+          ? "EN"
+          : locale === "de"
+        ? "DE"
+        : locale === "it"
+        ? "IT"
+        : "PL";
+    setLangName(langNameNew);
+  }, [locale]);
+
   return (
     <div className="lang-wrap">
       <button className="current-lang" onClick={() => handlePopup()}>
-        <img src={`/images/${locale}_Lang.svg`} />
+        <img src={`/images/${langName}_Lang.svg`} />
       </button>
       {langDisplay && (
         <div className="lang-switcher">
