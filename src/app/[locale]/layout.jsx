@@ -8,6 +8,7 @@ import { PopupsProvider } from "@/context/PopupsContext";
 import Preloader from "@/global_components/Preloader";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import CookiePopup from "@/global_components/CookiePopup/CookiePopup";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -46,6 +47,7 @@ export default function RootLayout({ children, params: { locale } }) {
               </PopupsProvider>
             </CartProvider>
           </AuthProvider>
+          <CookiePopup />
         </body>
       </NextIntlClientProvider>
     </html>

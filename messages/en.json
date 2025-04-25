@@ -1,1 +1,754 @@
-{"why":{"WhyCollaborate":{"block1":{"text":"We listen first and strategize second, ensuring we fully\n                understand your needs.","title":"Deep Listening"},"block2":{"text":"We work with you at every step, creating solutions that reflect\n                your vision.","title":"Genuine Partnership"},"block3":{"text":"Our commitment doesn’t end with one solution — we’re here to\n                adapt and guide you as your career grows.","title":"Continuous Support"},"title":"How We Collaborate"},"WhyDifferent":{"block1":{"text":"Every strategy is as unique as your career path. We reject the\n                idea of one-size-fits-all approaches.","title":"Customization <br />\n                at Every Turn"},"block2":{"text":"We cover multiple industries, ensuring you get advice that’s\n                relevant and actionable.","title":"Industry-Spanning <br />\n                Expertise"},"block3":{"text":"We don’t just react to challenges — we anticipate and plan for\n                them, so you’re always ahead.","title":"Proactive Problem <br />\n                Solving"},"button1":"Explore Our HR Solutions","button2":"Unlock Employment Opportunities","title":"Why We’re Different"},"WhyFocused":{"text1":"The Quorixia crew measures our success not by the number of\n              clients we serve but by the tangible results we deliver. We are\n              focused on making a real impact on your professional journey. Our\n              approach is designed to provide meaningful outcomes — from\n              securing better opportunities to developing lasting skills that\n              empower you in the long run.","text2":"We don’t believe in temporary fixes or superficial progress. Every\n              strategy we craft is designed for long-term success, tailored to\n              help you meet your immediate goals and thrive in the future.\n              Whether seeking career advancement, transitioning industries, or\n              enhancing your leadership skills, we ensure that our solutions\n              create measurable growth that aligns with your professional\n              aspirations.","title":"Focused on Outcomes that Matter"},"WhyGoals":{"text":"At Quorixia, the foundation of our success is our client-centric\n              approach. We focus entirely on you — your ambitions, challenges,\n              and growth. From the moment we start working together, we make\n              your goals our mission. We take the time to truly understand your\n              unique career trajectory and create tailored strategies aligned\n              with your objectives.\n              <br />\n              <br />\n              Our process is collaborative and designed to evolve with you. We\n              don’t believe in generic solutions or automated methods. Each\n              interaction is personalised and deliberate, ensuring we work\n              alongside you, not just for you. Your input is at the heart of\n              every solution we develop, and we adapt as your career progresses,\n              offering continuous support that evolves as your goals do.","title":"Your Goals Come First — Always"},"WhyHero":{"subtitle":"A Fresh, Professional <br />\n          Perspective on HR Solutions","subtitle2":"What Makes <br />\n            Us Unique","text1":"At Quorixia, we do things differently. Though we are a young company,\n          we bring a powerful combination <br />\n          of fresh energy, innovative thinking, and deep experience from a team\n          of seasoned professionals.\n          <br />\n          <br />\n          What sets us apart is our ability to blend the agility of a new firm\n          with the expertise of those who’ve spent <br />\n          years mastering their craft. Our high-quality, personalised solutions\n          are designed to make a meaningful <br />\n          impact on your career journey.\n          <br />\n          <br />\n          Whether navigating a complex transition, seeking career advancement,\n          or seeking guidance in a new <br />\n          field, Quorixia offers a tailored approach, ensuring your unique goals\n          are always the priority. We provide <br />\n          more than just advice — we craft the blueprint for your success.","text2":"We understand that every career journey is personal and unique. We\n            are committed to offering fully customised HR and employment\n            solutions, listening carefully to your needs, assessing your goals,\n            and developing a tailored plan that aligns perfectly with your\n            aspirations.\n            <br />\n            <br />\n            Our crew specialises in creating bespoke strategies for\n            professionals at all stages, whether they’re just starting out,\n            shifting industries, or preparing for senior leadership roles. Our\n            team draws on years of expertise across various industries, giving\n            us the knowledge to provide the proper guidance in any scenario. We\n            aren’t just consultants—we’re dedicated partners, helping you\n            navigate the twists and turns of your career with confidence.","title":"Why Choose Quorixia?"},"WhyLast":{"button":"Discover Our Approach","text":"Explore the values, passion, and dedication behind Quorixia. Learn\n              more about how we’re shaping careers and guiding individuals to\n              success with every step.","title":"Curious to Know What Drives Us?"},"WhyResult":{"block1":{"text":"We deliver accurate, measurable results from job offers to\n                skill-building.","title":"Tangible Progress"},"block2":{"text":"We focus on solutions that continue to benefit you far into the\n                future.","title":"Long-Term Success"},"block3":{"":"Our strategies are designed to drive meaningful career\n                development.","title":"Impactful Growth"},"title":"Our Commitment to Results"}},"checkout":{"countryDescription":"* An email containing payment instructions,\n                                including our bank details, will be sent shortly\n                                after placing an order. This email will also\n                                include a summary of your order details.","form":{"address":"Address","city":"City","country":"Country","email":"Email","firstName":"First name","lastName":"Last name","phone":"Phone Number","state":"State/Province","street":"Street","zip":"ZIP"},"pageTitle":"Billing Information","payment":{"name":"Bank Transfer*","text":"* You will soon receive an email with payment\n                              instructions, including our bank details and a\n                              summary of your order details.","title":"Payment Method"},"privacy":{"name":"Privacy Policy","text":"We will utilise your personal information to\n                              process your order, improve your browsing\n                              experience on our website, and perform other\n                              purposes detailed in our"},"refund":{"name":"Refund Policy","text":"I have read and agree to the"},"submit":"Submit","terms":{"name":"Terms and Conditions","text":"I have read and agree to the website's"},"total":"Total","validationSchema":{"email":"Please provide a valid email address.","required":"This field is required.","terms":"You must accept the terms and conditions."}},"register":{"form":{"age":"I am over 18 years old, and I have read and accepted all\n                      of the above","agree":"I agree to the","button":"Join Quorixia","confirmPassword":"Confirm Password","email":"Email","firstName":"First name","lastName":"Last Name","password":"Password","phone":"Phone number","privacy":"Privacy Policy","terms":"Terms and Conditions","username":"Username"},"subtitle":"Register to gain access to tailored career support, stay informed\n            about the latest job <br />\n            opportunities, and receive expert guidance to help you reach your\n            professional goals.","success":{"text":"Your account has been successfully created. A confirmation\n                    email has been sent to your inbox.\n                    <br />\n                    Welcome aboard!","title":"Congratulations!"},"title":"Join the Quorixia Community","validationSchema":{"age":"You must accept age","email":"Invalid email address","oneOf":"Passwords must match","policy":"You must accept the privacy policy","required":"This field is required","terms":"You must accept the terms and conditions"}},"default":{},"header":{"aboutUs":"About Us","account":"Account","blog":"Blog","careers":"Careers","caseStudies":"Case Studies","contactUs":"Contact Us","employment":"Employment","glossary":"Glossary","hr":"HR","login":"Log in","pricing":"Pricing","signup":"Sign up","whyQuorixia":"Why Quorixia"},"connect_form":{"expertiseLevel":{"label1":"Entry-Level","label2":"Mid-Level","label3":"Senior-Level"},"formFields":{"additionalInfo":"Additional Information","coreCompetencies":"Core Competencies","coverLetter":"Cover Letter","desiredRole":"Desired Job Role","email":"Email","expertiseLevel":"Level of Expertise","firstName":"First Name","lastName":"Last Name","linkedInProfile":"LinkedIn Profile Link","phone":"Phone Number","resume":"Attach Resume","salaryRange":"Expected Salary Range","sector":"Sector of Interest","startDate":"Earliest Start Date","submit":"Submit","terms1":"I have read and agree to the","terms2":"Terms of Use","terms3":"and","terms4":"Privacy Policy","workLocation":"Preferred Work Location"},"jobRole":{"label1":"Finance & Accounting","label10":"Sales & Business Development","label2":"Administrative Support","label3":"Marketing & Communications","label4":"Engineering & Construction","label5":"Food & Beverage","label6":"Healthcare & Biotechnology","label7":"Hospitality & Tourism","label8":"Human Resources & Talent Management","label9":"Information Technology & Software"},"validationSchema":{"firstName":"First Name is required","invalidEmail":"Invalid email address","invalidURL":"Invalid URL","lastName":"Last Name is required","requiredEmail":"Email is required"}},"cases":{"CasesHero":{"text":"At Quorixia, our approach goes beyond offering <br />\n            advice — we provide tailored solutions that lead to <br />\n            measurable outcomes. Below, detailed case studies <br />\n            highlight how we’ve empowered individuals to <br />\n            overcome challenges, navigate career transitions, and <br />\n            reach new heights in their professional journeys. Each <br />\n            story represents our commitment to personalised, <br />\n            client-centred success.","title":"Real Success Stories: How <br />\n            Quorixia Transforms Careers"}},"blog":{"BlogHero":{"text":"We believe that knowledge is key to unlocking your <br />\n            professional potential. Our blog is filled with expert <br />\n            tips, industry insights, and actionable advice to help <br />\n            you confidently navigate your career journey. Stay <br />\n            informed, stay ahead, and take control of your <br />\n            future with Quorixia.","title":" Quorixia Blog: Your <br />\n            Guide to Career Success"},"BlogSlider":{"read":"Read now","title":"Featured Blog Topics"}},"hr":{"HrExpertise":{"button":"Order HR Service Now","service":"HR Service","text":"No two career paths are alike. Our range of HR solutions is designed\n            to address your issues, whether navigating a career transition,\n            enhancing your leadership skills, or seeking personalised HR advice.\n            Focusing on customised strategies and one-on-one support, we offer\n            services that empower you to take control of your professional\n            future.","title":"Discover Our HR Expertise"},"HrHero":{"text":"At Quorixia, we specialise in providing <br />\n            personalised HR solutions to help you overcome <br />\n            career challenges, navigate transitions, and <br />\n            confidently achieve your goals.","title":"Transforming Your Professional Path <br />\n            with Tailored HR Solutions"},"HrPersonalisedApproach":{"text":"At Quorixia, we take a human-centred approach to HR services,\n              focusing on building solid relationships with each of our clients.\n              We understand that your professional journey is personal, so we\n              tailor every solution to fit your specific needs. For career\n              advancement, navigating challenges at work, or transitioning into\n              a new role, we craft strategies designed around your individual\n              goals, skills, and aspirations.","title":"Personalised Approach"},"HrPricing":{"button":"View Pricing & Packages","text":"We offer clear and flexible pricing to meet your specific needs.\n              Whether you’re looking for one-time consultations or ongoing HR\n              support, our service packages are designed to fit your career\n              goals and budget. Explore our detailed pricing options to find the\n              right package for you.","title":"Transparent Pricing, Tailored Packages"},"HrRequest":{"text":"Our experts bring decades of collective HR experience to guide you\n            with empathy, precision, and care. You won’t just get advice –\n            you’ll get a partner dedicated to your success.","title":"Unlock Your Personalised HR Strategy"}},"about":{"AboutGuiding":{"block1":{"text":"The foundation of our partnership begins with an in-depth\n                consultation. We take the time to explore your background, your\n                aspirations, and the challenges you’re currently facing.","title":"Consultation"},"block2":{"text":"Once we’ve gained a comprehensive understanding of your unique\n                situation, we craft a personalised strategy designed to help you\n                achieve your goals, whether it’s navigating a career transition,\n                negotiating a job offer, or preparing for a leadership role.","title":"Strategy Development"},"block3":{"text":"Our work doesn’t stop with strategy creation. We provide\n                continuous support, adjusting our approach to ensure you stay on\n                track, empowered, and confident in every decision.","title":"Ongoing Support"},"button":"Read Success Stories","subtitle":"At Quorixia, we understand that no two career paths are alike. This is\n          why we approach each client with a highly personalised strategy,\n          ensuring our solutions align with your goals and needs. Our process is\n          simple yet profound: we listen, we learn, and we create.","title":"Guiding Careers with Precision and Passion"},"AboutHero":{"subtitle":"Quorixia’s Dedication to Your Growth","text":"The Quorixia team views every career as a dynamic, evolving journey\n          full of potential and <br />\n          opportunity. We’re here to help you navigate the complexities of your\n          professional path with <br />\n          confidence and clarity. As a team of dedicated HR and employment\n          experts, we aim to <br />\n          provide personalised guidance and tailored solutions that align with\n          your unique goals.","text2":"We approach every client relationship with fresh eyes and an open\n          mind. By deeply understanding your specific needs, ambitions, and\n          challenges, we can craft bespoke strategies that help you achieve your\n          current objectives and lay the foundation for future success.","title":"Who We Are"},"AboutLast":{"button":"Why Choose Quorixia?","text":"Curious about what sets Quorixia apart from other HR firms?\n              Explore our unique approach and discover how we create\n              personalised solutions tailored to your needs.","title":"Ready to Learn More About Why Quorixia?"},"AboutPeople":{"text":"Our strength lies in our people. We are passionate HR and\n              employment professionals with extensive experience across diverse\n              industries. From tech to finance, creative sectors to healthcare,\n              our collective expertise spans many fields, allowing us to offer\n              you comprehensive and insightful career solutions. <br />\n              <br />\n              What sets our team apart is our deep commitment to your growth. We\n              don’t just provide you with advice — we invest in your long-term\n              success. Our experts are skilled in identifying the opportunities,\n              trends, and challenges unique to your industry, enabling us to\n              craft strategies that are not only practical but transformative.\n              <br />\n              <br />\n              Whether seeking guidance for a career shift, leadership coaching,\n              or job market navigation, our team brings the knowledge,\n              experience, and enthusiasm to help you thrive. We are more than\n              advisors; we are your partners in growth, guiding you through\n              every phase of your career with precision and care.","title":"The People Behind Quorixia"},"AboutPrinciples":{"block1":{"text":"We believe in being genuine — both in how we communicate and the\n              solutions we deliver. Our team is dedicated to offering honest,\n              transparent advice that aligns with your career aspirations.","title":"Authenticity"},"block2":{"text":"The path to success is rarely a straight line. We help you\n              navigate the unexpected with resilience, support you in overcoming\n              challenges, and seize new opportunities with determination.","title":"Resilience"},"block3":{"text":"We take a forward-thinking approach, anticipating future trends in\n              the job market to position you ahead of the curve. We ensure your\n              career remains adaptable and relevant by staying ahead of industry\n              changes.","title":"Vision"},"block4":{"text":"Our goal is to empower you to take control of your professional\n              journey. We equip you with the knowledge, tools, and confidence to\n              make impactful career decisions that align with your goals.","title":"Empowerment"},"block5":{"text":"Success is rarely achieved in isolation. We work closely with you,\n              building a collaborative relationship that ensures every solution\n              is co-created and designed for your unique needs.","title":"Collaboration"},"subtitle":"At the heart of Quorixia’s approach are values that reflect our\n            commitment to creating meaningful, transformative career experiences\n            for every individual. These principles shape everything we do, from\n            how we work with clients to the strategies we develop for\n            long-lasting success.","title":"Principles that <br />\n            Empower and Inspire"},"AboutSecond":{"text":"Your success is more than a destination — it’s the sum of every\n              decision and action along the way. At Quorixia, we prioritise a\n              long-term partnership that empowers you to make informed,\n              confident choices throughout your professional journey.","title":"Our Promise:"}},"home":{"HomeHero":{"subtitle":"Shape <br />\n          What’s Next","text":"At Quorixia, your career is more than a job — it’s your personal\n          journey. We offer bespoke HR and employment <br />\n          solutions, expertly crafted to guide you every step of the way.\n          Whether making bold career moves or seeking <br />\n          steady progression, we are here to help you unlock your full potential\n          with personalised, human-centred support.","title":"Redefine Your Career"},"HomeRequest":{"subtitle":"Your Journey Starts Here","text":"Whether you’re looking for HR advice or ready to explore new\n            employment opportunities, Quorixia is here to support you at every\n            stage of your career. Let’s work together to achieve your goals.","title":"Ready to Take the Next Step?"},"HomeResources":{"button":"Visit Our Resources","subtitle":"Empowering You With Knowledge","text":"Your career doesn’t come with a manual, but Quorixia’s resources are\n          the next best thing. Stay ahead of the curve with expert insights,\n          guides, and practical advice crafted by HR professionals. Our blog,\n          case studies, and glossary help you stay informed and inspired, giving\n          you the tools to navigate your career confidently.","title":"Career Resources"},"HomeSecond":{"button1":"Explore Our HR Solutions","button2":"Unlock Employment Opportunities","text":"We don’t just provide HR services — we empower you to take full\n              control of your work life. Be it a career transition, progressing\n              in your current field, or embarking on a new path, our solutions\n              are crafted to fit your personal journey.","titl":"Take Charge of Your Future"},"HomeSolutionBlack":{"button":"Unlock Your Personalised HR Strategy","content":"<h3 >Our Solutions</h3>\n          <h2 >What Makes Us Stand Out:</h2>\n          <p >\n            Navigating the complexities of HR can be overwhelming. That’s where\n            Quorixia steps in with a full range of personalised HR services that\n            go beyond the basics. Whether you’re negotiating contracts, seeking\n            legal advice, or working on personal development, our solutions are\n            crafted with your success in mind. Each service is tailored to meet\n            the unique challenges you face.\n          </p>\n          <h4 >Featured HR Services</h4>\n          <ul >\n            <li>\n              <b>Contract Negotiation:</b> We help you navigate and secure the\n              best terms for your employment agreements.\n            </li>\n            <li>\n              <b>Legal HR Consultation:</b> Expert advice on employment rights\n              and workplace regulations.\n            </li>\n            <li>\n              <b>Personalized Career Coaching:</b> One-on-one coaching to\n              strategize your career growth.\n            </li>\n            <li>\n              <b>Performance Review Support:</b> Guidance on how to excel in\n              your performance evaluations.\n            </li>\n            <li>\n              <b>Conflict Resolution:</b> Assistance in resolving workplace\n              disputes effectively.\n            </li>\n            <li>\n              <b>Work-Life Balance Strategies:</b> Tailored approaches to help\n              you manage your professional and personal life.\n            </li>\n            <li>\n              <b>Compensation Benchmarking:</b> Insights on how to ensure you’re\n              compensated fairly within your industry.\n            </li>\n            <li>\n              <b>Exit Strategy Planning:</b> Guidance on transitioning out of a\n              role smoothly and on your own terms.\n            </li>\n            <li>\n              <b>Leadership Development:</b> Support for individuals stepping\n              into or aiming for leadership roles.\n            </li>\n            <li>\n              <b>Employment Law Updates:</b> Stay informed about the latest\n              regulations that affect your rights and opportunities.\n            </li>\n          </ul>"},"HomeSolutionWhite":{"button":"Take the Next Step with Confidence","content":"<h3 >Our Solutions</h3>\n          <h2 >\n            Employment Services to Elevate Your Career\n          </h2>\n          <p >\n            Standing out in today’s competitive job market requires more than\n            just qualifications. Quorixia offers employment services that help\n            you highlight your strengths and align your career aspirations with\n            real-world opportunities. From resumes to interview coaching, we\n            provide everything you need to stay one step ahead.\n          </p>\n          <h4 >Featured Employment Services</h4>\n          <ul >\n            <li>\n              <b>CV Building:</b> Custom resumes designed to showcase your\n              skills and achievements.\n            </li>\n            <li>\n              <b>Interview Coaching:</b> Expert guidance on mastering interviews\n              with confidence.\n            </li>\n            <li>\n              <b>Job Market Navigation:</b> We help you identify and pursue the\n              best opportunities for your career.\n            </li>\n            <li>\n              <b>LinkedIn Profile Optimization:</b> Make a digital solid first\n              impression with a standout profile.\n            </li>\n            <li>\n              <b>Job Application Assistance:</b> Tailored support for completing\n              job applications that get noticed.\n            </li>\n            <li>\n              <b>Networking Strategy:</b> Learn how to build and expand your\n              professional network.\n            </li>\n            <li>\n              <b>Portfolio Development:</b> Showcase your work with a\n              professionally curated portfolio.\n            </li>\n            <li>\n              <b>Cover Letter Crafting:</b> Write compelling cover letters that\n              resonate with employers.\n            </li>\n            <li>\n              <b>Career Transition Support:</b> Smoothly switch industries or\n              roles with expert advice.\n            </li>\n            <li>\n              <b>Salary Negotiation:</b> Maximise your compensation by\n              negotiating from a position of strength.\n            </li>\n          </ul>"},"HomeStand":{"block1":{"text":"While Quorixia is a young, forward-thinking company, our team of\n                seasoned HR experts carries decades of rich, diverse experience\n                across various industries. We combine a powerful blend of\n                insight, creativity, and real-world expertise.","title":"Years of Expertise, Fresh Perspective"},"block2":{"text":"At Quorixia, we don’t believe in one-size-fits-all approaches.\n                Your career is a story in progress, full of potential and unique\n                challenges. That’s why we take the time to listen carefully and\n                understand the depth of your professional aspirations.","title":"Precision-Crafted Solutions, Tailored to You"},"block3":{"text":"Our approach goes beyond standard consulting. It’s about\n                building a deep partnership rooted in trust, compassion, and\n                mutual growth. The Quorixia team sees every interaction as an\n                opportunity to inspire confidence, unlock potential, and drive\n                transformation.","title":"Empathy and Empowerment at the Core"},"button":"See Why Clients Trust Quorixia","title":"What Makes Us Stand Out:"},"HomeWhy":{"subtitle":"Fueling Your Ambition with Expert Guidance","text":"Our crew doesn’t see you as just another client. You are a\n              professional with dreams, goals, and aspirations. With over a\n              decade of expertise in the HR and employment space, we specialise\n              in designing customised strategies that put you at the centre of\n              your career story.","title":"Why\n              <br />\n              Quorixia?"}},"glossary":{"GlossaryHero":{"subtitle":"Essential Terms to Know","text":"Navigating the complexities of HR and employment can involve\n          industry-specific <br />\n          terminology that isn’t always easy to understand. If you are new to\n          the job market or a <br />\n          seasoned professional, our glossary provides clear definitions of key\n          HR terms to keep you <br />\n          informed and empowered. From A to Z, this guide will help you\n          understand the language <br />\n          that drives modern HR practices and employment processes.","title":"The Quorixia HR & Employment Glossary:"}},"login":{"forgot":{"button":"Reset now","error":"An error occurred. Please try again.","subtitle":"Please provide your username or email address.\n          <br />\n          We’ll send you a link to create a new password via email.","success":"Reset link was sent to your email!","title":"Forgot Your Password?"},"form":{"button":"Log in","email":"Email","forgot":"Forgot password?","password":"Password"},"reset":{"button":"Set new password","confirmPassword":"Confirm Password","currentPassword":"Current Password","invalid":"Invalid or expired link.","newPassword":"New password","subtitle":"Update your password to keep your account secure.","success":"Password changed successfully!","title":"Change Password","validationSchema":{"confirmPassword":"Confirm password is required","currentPassword":"Current password is required","newPassword":"New password is required","oneOf":"Passwords must match"}},"text":"Log in to your account by entering your username or email and\n          password. <br />\n          If you’ve forgotten your password, use the “Forgot password?” link to\n          reset it.","title":"Welcome Back to Quorixia!","validationSchema":{"email":"Invalid email address","password":"Password is required","requiredEmail":"Email is required"}},"thankyou":{"text":"We appreciate your order, and our team will be in touch <br />\n          shortly to confirm the details.","title":"Thank you for choosing Quorixia!"},"employment":{"EmploymentExpertise":{"button":"Order Employment Service Now","service":"Order Employment","text":"Unlock a world of opportunities with Quorixia’s employment services.\n            From refining your resume to crafting a winning interview strategy,\n            our solutions are designed to help you stand out in the competitive\n            job market. Let us guide you through every step of your job search,\n            providing the tools, insights, and support needed to achieve your\n            career goals confidently.","title":"Explore the Full List <br />\n            of Offerings"},"EmploymentHero":{"text":"At Quorixia, we provide tailored employment <br />\n            solutions designed to help you navigate the <br />\n            job market, sharpen your skills, and secure <br />\n            the right opportunities.","title":"Elevating Your Career Journey <br />\n            with Our Employment Services"},"EmploymentHowWork":{"step1":{"content":"<p>\n                  Our journey together begins with a comprehensive consultation,\n                  virtually or in person. During this session, we dive deep into\n                  your career history, current challenges, and long-term\n                  aspirations. We ask insightful questions to understand your\n                  strengths, preferences, and pain points. This step helps us\n                  clearly understand who you are as a professional and where you\n                  want to go.\n                </p>\n                <h4>What We Cover:</h4>\n                <ul>\n                  <li>Your past experiences and current job search.</li>\n                  <li>Career transitions you’re considering.</li>\n                  <li>Skills and strengths to highlight.</li>\n                  <li>Potential barriers and how to overcome them.</li>\n                </ul>","title":"Step 1: In-Depth Consultation"},"step2":{"content":"<p>\n                  With the insights from our consultation, we create a fully\n                  customised employment strategy designed to meet your unique\n                  needs. This plan outlines actionable steps for your job search\n                  or career development, with detailed timelines and clear\n                  objectives. Our approach also includes tips for personal\n                  branding, market positioning, and presenting yourself as a\n                  standout candidate.\n                </p>\n\n                <h4>What You’ll Receive:</h4>\n                <ul>\n                  <li>Personalised career action plan.</li>\n                  <li>\n                    Resume/CV building strategy and interview preparation.\n                  </li>\n                  <li>\n                    Guidance on networking and leveraging your professional\n                    connections.\n                  </li>\n                  <li>\n                    Industry insights and trends that align with your career\n                    goals.\n                  </li>\n                </ul>","title":"Step 2: Tailored Strategy & Career Planning"},"step3":{"content":"<p>\n                  Once the plan is set, we move into action. Our team provides\n                  direct, hands-on support to help you implement your strategy.\n                  From perfecting your resume to practising mock interviews,\n                  we’re here to equip you with the necessary tools, knowledge,\n                  and confidence. We’ll also provide ongoing feedback, ensuring\n                  your job search is on track.\n                </p>\n\n                <h4>Services During This Stage:</h4>\n                <ul>\n                  <li>Resume/CV and cover letter writing.</li>\n                  <li>\n                    LinkedIn profile optimization and digital presence\n                    enhancement.\n                  </li>\n                  <li>\n                    Mock interviews and role-playing to sharpen your skills.\n                  </li>\n                  <li>Networking strategy support, both online and offline.</li>\n                </ul>","title":"Step 3: Implementation & Hands-On Support"},"step4":{"content":"<p>\n                  Your partnership doesn’t end once you land a job or complete a\n                  specific phase. We believe in continuous, long-term support.\n                  As your career progresses, we stay connected, offering advice\n                  on negotiating job offers, adjusting to new roles, or making\n                  further career moves. We’re your partners for ongoing success\n                  and adapt our strategies as your goals evolve.\n                </p>\n\n                <h4>Long-Term Support Includes:</h4>\n                <ul>\n                  <li>Job offer evaluation and negotiation advice.</li>\n                  <li>\n                    Performance review preparation and career growth strategies.\n                  </li>\n                  <li>\n                    Continuous industry insights to help you stay competitive.\n                  </li>\n                  <li>\n                    Ongoing consultations for future career transitions or\n                    advancements.\n                  </li>\n                </ul>","title":"Step 4: Continuous Guidance & Long-Term Support"},"title":"How We Work"},"EmploymentPricing":{"button":"View Pricing & Packages","text":"We offer flexible pricing options tailored to your specific\n              employment needs. Whether you are looking for a one-time service\n              or a comprehensive employment package, Quorixia provides\n              transparent pricing to fit every stage of your professional\n              journey.","title":"Transparent Pricing, Tailored Packages"},"EmploymentRequest":{"text":"We’re here to provide the personalised support you need to elevate\n            your professional path. Use the form below to reach out, and one of\n            our expert consultants will get back to you promptly. Together,\n            we’ll tailor a strategy that aligns with your aspirations.","title":"Let’s Start Your Career Journey Together"}},"dashboard":{"availableFiles":"Available Files","logout":"Log Out","orders":{"cancelled":"Cancelled","completed":"Completed","date":"Date","files":"Available Files","id":"Order ID","loading":"Loading orders...","method":"Bank Transfer","payment":"Payment Method","service":"Service Purchased","status":"Order Status","total":"Total Price"},"personalData":"Personal Data","PersonalData":{"error":"An error occurred while updating your information.","form":{"address":"Address","button":"Save changes","city":"City","country":"Country","email":"Email","firstName":"First Name","lastName":"Last Name","phone":"Phone","state":"State/Province","street":"Street","zip":"ZIP"},"success":"Your information has been updated successfully.","title":"Personal Information","validationSchema":{"email":"Please provide a valid email address.","required":"This field is required."}},"pleaseLogIn":"Please log in.","recentOrders":"Recent Orders","welcome":"Welcome"},"footer":{"aboutUs":"About Us","blog":"Blog","careers":"Careers","caseStudies":"Case Studies","contactUs":"Contact Us","cookies":"Cookies & Tracking","description":"Personalised HR and employment solutions designed to <br />\n              help you confidently navigate your career journey.","employment":"Employment","glossary":"Glossary","hr":"HR","office":"Office address","platform":"Platform","pricing":"Pricing","privacy":"Privacy Policy","refund":"Refund Policy","registered":"Registered address","resources":"Resources","solutions":"Solutions","stayConnected":"Stay Connected","support":"Support","terms":"Terms of Use","whyQuorixia":"Why Quorixia"},"contact":{"ContactDetails":{"office":"Office Address","registered":"Registered Address","title":"Contact Information"},"ContactHero":{"text":"We’re here to help you on your career journey. Don’t <br />\n            hesitate to reach out if you have questions about our <br />\n            services, want to learn more about how we can assist <br />\n            you, or need personalised HR and employment <br />\n            solutions. Our team is always ready to assist you. Get <br />\n            in touch using the information below, or send us a <br />\n            message through our contact form — we’ll respond as <br />\n            soon as possible.","title":"Get in Touch with Quorixia"},"ContactRequest":{"text":"If you have any questions or inquiries, please use the form below to\n            contact us. Whether you seek career advice, more information about\n            our services, or want to collaborate, we’re here to listen and\n            respond. Simply fill out the form, and one of our team members will\n            reply shortly.","title":"Let’s Start a Conversation"}},"careers":{"CareersBenefits":{"subtitle1":"Flexible Work <br />\n              Environment","subtitle2":"Professional <br />\n              Development","subtitle3":"Work-Life <br />\n              Balance","subtitle4":"Inclusive <br />\n              Culture","text1":"Whether you prefer working from home or in the office, we offer\n              flexible arrangements to suit your lifestyle.","text2":"Continuous learning is critical to success, so we provide\n              opportunities for training, certifications, and career growth.","text3":"We value your well-being, offering paid time off, health benefits,\n              and mental health support to ensure you stay energised and\n              focused.","text4":"Diversity and inclusion are more than buzzwords for us — they are\n              part of who we are. We strive to create an environment where\n              everyone feels valued and empowered to bring their whole self to\n              work.","title":"Employee Benefits"},"CareersHero":{"subtitle":"Shape the Future with Quorixia","text":"Great talent is the key to driving meaningful change. As a growing\n          company transforming <br />\n          how HR and employment services are delivered, we always look for\n          passionate, innovative <br />\n          individuals ready to make an impact. Join us in creating personalised\n          solutions that help <br />\n          professionals reach their full potential. Explore our current openings\n          and become part of a <br />\n          team dedicated to excellence, growth, and collaboration.","title":"Join Our Team"},"CareersHow":{"button":"Submit Your Resume","text":"Interested in joining Quorixia? We’d love to hear from you! Send\n              your resume, cover letter, and a brief description of why you’d be\n              a great fit. Please include the job title you’re applying for in\n              the subject line.","title":"How to Apply"},"CareersLast":{"text":"Quorixia is more than just a company — it’s a place where\n              innovation, collaboration, and passion unite to make a difference\n              in people’s lives. If you’re ready to be part of a growing team\n              that values your contributions and supports your growth, apply\n              today!","title":"Join Us on the Journey <br />\n              to Transform Careers"},"CareersProcess":{"block1":{"text":"Our HR team carefully reviews every application to ensure the\n                best fit.","title":"Initial Application Review"},"block2":{"text":"If selected, you’ll be invited to an introductory phone\n                interview to discuss your experience and career goals.","title":"Phone Interview"},"block3":{"text":"Depending on the role, we may ask you to complete a short skills\n                assessment to showcase your expertise.","title":"Skills Assessment"},"block4":{"text":"Successful candidates will have a final interview with the team\n                to assess cultural fit and discuss how they can contribute to\n                our mission.","title":"Final Interview"},"block5":{"text":"Once we find the right fit, we’ll extend an offer and start the\n                onboarding process to welcome you to the team.","title":"Offer & Onboarding"},"subtitle":"At Quorixia, we believe in a hiring process that is as personalised as\n          our services. Here’s what you can expect:","title":"Our Hiring Process"},"CareersWhy":{"subtitle1":"Our Mission","subtitle2":"Our Culture","text1":"We are driven by a simple mission: to empower individuals to\n              achieve their career goals with personalised HR and employment\n              solutions. When you work with us, you contribute to changing lives\n              and making a real difference in how people shape their\n              professional futures.","text2":"We believe in fostering a supportive, dynamic work environment\n              where creativity and collaboration thrive. At Quorixia, you’ll\n              find a culture that values continuous learning, innovative\n              thinking, and team spirit. We encourage our employees to grow\n              professionally and personally, offering opportunities for skill\n              development and career advancement.","title":"Why Work with Quorixia?"},"CareersWrap":{"subtitle":"Here are our latest opportunities to join the Quorixia team:","title":"Current Job Openings"},"JobPopup":{"desiredPositions":{"label1":"HR Consultant","label2":"Digital Marketing Specialist","label3":"Career Coach","label4":"Client Relationship Manager"},"form":{"email":"Email","fullName":"Full Name","message":"Your Message","phone":"Phone Number","portfolio":"Cover Letter","position":"Choose Service","resume":"Attach Resume","send":"Send"},"subtitle":"Ready to join the Quorixia crew?\n                          <br />\n                          Fill out the form below to submit your application!","thanks":{"text":"Your request has been received successfully!\n                          <br />\n                          One of our team members will get in touch with you\n                          shortly.","title":"THANK YOU!"},"title":"Application form","validationSchema":{"email":"Please provide a correct email address.","required":"This field is required."}}},"cart":{"empty":{"button":"Get started","text":"Browse our selection of HR and employment services to help\n                    boost <br />\n                    your career growth and advance your professional\n                    development.","title":"It seems your cart is currently empty"},"price":"Price","proceed":"Proceed to checkout","quantity":"Quantity","serviceName":"Service Name","subtotal":"Subtotal","title":"Cart","total":"Total"},"pricing":{"AdditionalSolution":{"button":"Download Complete Price List","text":"The fixed-price services listed above are just a glimpse of what\n              Quorixia can provide. We offer a full suite of HR and employment\n              solutions designed to be flexible and personalised to your career\n              path. We have many services to meet your unique needs, from\n              advanced coaching to tailored job search strategies.\n              <br />\n              <br />\n              Download our comprehensive price list for a detailed look at all\n              the options and pricing we offer. We’re dedicated to supporting\n              your career growth, no matter where you are on your journey.","title":"Discover Additional Solutions"},"CareerSolution":{"buy":"Buy","from":"From","price":"Price","subtitle":"Choose the Perfect Package for Your Journey","text":"At Quorixia, we understand that every career path is unique.\n                That’s why we’ve created a range of carefully curated service\n                packages designed to support you at every stage of your\n                professional journey. If you’re just starting, looking to\n                progress in your field, navigating a career transition, or\n                preparing for leadership roles, our packages provide\n                comprehensive, personalised support tailored to your specific\n                goals. Explore our packages below and find the one that fits\n                your career aspirations.","title":"Tailored Career Solutions"},"OrderPopup":{"form":{"email":"Email","fullName":"Full Name","message":"Your Message","phone":"Phone Number","send":"Send"},"text":"Interested in our ready-made package? Please fill out\n                          the form below so our representative can contact you\n                          shortly with all the necessary details.","thanks":{"text":"Your request has been received successfully!\n                          <br />\n                          One of our team members will get in touch with you\n                          shortly.","title":"THANK YOU!"},"title":"Complete Package Request","validationSchema":{"email":"Please provide a correct email address.","required":"This field is required."}},"PricingHero":{"subtitle":"Transparent & Flexible <br />\n          Options for Your Career Needs","text":"The Quorixia crew provides clear, fixed pricing for our HR and\n          employment services, ensuring <br />\n          you know exactly what you’re getting. Whether you need standalone\n          services or want to invest <br />\n          in a comprehensive career support package, our options are designed to\n          fit various needs and <br />\n          budgets. Explore our fixed-price services below, or opt for one of our\n          carefully curated <br />\n          packages that combine multiple offerings to give you the best value.","title":"Quorixia Pricing"},"PricingSecond":{"employment":"Employment Services","hr":"HR Services"}},"thanks_popup":{"text":"Your request has been received successfully!\n                <br />\n                One of our team members will get in touch with you shortly.","title":"THANK YOU!"},"request_popup":{"employmentService":{"label1":"Resume & CV Building","label10":"Personal Branding Consultation","label11":"Job Application Assistance","label12":"Professional Portfolio Development","label13":"Freelance & Contract Job Strategies","label14":"Virtual Interview Coaching","label15":"Workplace Culture Fit Analysis","label16":"Internship & Apprenticeship Search","label17":"Second Career Planning","label18":"Interview Follow-Up Strategy","label19":"Freelancer Profile Optimization","label2":"Interview Preparation","label20":"Employment Law Advice","label21":"Job Offer Evaluation","label3":"Job Search Strategy","label4":"LinkedIn Profile Optimization","label5":"Networking Strategy","label6":"Cover Letter Writing","label7":"Job Market Trends & Insights","label8":"Salary Negotiation Coaching","label9":"Career Transition Support"},"form":{"email":"Email","fullName":"Full Name","message":"Your Message","phone":"Phone Number","send":"Send","service":"Choose Service"},"hrServices":{"label1":"Contract Negotiation & Review","label10":"Talent Development & Skills Assessment","label11":"Diversity & Inclusion Consultation","label12":"Remote Work & Flexibility Planning","label13":"Career Path Planning","label14":"HR Policy Review","label15":"Personal Development Plans","label16":"Conflict Mediation","label17":"Job Role Analysis & Clarification","label18":"Employee Rights Advocacy","label19":"Workplace Culture & Adaptation","label2":"Performance Management","label20":"Mentorship Matching","label21":"Workplace Wellness & Mental Health Support","label3":"Legal HR Consultation","label4":"Workplace Conflict Resolution","label5":"Leadership Coaching","label6":"Compensation & Benefits Consultation","label7":"Exit Strategy & Career Transition Support","label8":"Work-Life Balance Strategies","label9":"Onboarding Support"},"text1":"Get started with our tailored","text2":"today.\n                          Schedule a consultation and take the first step toward\n                          achieving your career goals.","thanks":{"text":" Your request has been received successfully!\n                          <br />\n                          One of our team members will get in touch with you\n                          shortly.","title":"THANK YOU!"},"title":"Ready to Transform Your Professional Journey?","validationSchema":{"email":"Please provide a correct email address.","required":"This field is required."}}}
+{
+  "why": {
+    "WhyCollaborate": {
+      "block1": {
+        "text": "We listen first and strategize second, ensuring we fully\n                understand your needs.",
+        "title": "Deep Listening"
+      },
+      "block2": {
+        "text": "We work with you at every step, creating solutions that reflect\n                your vision.",
+        "title": "Genuine Partnership"
+      },
+      "block3": {
+        "text": "Our commitment doesn’t end with one solution — we’re here to\n                adapt and guide you as your career grows.",
+        "title": "Continuous Support"
+      },
+      "title": "How We Collaborate"
+    },
+    "WhyDifferent": {
+      "block1": {
+        "text": "Every strategy is as unique as your career path. We reject the\n                idea of one-size-fits-all approaches.",
+        "title": "Customization <br />\n                at Every Turn"
+      },
+      "block2": {
+        "text": "We cover multiple industries, ensuring you get advice that’s\n                relevant and actionable.",
+        "title": "Industry-Spanning <br />\n                Expertise"
+      },
+      "block3": {
+        "text": "We don’t just react to challenges — we anticipate and plan for\n                them, so you’re always ahead.",
+        "title": "Proactive Problem <br />\n                Solving"
+      },
+      "button1": "Explore Our HR Solutions",
+      "button2": "Unlock Employment Opportunities",
+      "title": "Why We’re Different"
+    },
+    "WhyFocused": {
+      "text1": "The Quorixia crew measures our success not by the number of\n              clients we serve but by the tangible results we deliver. We are\n              focused on making a real impact on your professional journey. Our\n              approach is designed to provide meaningful outcomes — from\n              securing better opportunities to developing lasting skills that\n              empower you in the long run.",
+      "text2": "We don’t believe in temporary fixes or superficial progress. Every\n              strategy we craft is designed for long-term success, tailored to\n              help you meet your immediate goals and thrive in the future.\n              Whether seeking career advancement, transitioning industries, or\n              enhancing your leadership skills, we ensure that our solutions\n              create measurable growth that aligns with your professional\n              aspirations.",
+      "title": "Focused on Outcomes that Matter"
+    },
+    "WhyGoals": {
+      "text": "At Quorixia, the foundation of our success is our client-centric\n              approach. We focus entirely on you — your ambitions, challenges,\n              and growth. From the moment we start working together, we make\n              your goals our mission. We take the time to truly understand your\n              unique career trajectory and create tailored strategies aligned\n              with your objectives.\n              <br />\n              <br />\n              Our process is collaborative and designed to evolve with you. We\n              don’t believe in generic solutions or automated methods. Each\n              interaction is personalised and deliberate, ensuring we work\n              alongside you, not just for you. Your input is at the heart of\n              every solution we develop, and we adapt as your career progresses,\n              offering continuous support that evolves as your goals do.",
+      "title": "Your Goals Come First — Always"
+    },
+    "WhyHero": {
+      "subtitle": "A Fresh, Professional <br />\n          Perspective on HR Solutions",
+      "subtitle2": "What Makes <br />\n            Us Unique",
+      "text1": "At Quorixia, we do things differently. Though we are a young company,\n          we bring a powerful combination <br />\n          of fresh energy, innovative thinking, and deep experience from a team\n          of seasoned professionals.\n          <br />\n          <br />\n          What sets us apart is our ability to blend the agility of a new firm\n          with the expertise of those who’ve spent <br />\n          years mastering their craft. Our high-quality, personalised solutions\n          are designed to make a meaningful <br />\n          impact on your career journey.\n          <br />\n          <br />\n          Whether navigating a complex transition, seeking career advancement,\n          or seeking guidance in a new <br />\n          field, Quorixia offers a tailored approach, ensuring your unique goals\n          are always the priority. We provide <br />\n          more than just advice — we craft the blueprint for your success.",
+      "text2": "We understand that every career journey is personal and unique. We\n            are committed to offering fully customised HR and employment\n            solutions, listening carefully to your needs, assessing your goals,\n            and developing a tailored plan that aligns perfectly with your\n            aspirations.\n            <br />\n            <br />\n            Our crew specialises in creating bespoke strategies for\n            professionals at all stages, whether they’re just starting out,\n            shifting industries, or preparing for senior leadership roles. Our\n            team draws on years of expertise across various industries, giving\n            us the knowledge to provide the proper guidance in any scenario. We\n            aren’t just consultants—we’re dedicated partners, helping you\n            navigate the twists and turns of your career with confidence.",
+      "title": "Why Choose Quorixia?"
+    },
+    "WhyLast": {
+      "button": "Discover Our Approach",
+      "text": "Explore the values, passion, and dedication behind Quorixia. Learn\n              more about how we’re shaping careers and guiding individuals to\n              success with every step.",
+      "title": "Curious to Know What Drives Us?"
+    },
+    "WhyResult": {
+      "block1": {
+        "text": "We deliver accurate, measurable results from job offers to\n                skill-building.",
+        "title": "Tangible Progress"
+      },
+      "block2": {
+        "text": "We focus on solutions that continue to benefit you far into the\n                future.",
+        "title": "Long-Term Success"
+      },
+      "block3": {
+        "": "Our strategies are designed to drive meaningful career\n                development.",
+        "title": "Impactful Growth"
+      },
+      "title": "Our Commitment to Results"
+    }
+  },
+  "checkout": {
+    "countryDescription": "* An email containing payment instructions,\n                                including our bank details, will be sent shortly\n                                after placing an order. This email will also\n                                include a summary of your order details.",
+    "form": {
+      "address": "Address",
+      "city": "City",
+      "country": "Country",
+      "email": "Email",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "phone": "Phone Number",
+      "state": "State/Province",
+      "street": "Street",
+      "zip": "ZIP"
+    },
+    "pageTitle": "Billing Information",
+    "payment": {
+      "name": "Bank Transfer*",
+      "text": "* You will soon receive an email with payment\n                              instructions, including our bank details and a\n                              summary of your order details.",
+      "title": "Payment Method"
+    },
+    "privacy": {
+      "name": "Privacy Policy",
+      "text": "We will utilise your personal information to\n                              process your order, improve your browsing\n                              experience on our website, and perform other\n                              purposes detailed in our"
+    },
+    "refund": {
+      "name": "Refund Policy",
+      "text": "I have read and agree to the"
+    },
+    "submit": "Submit",
+    "terms": {
+      "name": "Terms and Conditions",
+      "text": "I have read and agree to the website's"
+    },
+    "total": "Total",
+    "validationSchema": {
+      "email": "Please provide a valid email address.",
+      "required": "This field is required.",
+      "terms": "You must accept the terms and conditions."
+    }
+  },
+  "register": {
+    "form": {
+      "age": "I am over 18 years old, and I have read and accepted all\n                      of the above",
+      "agree": "I agree to the",
+      "button": "Join Quorixia",
+      "confirmPassword": "Confirm Password",
+      "email": "Email",
+      "firstName": "First name",
+      "lastName": "Last Name",
+      "password": "Password",
+      "phone": "Phone number",
+      "privacy": "Privacy Policy",
+      "terms": "Terms and Conditions",
+      "username": "Username"
+    },
+    "subtitle": "Register to gain access to tailored career support, stay informed\n            about the latest job <br />\n            opportunities, and receive expert guidance to help you reach your\n            professional goals.",
+    "success": {
+      "text": "Your account has been successfully created. A confirmation\n                    email has been sent to your inbox.\n                    <br />\n                    Welcome aboard!",
+      "title": "Congratulations!"
+    },
+    "title": "Join the Quorixia Community",
+    "validationSchema": {
+      "age": "You must accept age",
+      "email": "Invalid email address",
+      "oneOf": "Passwords must match",
+      "policy": "You must accept the privacy policy",
+      "required": "This field is required",
+      "terms": "You must accept the terms and conditions"
+    }
+  },
+  "default": {},
+  "header": {
+    "aboutUs": "About Us",
+    "account": "Account",
+    "blog": "Blog",
+    "careers": "Careers",
+    "caseStudies": "Case Studies",
+    "contactUs": "Contact Us",
+    "employment": "Employment",
+    "glossary": "Glossary",
+    "hr": "HR",
+    "login": "Log in",
+    "pricing": "Pricing",
+    "signup": "Sign up",
+    "whyQuorixia": "Why Quorixia"
+  },
+  "connect_form": {
+    "expertiseLevel": {
+      "label1": "Entry-Level",
+      "label2": "Mid-Level",
+      "label3": "Senior-Level"
+    },
+    "formFields": {
+      "additionalInfo": "Additional Information",
+      "coreCompetencies": "Core Competencies",
+      "coverLetter": "Cover Letter",
+      "desiredRole": "Desired Job Role",
+      "email": "Email",
+      "expertiseLevel": "Level of Expertise",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "linkedInProfile": "LinkedIn Profile Link",
+      "phone": "Phone Number",
+      "resume": "Attach Resume",
+      "salaryRange": "Expected Salary Range",
+      "sector": "Sector of Interest",
+      "startDate": "Earliest Start Date",
+      "submit": "Submit",
+      "terms1": "I have read and agree to the",
+      "terms2": "Terms of Use",
+      "terms3": "and",
+      "terms4": "Privacy Policy",
+      "workLocation": "Preferred Work Location"
+    },
+    "jobRole": {
+      "label1": "Finance & Accounting",
+      "label10": "Sales & Business Development",
+      "label2": "Administrative Support",
+      "label3": "Marketing & Communications",
+      "label4": "Engineering & Construction",
+      "label5": "Food & Beverage",
+      "label6": "Healthcare & Biotechnology",
+      "label7": "Hospitality & Tourism",
+      "label8": "Human Resources & Talent Management",
+      "label9": "Information Technology & Software"
+    },
+    "validationSchema": {
+      "firstName": "First Name is required",
+      "invalidEmail": "Invalid email address",
+      "invalidURL": "Invalid URL",
+      "lastName": "Last Name is required",
+      "requiredEmail": "Email is required"
+    }
+  },
+  "cases": {
+    "CasesHero": {
+      "text": "At Quorixia, our approach goes beyond offering <br />\n            advice — we provide tailored solutions that lead to <br />\n            measurable outcomes. Below, detailed case studies <br />\n            highlight how we’ve empowered individuals to <br />\n            overcome challenges, navigate career transitions, and <br />\n            reach new heights in their professional journeys. Each <br />\n            story represents our commitment to personalised, <br />\n            client-centred success.",
+      "title": "Real Success Stories: How <br />\n            Quorixia Transforms Careers"
+    }
+  },
+  "blog": {
+    "BlogHero": {
+      "text": "We believe that knowledge is key to unlocking your <br />\n            professional potential. Our blog is filled with expert <br />\n            tips, industry insights, and actionable advice to help <br />\n            you confidently navigate your career journey. Stay <br />\n            informed, stay ahead, and take control of your <br />\n            future with Quorixia.",
+      "title": " Quorixia Blog: Your <br />\n            Guide to Career Success"
+    },
+    "BlogSlider": { "read": "Read now", "title": "Featured Blog Topics" }
+  },
+  "hr": {
+    "HrExpertise": {
+      "button": "Order HR Service Now",
+      "service": "HR Service",
+      "text": "No two career paths are alike. Our range of HR solutions is designed\n            to address your issues, whether navigating a career transition,\n            enhancing your leadership skills, or seeking personalised HR advice.\n            Focusing on customised strategies and one-on-one support, we offer\n            services that empower you to take control of your professional\n            future.",
+      "title": "Discover Our HR Expertise"
+    },
+    "HrHero": {
+      "text": "At Quorixia, we specialise in providing <br />\n            personalised HR solutions to help you overcome <br />\n            career challenges, navigate transitions, and <br />\n            confidently achieve your goals.",
+      "title": "Transforming Your Professional Path <br />\n            with Tailored HR Solutions"
+    },
+    "HrPersonalisedApproach": {
+      "text": "At Quorixia, we take a human-centred approach to HR services,\n              focusing on building solid relationships with each of our clients.\n              We understand that your professional journey is personal, so we\n              tailor every solution to fit your specific needs. For career\n              advancement, navigating challenges at work, or transitioning into\n              a new role, we craft strategies designed around your individual\n              goals, skills, and aspirations.",
+      "title": "Personalised Approach"
+    },
+    "HrPricing": {
+      "button": "View Pricing & Packages",
+      "text": "We offer clear and flexible pricing to meet your specific needs.\n              Whether you’re looking for one-time consultations or ongoing HR\n              support, our service packages are designed to fit your career\n              goals and budget. Explore our detailed pricing options to find the\n              right package for you.",
+      "title": "Transparent Pricing, Tailored Packages"
+    },
+    "HrRequest": {
+      "text": "Our experts bring decades of collective HR experience to guide you\n            with empathy, precision, and care. You won’t just get advice –\n            you’ll get a partner dedicated to your success.",
+      "title": "Unlock Your Personalised HR Strategy"
+    }
+  },
+  "about": {
+    "AboutGuiding": {
+      "block1": {
+        "text": "The foundation of our partnership begins with an in-depth\n                consultation. We take the time to explore your background, your\n                aspirations, and the challenges you’re currently facing.",
+        "title": "Consultation"
+      },
+      "block2": {
+        "text": "Once we’ve gained a comprehensive understanding of your unique\n                situation, we craft a personalised strategy designed to help you\n                achieve your goals, whether it’s navigating a career transition,\n                negotiating a job offer, or preparing for a leadership role.",
+        "title": "Strategy Development"
+      },
+      "block3": {
+        "text": "Our work doesn’t stop with strategy creation. We provide\n                continuous support, adjusting our approach to ensure you stay on\n                track, empowered, and confident in every decision.",
+        "title": "Ongoing Support"
+      },
+      "button": "Read Success Stories",
+      "subtitle": "At Quorixia, we understand that no two career paths are alike. This is\n          why we approach each client with a highly personalised strategy,\n          ensuring our solutions align with your goals and needs. Our process is\n          simple yet profound: we listen, we learn, and we create.",
+      "title": "Guiding Careers with Precision and Passion"
+    },
+    "AboutHero": {
+      "subtitle": "Quorixia’s Dedication to Your Growth",
+      "text": "The Quorixia team views every career as a dynamic, evolving journey\n          full of potential and <br />\n          opportunity. We’re here to help you navigate the complexities of your\n          professional path with <br />\n          confidence and clarity. As a team of dedicated HR and employment\n          experts, we aim to <br />\n          provide personalised guidance and tailored solutions that align with\n          your unique goals.",
+      "text2": "We approach every client relationship with fresh eyes and an open\n          mind. By deeply understanding your specific needs, ambitions, and\n          challenges, we can craft bespoke strategies that help you achieve your\n          current objectives and lay the foundation for future success.",
+      "title": "Who We Are"
+    },
+    "AboutLast": {
+      "button": "Why Choose Quorixia?",
+      "text": "Curious about what sets Quorixia apart from other HR firms?\n              Explore our unique approach and discover how we create\n              personalised solutions tailored to your needs.",
+      "title": "Ready to Learn More About Why Quorixia?"
+    },
+    "AboutPeople": {
+      "text": "Our strength lies in our people. We are passionate HR and\n              employment professionals with extensive experience across diverse\n              industries. From tech to finance, creative sectors to healthcare,\n              our collective expertise spans many fields, allowing us to offer\n              you comprehensive and insightful career solutions. <br />\n              <br />\n              What sets our team apart is our deep commitment to your growth. We\n              don’t just provide you with advice — we invest in your long-term\n              success. Our experts are skilled in identifying the opportunities,\n              trends, and challenges unique to your industry, enabling us to\n              craft strategies that are not only practical but transformative.\n              <br />\n              <br />\n              Whether seeking guidance for a career shift, leadership coaching,\n              or job market navigation, our team brings the knowledge,\n              experience, and enthusiasm to help you thrive. We are more than\n              advisors; we are your partners in growth, guiding you through\n              every phase of your career with precision and care.",
+      "title": "The People Behind Quorixia"
+    },
+    "AboutPrinciples": {
+      "block1": {
+        "text": "We believe in being genuine — both in how we communicate and the\n              solutions we deliver. Our team is dedicated to offering honest,\n              transparent advice that aligns with your career aspirations.",
+        "title": "Authenticity"
+      },
+      "block2": {
+        "text": "The path to success is rarely a straight line. We help you\n              navigate the unexpected with resilience, support you in overcoming\n              challenges, and seize new opportunities with determination.",
+        "title": "Resilience"
+      },
+      "block3": {
+        "text": "We take a forward-thinking approach, anticipating future trends in\n              the job market to position you ahead of the curve. We ensure your\n              career remains adaptable and relevant by staying ahead of industry\n              changes.",
+        "title": "Vision"
+      },
+      "block4": {
+        "text": "Our goal is to empower you to take control of your professional\n              journey. We equip you with the knowledge, tools, and confidence to\n              make impactful career decisions that align with your goals.",
+        "title": "Empowerment"
+      },
+      "block5": {
+        "text": "Success is rarely achieved in isolation. We work closely with you,\n              building a collaborative relationship that ensures every solution\n              is co-created and designed for your unique needs.",
+        "title": "Collaboration"
+      },
+      "subtitle": "At the heart of Quorixia’s approach are values that reflect our\n            commitment to creating meaningful, transformative career experiences\n            for every individual. These principles shape everything we do, from\n            how we work with clients to the strategies we develop for\n            long-lasting success.",
+      "title": "Principles that <br />\n            Empower and Inspire"
+    },
+    "AboutSecond": {
+      "text": "Your success is more than a destination — it’s the sum of every\n              decision and action along the way. At Quorixia, we prioritise a\n              long-term partnership that empowers you to make informed,\n              confident choices throughout your professional journey.",
+      "title": "Our Promise:"
+    }
+  },
+  "home": {
+    "HomeHero": {
+      "subtitle": "Shape <br />\n          What’s Next",
+      "text": "At Quorixia, your career is more than a job — it’s your personal\n          journey. We offer bespoke HR and employment <br />\n          solutions, expertly crafted to guide you every step of the way.\n          Whether making bold career moves or seeking <br />\n          steady progression, we are here to help you unlock your full potential\n          with personalised, human-centred support.",
+      "title": "Redefine Your Career"
+    },
+    "HomeRequest": {
+      "subtitle": "Your Journey Starts Here",
+      "text": "Whether you’re looking for HR advice or ready to explore new\n            employment opportunities, Quorixia is here to support you at every\n            stage of your career. Let’s work together to achieve your goals.",
+      "title": "Ready to Take the Next Step?"
+    },
+    "HomeResources": {
+      "button": "Visit Our Resources",
+      "subtitle": "Empowering You With Knowledge",
+      "text": "Your career doesn’t come with a manual, but Quorixia’s resources are\n          the next best thing. Stay ahead of the curve with expert insights,\n          guides, and practical advice crafted by HR professionals. Our blog,\n          case studies, and glossary help you stay informed and inspired, giving\n          you the tools to navigate your career confidently.",
+      "title": "Career Resources"
+    },
+    "HomeSecond": {
+      "button1": "Explore Our HR Solutions",
+      "button2": "Unlock Employment Opportunities",
+      "text": "We don’t just provide HR services — we empower you to take full\n              control of your work life. Be it a career transition, progressing\n              in your current field, or embarking on a new path, our solutions\n              are crafted to fit your personal journey.",
+      "titl": "Take Charge of Your Future"
+    },
+    "HomeSolutionBlack": {
+      "button": "Unlock Your Personalised HR Strategy",
+      "content": "<h3 >Our Solutions</h3>\n          <h2 >What Makes Us Stand Out:</h2>\n          <p >\n            Navigating the complexities of HR can be overwhelming. That’s where\n            Quorixia steps in with a full range of personalised HR services that\n            go beyond the basics. Whether you’re negotiating contracts, seeking\n            legal advice, or working on personal development, our solutions are\n            crafted with your success in mind. Each service is tailored to meet\n            the unique challenges you face.\n          </p>\n          <h4 >Featured HR Services</h4>\n          <ul >\n            <li>\n              <b>Contract Negotiation:</b> We help you navigate and secure the\n              best terms for your employment agreements.\n            </li>\n            <li>\n              <b>Legal HR Consultation:</b> Expert advice on employment rights\n              and workplace regulations.\n            </li>\n            <li>\n              <b>Personalized Career Coaching:</b> One-on-one coaching to\n              strategize your career growth.\n            </li>\n            <li>\n              <b>Performance Review Support:</b> Guidance on how to excel in\n              your performance evaluations.\n            </li>\n            <li>\n              <b>Conflict Resolution:</b> Assistance in resolving workplace\n              disputes effectively.\n            </li>\n            <li>\n              <b>Work-Life Balance Strategies:</b> Tailored approaches to help\n              you manage your professional and personal life.\n            </li>\n            <li>\n              <b>Compensation Benchmarking:</b> Insights on how to ensure you’re\n              compensated fairly within your industry.\n            </li>\n            <li>\n              <b>Exit Strategy Planning:</b> Guidance on transitioning out of a\n              role smoothly and on your own terms.\n            </li>\n            <li>\n              <b>Leadership Development:</b> Support for individuals stepping\n              into or aiming for leadership roles.\n            </li>\n            <li>\n              <b>Employment Law Updates:</b> Stay informed about the latest\n              regulations that affect your rights and opportunities.\n            </li>\n          </ul>"
+    },
+    "HomeSolutionWhite": {
+      "button": "Take the Next Step with Confidence",
+      "content": "<h3 >Our Solutions</h3>\n          <h2 >\n            Employment Services to Elevate Your Career\n          </h2>\n          <p >\n            Standing out in today’s competitive job market requires more than\n            just qualifications. Quorixia offers employment services that help\n            you highlight your strengths and align your career aspirations with\n            real-world opportunities. From resumes to interview coaching, we\n            provide everything you need to stay one step ahead.\n          </p>\n          <h4 >Featured Employment Services</h4>\n          <ul >\n            <li>\n              <b>CV Building:</b> Custom resumes designed to showcase your\n              skills and achievements.\n            </li>\n            <li>\n              <b>Interview Coaching:</b> Expert guidance on mastering interviews\n              with confidence.\n            </li>\n            <li>\n              <b>Job Market Navigation:</b> We help you identify and pursue the\n              best opportunities for your career.\n            </li>\n            <li>\n              <b>LinkedIn Profile Optimization:</b> Make a digital solid first\n              impression with a standout profile.\n            </li>\n            <li>\n              <b>Job Application Assistance:</b> Tailored support for completing\n              job applications that get noticed.\n            </li>\n            <li>\n              <b>Networking Strategy:</b> Learn how to build and expand your\n              professional network.\n            </li>\n            <li>\n              <b>Portfolio Development:</b> Showcase your work with a\n              professionally curated portfolio.\n            </li>\n            <li>\n              <b>Cover Letter Crafting:</b> Write compelling cover letters that\n              resonate with employers.\n            </li>\n            <li>\n              <b>Career Transition Support:</b> Smoothly switch industries or\n              roles with expert advice.\n            </li>\n            <li>\n              <b>Salary Negotiation:</b> Maximise your compensation by\n              negotiating from a position of strength.\n            </li>\n          </ul>"
+    },
+    "HomeStand": {
+      "block1": {
+        "text": "While Quorixia is a young, forward-thinking company, our team of\n                seasoned HR experts carries decades of rich, diverse experience\n                across various industries. We combine a powerful blend of\n                insight, creativity, and real-world expertise.",
+        "title": "Years of Expertise, Fresh Perspective"
+      },
+      "block2": {
+        "text": "At Quorixia, we don’t believe in one-size-fits-all approaches.\n                Your career is a story in progress, full of potential and unique\n                challenges. That’s why we take the time to listen carefully and\n                understand the depth of your professional aspirations.",
+        "title": "Precision-Crafted Solutions, Tailored to You"
+      },
+      "block3": {
+        "text": "Our approach goes beyond standard consulting. It’s about\n                building a deep partnership rooted in trust, compassion, and\n                mutual growth. The Quorixia team sees every interaction as an\n                opportunity to inspire confidence, unlock potential, and drive\n                transformation.",
+        "title": "Empathy and Empowerment at the Core"
+      },
+      "button": "See Why Clients Trust Quorixia",
+      "title": "What Makes Us Stand Out:"
+    },
+    "HomeWhy": {
+      "subtitle": "Fueling Your Ambition with Expert Guidance",
+      "text": "Our crew doesn’t see you as just another client. You are a\n              professional with dreams, goals, and aspirations. With over a\n              decade of expertise in the HR and employment space, we specialise\n              in designing customised strategies that put you at the centre of\n              your career story.",
+      "title": "Why\n              <br />\n              Quorixia?"
+    }
+  },
+  "glossary": {
+    "GlossaryHero": {
+      "subtitle": "Essential Terms to Know",
+      "text": "Navigating the complexities of HR and employment can involve\n          industry-specific <br />\n          terminology that isn’t always easy to understand. If you are new to\n          the job market or a <br />\n          seasoned professional, our glossary provides clear definitions of key\n          HR terms to keep you <br />\n          informed and empowered. From A to Z, this guide will help you\n          understand the language <br />\n          that drives modern HR practices and employment processes.",
+      "title": "The Quorixia HR & Employment Glossary:"
+    }
+  },
+  "login": {
+    "forgot": {
+      "button": "Reset now",
+      "error": "An error occurred. Please try again.",
+      "subtitle": "Please provide your username or email address.\n          <br />\n          We’ll send you a link to create a new password via email.",
+      "success": "Reset link was sent to your email!",
+      "title": "Forgot Your Password?"
+    },
+    "form": {
+      "button": "Log in",
+      "email": "Email",
+      "forgot": "Forgot password?",
+      "password": "Password"
+    },
+    "reset": {
+      "button": "Set new password",
+      "confirmPassword": "Confirm Password",
+      "currentPassword": "Current Password",
+      "invalid": "Invalid or expired link.",
+      "newPassword": "New password",
+      "subtitle": "Update your password to keep your account secure.",
+      "success": "Password changed successfully!",
+      "title": "Change Password",
+      "validationSchema": {
+        "confirmPassword": "Confirm password is required",
+        "currentPassword": "Current password is required",
+        "newPassword": "New password is required",
+        "oneOf": "Passwords must match"
+      }
+    },
+    "text": "Log in to your account by entering your username or email and\n          password. <br />\n          If you’ve forgotten your password, use the “Forgot password?” link to\n          reset it.",
+    "title": "Welcome Back to Quorixia!",
+    "validationSchema": {
+      "email": "Invalid email address",
+      "password": "Password is required",
+      "requiredEmail": "Email is required"
+    }
+  },
+  "thankyou": {
+    "text": "We appreciate your order, and our team will be in touch <br />\n          shortly to confirm the details.",
+    "title": "Thank you for choosing Quorixia!"
+  },
+  "employment": {
+    "EmploymentExpertise": {
+      "button": "Order Employment Service Now",
+      "service": "Order Employment",
+      "text": "Unlock a world of opportunities with Quorixia’s employment services.\n            From refining your resume to crafting a winning interview strategy,\n            our solutions are designed to help you stand out in the competitive\n            job market. Let us guide you through every step of your job search,\n            providing the tools, insights, and support needed to achieve your\n            career goals confidently.",
+      "title": "Explore the Full List <br />\n            of Offerings"
+    },
+    "EmploymentHero": {
+      "text": "At Quorixia, we provide tailored employment <br />\n            solutions designed to help you navigate the <br />\n            job market, sharpen your skills, and secure <br />\n            the right opportunities.",
+      "title": "Elevating Your Career Journey <br />\n            with Our Employment Services"
+    },
+    "EmploymentHowWork": {
+      "step1": {
+        "content": "<p>\n                  Our journey together begins with a comprehensive consultation,\n                  virtually or in person. During this session, we dive deep into\n                  your career history, current challenges, and long-term\n                  aspirations. We ask insightful questions to understand your\n                  strengths, preferences, and pain points. This step helps us\n                  clearly understand who you are as a professional and where you\n                  want to go.\n                </p>\n                <h4>What We Cover:</h4>\n                <ul>\n                  <li>Your past experiences and current job search.</li>\n                  <li>Career transitions you’re considering.</li>\n                  <li>Skills and strengths to highlight.</li>\n                  <li>Potential barriers and how to overcome them.</li>\n                </ul>",
+        "title": "Step 1: In-Depth Consultation"
+      },
+      "step2": {
+        "content": "<p>\n                  With the insights from our consultation, we create a fully\n                  customised employment strategy designed to meet your unique\n                  needs. This plan outlines actionable steps for your job search\n                  or career development, with detailed timelines and clear\n                  objectives. Our approach also includes tips for personal\n                  branding, market positioning, and presenting yourself as a\n                  standout candidate.\n                </p>\n\n                <h4>What You’ll Receive:</h4>\n                <ul>\n                  <li>Personalised career action plan.</li>\n                  <li>\n                    Resume/CV building strategy and interview preparation.\n                  </li>\n                  <li>\n                    Guidance on networking and leveraging your professional\n                    connections.\n                  </li>\n                  <li>\n                    Industry insights and trends that align with your career\n                    goals.\n                  </li>\n                </ul>",
+        "title": "Step 2: Tailored Strategy & Career Planning"
+      },
+      "step3": {
+        "content": "<p>\n                  Once the plan is set, we move into action. Our team provides\n                  direct, hands-on support to help you implement your strategy.\n                  From perfecting your resume to practising mock interviews,\n                  we’re here to equip you with the necessary tools, knowledge,\n                  and confidence. We’ll also provide ongoing feedback, ensuring\n                  your job search is on track.\n                </p>\n\n                <h4>Services During This Stage:</h4>\n                <ul>\n                  <li>Resume/CV and cover letter writing.</li>\n                  <li>\n                    LinkedIn profile optimization and digital presence\n                    enhancement.\n                  </li>\n                  <li>\n                    Mock interviews and role-playing to sharpen your skills.\n                  </li>\n                  <li>Networking strategy support, both online and offline.</li>\n                </ul>",
+        "title": "Step 3: Implementation & Hands-On Support"
+      },
+      "step4": {
+        "content": "<p>\n                  Your partnership doesn’t end once you land a job or complete a\n                  specific phase. We believe in continuous, long-term support.\n                  As your career progresses, we stay connected, offering advice\n                  on negotiating job offers, adjusting to new roles, or making\n                  further career moves. We’re your partners for ongoing success\n                  and adapt our strategies as your goals evolve.\n                </p>\n\n                <h4>Long-Term Support Includes:</h4>\n                <ul>\n                  <li>Job offer evaluation and negotiation advice.</li>\n                  <li>\n                    Performance review preparation and career growth strategies.\n                  </li>\n                  <li>\n                    Continuous industry insights to help you stay competitive.\n                  </li>\n                  <li>\n                    Ongoing consultations for future career transitions or\n                    advancements.\n                  </li>\n                </ul>",
+        "title": "Step 4: Continuous Guidance & Long-Term Support"
+      },
+      "title": "How We Work"
+    },
+    "EmploymentPricing": {
+      "button": "View Pricing & Packages",
+      "text": "We offer flexible pricing options tailored to your specific\n              employment needs. Whether you are looking for a one-time service\n              or a comprehensive employment package, Quorixia provides\n              transparent pricing to fit every stage of your professional\n              journey.",
+      "title": "Transparent Pricing, Tailored Packages"
+    },
+    "EmploymentRequest": {
+      "text": "We’re here to provide the personalised support you need to elevate\n            your professional path. Use the form below to reach out, and one of\n            our expert consultants will get back to you promptly. Together,\n            we’ll tailor a strategy that aligns with your aspirations.",
+      "title": "Let’s Start Your Career Journey Together"
+    }
+  },
+  "dashboard": {
+    "availableFiles": "Available Files",
+    "logout": "Log Out",
+    "orders": {
+      "cancelled": "Cancelled",
+      "completed": "Completed",
+      "date": "Date",
+      "files": "Available Files",
+      "id": "Order ID",
+      "loading": "Loading orders...",
+      "method": "Bank Transfer",
+      "payment": "Payment Method",
+      "service": "Service Purchased",
+      "status": "Order Status",
+      "total": "Total Price"
+    },
+    "personalData": "Personal Data",
+    "PersonalData": {
+      "error": "An error occurred while updating your information.",
+      "form": {
+        "address": "Address",
+        "button": "Save changes",
+        "city": "City",
+        "country": "Country",
+        "email": "Email",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "phone": "Phone",
+        "state": "State/Province",
+        "street": "Street",
+        "zip": "ZIP"
+      },
+      "success": "Your information has been updated successfully.",
+      "title": "Personal Information",
+      "validationSchema": {
+        "email": "Please provide a valid email address.",
+        "required": "This field is required."
+      }
+    },
+    "pleaseLogIn": "Please log in.",
+    "recentOrders": "Recent Orders",
+    "welcome": "Welcome"
+  },
+  "footer": {
+    "aboutUs": "About Us",
+    "blog": "Blog",
+    "careers": "Careers",
+    "caseStudies": "Case Studies",
+    "contactUs": "Contact Us",
+    "cookies": "Cookies & Tracking",
+    "description": "Personalised HR and employment solutions designed to <br />\n              help you confidently navigate your career journey.",
+    "employment": "Employment",
+    "glossary": "Glossary",
+    "hr": "HR",
+    "office": "Office address",
+    "platform": "Platform",
+    "pricing": "Pricing",
+    "privacy": "Privacy Policy",
+    "refund": "Refund Policy",
+    "registered": "Registered address",
+    "resources": "Resources",
+    "solutions": "Solutions",
+    "stayConnected": "Stay Connected",
+    "support": "Support",
+    "terms": "Terms of Use",
+    "whyQuorixia": "Why Quorixia"
+  },
+  "contact": {
+    "ContactDetails": {
+      "office": "Office Address",
+      "registered": "Registered Address",
+      "title": "Contact Information"
+    },
+    "ContactHero": {
+      "text": "We’re here to help you on your career journey. Don’t <br />\n            hesitate to reach out if you have questions about our <br />\n            services, want to learn more about how we can assist <br />\n            you, or need personalised HR and employment <br />\n            solutions. Our team is always ready to assist you. Get <br />\n            in touch using the information below, or send us a <br />\n            message through our contact form — we’ll respond as <br />\n            soon as possible.",
+      "title": "Get in Touch with Quorixia"
+    },
+    "ContactRequest": {
+      "text": "If you have any questions or inquiries, please use the form below to\n            contact us. Whether you seek career advice, more information about\n            our services, or want to collaborate, we’re here to listen and\n            respond. Simply fill out the form, and one of our team members will\n            reply shortly.",
+      "title": "Let’s Start a Conversation"
+    }
+  },
+  "careers": {
+    "CareersBenefits": {
+      "subtitle1": "Flexible Work <br />\n              Environment",
+      "subtitle2": "Professional <br />\n              Development",
+      "subtitle3": "Work-Life <br />\n              Balance",
+      "subtitle4": "Inclusive <br />\n              Culture",
+      "text1": "Whether you prefer working from home or in the office, we offer\n              flexible arrangements to suit your lifestyle.",
+      "text2": "Continuous learning is critical to success, so we provide\n              opportunities for training, certifications, and career growth.",
+      "text3": "We value your well-being, offering paid time off, health benefits,\n              and mental health support to ensure you stay energised and\n              focused.",
+      "text4": "Diversity and inclusion are more than buzzwords for us — they are\n              part of who we are. We strive to create an environment where\n              everyone feels valued and empowered to bring their whole self to\n              work.",
+      "title": "Employee Benefits"
+    },
+    "CareersHero": {
+      "subtitle": "Shape the Future with Quorixia",
+      "text": "Great talent is the key to driving meaningful change. As a growing\n          company transforming <br />\n          how HR and employment services are delivered, we always look for\n          passionate, innovative <br />\n          individuals ready to make an impact. Join us in creating personalised\n          solutions that help <br />\n          professionals reach their full potential. Explore our current openings\n          and become part of a <br />\n          team dedicated to excellence, growth, and collaboration.",
+      "title": "Join Our Team"
+    },
+    "CareersHow": {
+      "button": "Submit Your Resume",
+      "text": "Interested in joining Quorixia? We’d love to hear from you! Send\n              your resume, cover letter, and a brief description of why you’d be\n              a great fit. Please include the job title you’re applying for in\n              the subject line.",
+      "title": "How to Apply"
+    },
+    "CareersLast": {
+      "text": "Quorixia is more than just a company — it’s a place where\n              innovation, collaboration, and passion unite to make a difference\n              in people’s lives. If you’re ready to be part of a growing team\n              that values your contributions and supports your growth, apply\n              today!",
+      "title": "Join Us on the Journey <br />\n              to Transform Careers"
+    },
+    "CareersProcess": {
+      "block1": {
+        "text": "Our HR team carefully reviews every application to ensure the\n                best fit.",
+        "title": "Initial Application Review"
+      },
+      "block2": {
+        "text": "If selected, you’ll be invited to an introductory phone\n                interview to discuss your experience and career goals.",
+        "title": "Phone Interview"
+      },
+      "block3": {
+        "text": "Depending on the role, we may ask you to complete a short skills\n                assessment to showcase your expertise.",
+        "title": "Skills Assessment"
+      },
+      "block4": {
+        "text": "Successful candidates will have a final interview with the team\n                to assess cultural fit and discuss how they can contribute to\n                our mission.",
+        "title": "Final Interview"
+      },
+      "block5": {
+        "text": "Once we find the right fit, we’ll extend an offer and start the\n                onboarding process to welcome you to the team.",
+        "title": "Offer & Onboarding"
+      },
+      "subtitle": "At Quorixia, we believe in a hiring process that is as personalised as\n          our services. Here’s what you can expect:",
+      "title": "Our Hiring Process"
+    },
+    "CareersWhy": {
+      "subtitle1": "Our Mission",
+      "subtitle2": "Our Culture",
+      "text1": "We are driven by a simple mission: to empower individuals to\n              achieve their career goals with personalised HR and employment\n              solutions. When you work with us, you contribute to changing lives\n              and making a real difference in how people shape their\n              professional futures.",
+      "text2": "We believe in fostering a supportive, dynamic work environment\n              where creativity and collaboration thrive. At Quorixia, you’ll\n              find a culture that values continuous learning, innovative\n              thinking, and team spirit. We encourage our employees to grow\n              professionally and personally, offering opportunities for skill\n              development and career advancement.",
+      "title": "Why Work with Quorixia?"
+    },
+    "CareersWrap": {
+      "subtitle": "Here are our latest opportunities to join the Quorixia team:",
+      "title": "Current Job Openings"
+    },
+    "JobPopup": {
+      "desiredPositions": {
+        "label1": "HR Consultant",
+        "label2": "Digital Marketing Specialist",
+        "label3": "Career Coach",
+        "label4": "Client Relationship Manager"
+      },
+      "form": {
+        "email": "Email",
+        "fullName": "Full Name",
+        "message": "Your Message",
+        "phone": "Phone Number",
+        "portfolio": "Cover Letter",
+        "position": "Choose Service",
+        "resume": "Attach Resume",
+        "send": "Send"
+      },
+      "subtitle": "Ready to join the Quorixia crew?\n                          <br />\n                          Fill out the form below to submit your application!",
+      "thanks": {
+        "text": "Your request has been received successfully!\n                          <br />\n                          One of our team members will get in touch with you\n                          shortly.",
+        "title": "THANK YOU!"
+      },
+      "title": "Application form",
+      "validationSchema": {
+        "email": "Please provide a correct email address.",
+        "required": "This field is required."
+      }
+    }
+  },
+  "cart": {
+    "empty": {
+      "button": "Get started",
+      "text": "Browse our selection of HR and employment services to help\n                    boost <br />\n                    your career growth and advance your professional\n                    development.",
+      "title": "It seems your cart is currently empty"
+    },
+    "price": "Price",
+    "proceed": "Proceed to checkout",
+    "quantity": "Quantity",
+    "serviceName": "Service Name",
+    "subtotal": "Subtotal",
+    "title": "Cart",
+    "total": "Total"
+  },
+  "pricing": {
+    "AdditionalSolution": {
+      "button": "Download Complete Price List",
+      "text": "The fixed-price services listed above are just a glimpse of what\n              Quorixia can provide. We offer a full suite of HR and employment\n              solutions designed to be flexible and personalised to your career\n              path. We have many services to meet your unique needs, from\n              advanced coaching to tailored job search strategies.\n              <br />\n              <br />\n              Download our comprehensive price list for a detailed look at all\n              the options and pricing we offer. We’re dedicated to supporting\n              your career growth, no matter where you are on your journey.",
+      "title": "Discover Additional Solutions"
+    },
+    "CareerSolution": {
+      "buy": "Buy",
+      "from": "From",
+      "price": "Price",
+      "subtitle": "Choose the Perfect Package for Your Journey",
+      "text": "At Quorixia, we understand that every career path is unique.\n                That’s why we’ve created a range of carefully curated service\n                packages designed to support you at every stage of your\n                professional journey. If you’re just starting, looking to\n                progress in your field, navigating a career transition, or\n                preparing for leadership roles, our packages provide\n                comprehensive, personalised support tailored to your specific\n                goals. Explore our packages below and find the one that fits\n                your career aspirations.",
+      "title": "Tailored Career Solutions"
+    },
+    "OrderPopup": {
+      "form": {
+        "email": "Email",
+        "fullName": "Full Name",
+        "message": "Your Message",
+        "phone": "Phone Number",
+        "send": "Send"
+      },
+      "text": "Interested in our ready-made package? Please fill out\n                          the form below so our representative can contact you\n                          shortly with all the necessary details.",
+      "thanks": {
+        "text": "Your request has been received successfully!\n                          <br />\n                          One of our team members will get in touch with you\n                          shortly.",
+        "title": "THANK YOU!"
+      },
+      "title": "Complete Package Request",
+      "validationSchema": {
+        "email": "Please provide a correct email address.",
+        "required": "This field is required."
+      }
+    },
+    "PricingHero": {
+      "subtitle": "Transparent & Flexible <br />\n          Options for Your Career Needs",
+      "text": "The Quorixia crew provides clear, fixed pricing for our HR and\n          employment services, ensuring <br />\n          you know exactly what you’re getting. Whether you need standalone\n          services or want to invest <br />\n          in a comprehensive career support package, our options are designed to\n          fit various needs and <br />\n          budgets. Explore our fixed-price services below, or opt for one of our\n          carefully curated <br />\n          packages that combine multiple offerings to give you the best value.",
+      "title": "Quorixia Pricing"
+    },
+    "PricingSecond": {
+      "employment": "Employment Services",
+      "hr": "HR Services"
+    }
+  },
+  "thanks_popup": {
+    "text": "Your request has been received successfully!\n                <br />\n                One of our team members will get in touch with you shortly.",
+    "title": "THANK YOU!"
+  },
+  "request_popup": {
+    "employmentService": {
+      "label1": "Resume & CV Building",
+      "label10": "Personal Branding Consultation",
+      "label11": "Job Application Assistance",
+      "label12": "Professional Portfolio Development",
+      "label13": "Freelance & Contract Job Strategies",
+      "label14": "Virtual Interview Coaching",
+      "label15": "Workplace Culture Fit Analysis",
+      "label16": "Internship & Apprenticeship Search",
+      "label17": "Second Career Planning",
+      "label18": "Interview Follow-Up Strategy",
+      "label19": "Freelancer Profile Optimization",
+      "label2": "Interview Preparation",
+      "label20": "Employment Law Advice",
+      "label21": "Job Offer Evaluation",
+      "label3": "Job Search Strategy",
+      "label4": "LinkedIn Profile Optimization",
+      "label5": "Networking Strategy",
+      "label6": "Cover Letter Writing",
+      "label7": "Job Market Trends & Insights",
+      "label8": "Salary Negotiation Coaching",
+      "label9": "Career Transition Support"
+    },
+    "form": {
+      "email": "Email",
+      "fullName": "Full Name",
+      "message": "Your Message",
+      "phone": "Phone Number",
+      "send": "Send",
+      "service": "Choose Service"
+    },
+    "hrServices": {
+      "label1": "Contract Negotiation & Review",
+      "label10": "Talent Development & Skills Assessment",
+      "label11": "Diversity & Inclusion Consultation",
+      "label12": "Remote Work & Flexibility Planning",
+      "label13": "Career Path Planning",
+      "label14": "HR Policy Review",
+      "label15": "Personal Development Plans",
+      "label16": "Conflict Mediation",
+      "label17": "Job Role Analysis & Clarification",
+      "label18": "Employee Rights Advocacy",
+      "label19": "Workplace Culture & Adaptation",
+      "label2": "Performance Management",
+      "label20": "Mentorship Matching",
+      "label21": "Workplace Wellness & Mental Health Support",
+      "label3": "Legal HR Consultation",
+      "label4": "Workplace Conflict Resolution",
+      "label5": "Leadership Coaching",
+      "label6": "Compensation & Benefits Consultation",
+      "label7": "Exit Strategy & Career Transition Support",
+      "label8": "Work-Life Balance Strategies",
+      "label9": "Onboarding Support"
+    },
+    "text1": "Get started with our tailored",
+    "text2": "today.\n                          Schedule a consultation and take the first step toward\n                          achieving your career goals.",
+    "thanks": {
+      "text": " Your request has been received successfully!\n                          <br />\n                          One of our team members will get in touch with you\n                          shortly.",
+      "title": "THANK YOU!"
+    },
+    "title": "Ready to Transform Your Professional Journey?",
+    "validationSchema": {
+      "email": "Please provide a correct email address.",
+      "required": "This field is required."
+    }
+  },
+  "cookie": {
+    "accept": "Accept",
+    "decline": "Decline",
+    "title": "Cookie settings",
+    "text": "We use cookies to optimize user experience, analyze site traffic, and deliver personalized content. By accepting, you consent to our cookie policy. View our <link>Cookie Policy</link> for more information."
+  }
+}
