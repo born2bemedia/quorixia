@@ -15,6 +15,7 @@ import Select from "react-select";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useTranslations } from "next-intl";
+import { excludedCountries } from "@/utils/countries";
 
 function JobPopup() {
   const t = useTranslations("careers");
@@ -48,12 +49,18 @@ function JobPopup() {
   };
 
   const desiredPositions = [
-    { value: t("JobPopup.desiredPositions.label1"), label: t("JobPopup.desiredPositions.label1") },
+    {
+      value: t("JobPopup.desiredPositions.label1"),
+      label: t("JobPopup.desiredPositions.label1"),
+    },
     {
       value: t("JobPopup.desiredPositions.label2"),
       label: t("JobPopup.desiredPositions.label2"),
     },
-    { value: t("JobPopup.desiredPositions.label3"), label: t("JobPopup.desiredPositions.label3") },
+    {
+      value: t("JobPopup.desiredPositions.label3"),
+      label: t("JobPopup.desiredPositions.label3"),
+    },
     {
       value: t("JobPopup.desiredPositions.label4"),
       label: t("JobPopup.desiredPositions.label4"),
@@ -237,7 +244,11 @@ function JobPopup() {
                     {!status && (
                       <div className="form-inner job">
                         <h2>{t("JobPopup.title")}</h2>
-                        <p dangerouslySetInnerHTML={{ __html: t("JobPopup.subtitle") }} />
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: t("JobPopup.subtitle"),
+                          }}
+                        />
 
                         <div>
                           <Field
@@ -282,63 +293,7 @@ function JobPopup() {
                             className={
                               touched.phone && errors.phone ? "invalid" : ""
                             }
-                            excludeCountries={[
-                              "il", // Israel
-                              "us", // United States of America
-                              "al", // Albania
-                              "bb", // Barbados
-                              "ba", // Bosnia and Herzegovina
-                              "gy", // Guyana
-                              "jm", // Jamaica
-                              "la", // Laos (Lao)
-                              "mu", // Mauritius
-                              "mm", // Myanmar
-                              "ni", // Nicaragua
-                              "ug", // Uganda
-                              "vu", // Vanuatu
-                              "af", // Afghanistan
-                              "bs", // Bahamas
-                              "bw", // Botswana
-                              "kh", // Cambodia
-                              "et", // Ethiopia
-                              "gh", // Ghana
-                              "is", // Iceland
-                              "iq", // Iraq
-                              "mn", // Mongolia
-                              "pk", // Pakistan
-                              "pa", // Panama
-                              "lk", // Sri Lanka
-                              "tt", // Trinidad and Tobago
-                              "tn", // Tunisia
-                              "vi", // U.S. Virgin Islands
-                              "ye", // Yemen
-                              "zw", // Zimbabwe
-                              "ru", // Russia
-                              "by", // Belarus
-                              "cu", // Cuba
-                              "kp", // North Korea
-                              "sd", // Sudan
-                              "sy", // Syria (Syrian Arab Republic)
-                              "dz", // Algeria
-                              "bd", // Bangladesh
-                              "bo", // Bolivia
-                              "cn", // China
-                              "kg", // Kyrgyzstan
-                              "mk", // North Macedonia (Macedonia)
-                              "np", // Nepal
-                              "ng", // Nigeria
-                              "th", // Thailand
-                              "kr", // South Korea (Republic of Korea)
-                              "so", // Somalia
-                              "vn", // Vietnam
-                              "co", // Colombia
-                              "ec", // Ecuador
-                              "id", // Indonesia
-                              "jo", // Jordan
-                              "ma", // Morocco
-                              "sa", // Saudi Arabia
-                              "tw", // Taiwan
-                            ]}
+                            excludeCountries={excludedCountries}
                           />
                           <ErrorMessage
                             name="phone"
@@ -455,7 +410,11 @@ function JobPopup() {
                     {status && status.success && (
                       <div className="success">
                         <h3>{t("JobPopup.thanks.title")}</h3>
-                        <p dangerouslySetInnerHTML={{ __html: t("JobPopup.thanks.text") }} />
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: t("JobPopup.thanks.text"),
+                          }}
+                        />
                       </div>
                     )}
                   </Form>

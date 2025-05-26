@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import ChangePassword from "./ChangePassword";
 import ButtonArrow from "@/icons/ButtonArrow";
 import { useTranslations } from "next-intl";
-import { excludedCountries } from "@/utils/excludedCountries";
+import { excludedCountries } from "@/utils/countries";
 
 const getCountryOptionByCode = (code) => {
   const countries = countryList().getData();
