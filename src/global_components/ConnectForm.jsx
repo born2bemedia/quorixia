@@ -10,6 +10,7 @@ import ButtonArrow from "@/icons/ButtonArrow";
 import CheckboxIcon from "@/icons/CheckboxIcon";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
+import { excludedCountries } from "@/utils/countries";
 
 const ConnectForm = () => {
   const t = useTranslations("connect_form");
@@ -270,63 +271,7 @@ const ConnectForm = () => {
                   placeholder={t("formFields.phone")}
                   onChange={(phone) => setFieldValue("phone", phone)}
                   className={touched.phone && errors.phone ? "invalid" : ""}
-                  excludeCountries={[
-                    "il", // Israel
-                    "us", // United States of America
-                    "al", // Albania
-                    "bb", // Barbados
-                    "ba", // Bosnia and Herzegovina
-                    "gy", // Guyana
-                    "jm", // Jamaica
-                    "la", // Laos (Lao)
-                    "mu", // Mauritius
-                    "mm", // Myanmar
-                    "ni", // Nicaragua
-                    "ug", // Uganda
-                    "vu", // Vanuatu
-                    "af", // Afghanistan
-                    "bs", // Bahamas
-                    "bw", // Botswana
-                    "kh", // Cambodia
-                    "et", // Ethiopia
-                    "gh", // Ghana
-                    "is", // Iceland
-                    "iq", // Iraq
-                    "mn", // Mongolia
-                    "pk", // Pakistan
-                    "pa", // Panama
-                    "lk", // Sri Lanka
-                    "tt", // Trinidad and Tobago
-                    "tn", // Tunisia
-                    "vi", // U.S. Virgin Islands
-                    "ye", // Yemen
-                    "zw", // Zimbabwe
-                    "ru", // Russia
-                    "by", // Belarus
-                    "cu", // Cuba
-                    "kp", // North Korea
-                    "sd", // Sudan
-                    "sy", // Syria (Syrian Arab Republic)
-                    "dz", // Algeria
-                    "bd", // Bangladesh
-                    "bo", // Bolivia
-                    "cn", // China
-                    "kg", // Kyrgyzstan
-                    "mk", // North Macedonia (Macedonia)
-                    "np", // Nepal
-                    "ng", // Nigeria
-                    "th", // Thailand
-                    "kr", // South Korea (Republic of Korea)
-                    "so", // Somalia
-                    "vn", // Vietnam
-                    "co", // Colombia
-                    "ec", // Ecuador
-                    "id", // Indonesia
-                    "jo", // Jordan
-                    "ma", // Morocco
-                    "sa", // Saudi Arabia
-                    "tw", // Taiwan
-                  ]}
+                  excludeCountries={excludedCountries}
                 />
                 <ErrorMessage name="phone" component="div" className="error" />
               </div>

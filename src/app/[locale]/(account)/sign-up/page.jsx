@@ -10,6 +10,9 @@ import { Link } from "@/navigation";
 import CheckboxIcon from "@/icons/CheckboxIcon";
 import ButtonArrow from "@/icons/ButtonArrow";
 import { useTranslations } from "next-intl";
+import { excludedCountries } from "@/utils/countries";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export default function SignUp() {
   const t = useTranslations("register");
@@ -102,7 +105,7 @@ export default function SignUp() {
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
-            {({ isSubmitting, touched, errors }) => (
+            {({ isSubmitting, touched, errors, setFieldValue }) => (
               <Form className="sign-up">
                 <div>
                   <Field
@@ -150,11 +153,14 @@ export default function SignUp() {
                   />
                 </div>
                 <div>
-                  <Field
-                    type="text"
-                    name="phone"
+                  <PhoneInput
+                    country={"gb"}
+                    value=""
                     placeholder={t("form.phone")}
-                    className={touched.phone && errors.phone ? "invalid" : ""}
+                    onChange={(phone) => setFieldValue("phone", phone)}
+                    className="phone-container"
+                    inputClass="phone-field"
+                    excludeCountries={excludedCountries}
                   />
                   <ErrorMessage
                     name="phone"
@@ -218,10 +224,8 @@ export default function SignUp() {
                   <label htmlFor="terms">
                     <CheckboxIcon />
                     <span>
-                    {t("form.agree")}{" "}
-                      <Link href="/terms-of-use">
-                      {t("form.terms")}
-                      </Link>
+                      {t("form.agree")}{" "}
+                      <Link href="/terms-of-use">{t("form.terms")}</Link>
                     </span>
                   </label>
                   <ErrorMessage
@@ -242,7 +246,7 @@ export default function SignUp() {
                   <label htmlFor="privacy">
                     <CheckboxIcon />
                     <span>
-                    {t("form.agree")}{" "}
+                      {t("form.agree")}{" "}
                       <Link href="/privacy-policy">{t("form.privacy")}</Link>.
                     </span>
                   </label>
@@ -261,14 +265,10 @@ export default function SignUp() {
                   />
                   <label htmlFor="age">
                     <CheckboxIcon />
-                    <span>
-                    {t("form.age")}
-                    </span>
+                    <span>{t("form.age")}</span>
                   </label>
                   <ErrorMessage name="age" component="div" className="error" />
                 </div>
-
-                
 
                 <div className="button-wrap">
                   <button
@@ -280,7 +280,9 @@ export default function SignUp() {
                     <ButtonArrow />
                   </button>
                 </div>
-                {globalError && <div className="global-error">{globalError}</div>}
+                {globalError && (
+                  <div className="global-error">{globalError}</div>
+                )}
               </Form>
             )}
           </Formik>
@@ -293,7 +295,9 @@ export default function SignUp() {
             <div>
               <div className="form-wrap">
                 <div className="success">
-                  <h3 dangerouslySetInnerHTML={{ __html: t("success.title") }} />
+                  <h3
+                    dangerouslySetInnerHTML={{ __html: t("success.title") }}
+                  />
                   <p dangerouslySetInnerHTML={{ __html: t("success.text") }} />
                 </div>
               </div>

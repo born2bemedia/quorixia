@@ -17,70 +17,12 @@ import { createOrder } from "@/app/[locale]/api/orders";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useTranslations } from "next-intl";
-import { excludedCountries } from "@/utils/excludedCountries";
+import { excludedCountries } from "@/utils/countries";
 
 const getCountryOptionByCode = (code) => {
   const countries = countryList().getData();
   return countries.find((country) => country.value === code);
 };
-
-const excludeCountries = [
-  "IL", // Israel
-  "US", // United States of America
-  "AL", // Albania
-  "BB", // Barbados
-  "BA", // Bosnia and Herzegovina
-  "GY", // Guyana
-  "JM", // Jamaica
-  "LA", // Laos (Lao)
-  "MU", // Mauritius
-  "MM", // Myanmar
-  "NI", // Nicaragua
-  "UG", // Uganda
-  "VU", // Vanuatu
-  "AF", // Afghanistan
-  "BS", // Bahamas
-  "BW", // Botswana
-  "KH", // Cambodia
-  "ET", // Ethiopia
-  "GH", // Ghana
-  "IS", // Iceland
-  "IQ", // Iraq
-  "MN", // Mongolia
-  "PK", // Pakistan
-  "PA", // Panama
-  "LK", // Sri Lanka
-  "TT", // Trinidad and Tobago
-  "TN", // Tunisia
-  "VI", // U.S. Virgin Islands
-  "YE", // Yemen
-  "ZW", // Zimbabwe
-  "RU", // Russia
-  "BY", // Belarus
-  "CU", // Cuba
-  "KP", // North Korea
-  "SD", // Sudan
-  "SY", // Syria
-  "DZ", // Algeria
-  "BD", // Bangladesh
-  "BO", // Bolivia
-  "CN", // China
-  "KG", // Kyrgyzstan
-  "MK", // North Macedonia
-  "NP", // Nepal
-  "NG", // Nigeria
-  "TH", // Thailand
-  "KR", // South Korea
-  "SO", // Somalia
-  "VN", // Vietnam
-  "CO", // Colombia
-  "EC", // Ecuador
-  "ID", // Indonesia
-  "JO", // Jordan
-  "MA", // Morocco
-  "SA", // Saudi Arabia
-  "TW", // Taiwan
-];
 
 const allCountries = countryList().getData();
 const filteredCountries = allCountries.filter(
@@ -157,8 +99,6 @@ const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const { currentUser, setCurrentUser, getToken } = useAuth();
   const router = useRouter();
-
-  console.log(getCountryOptionByCode(currentUser?.country));
 
   useEffect(() => {
     setIsMounted(true);
