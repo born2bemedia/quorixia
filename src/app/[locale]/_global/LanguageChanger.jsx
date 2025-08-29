@@ -28,7 +28,7 @@ export default function LanguageChanger() {
         ? "DE"
         : locale === "it"
         ? "IT"
-        : "PL";
+        : "EL";
     setLangName(langNameNew);
   }, [locale]);
 
@@ -52,6 +52,13 @@ export default function LanguageChanger() {
           >
             <img src="/images/DE_Lang.svg" />
             <span>German</span>
+          </button>
+          <button
+            onClick={() => handleChange("el")}
+            className={locale === "el" ? "active" : ""}
+          >
+            <GreekIcon />
+            <span>Greek</span>
           </button>
           <button
             onClick={() => handleChange("it")}
@@ -82,3 +89,21 @@ export default function LanguageChanger() {
     </div>
   );
 }
+
+const GreekIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17" viewBox="0 0 24 17" fill="none">
+<g clipPath="url(#clip0)">
+  <rect width="24" height="17" fill="#0D5EAF"/>
+  <rect y="2.125" width="24" height="2.125" fill="white"/>
+  <rect y="6.375" width="24" height="2.125" fill="white"/>
+  <rect y="10.625" width="24" height="2.125" fill="white"/>
+  <rect y="14.875" width="24" height="2.125" fill="white"/>
+  <rect width="9.5" height="9.5" fill="#0D5EAF"/>
+  <rect x="3.8" width="1.9" height="9.5" fill="white"/>
+  <rect y="3.8" width="9.5" height="1.9" fill="white"/>
+</g>
+<defs>
+  <clipPath id="clip0">
+    <rect width="24" height="17" fill="white"/>
+  </clipPath>
+</defs>
+</svg>
