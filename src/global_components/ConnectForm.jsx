@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { usePopup } from "@/context/PopupsContext";
@@ -11,10 +11,16 @@ import CheckboxIcon from "@/icons/CheckboxIcon";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { excludedCountries } from "@/utils/countries";
+import ReCaptcha from "react-google-recaptcha";
 
 const ConnectForm = () => {
   const t = useTranslations("connect_form");
   const { setThanksPopupDisplay } = usePopup();
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+
+  const handleCaptchaVerify = (token) => {
+    setIsCaptchaVerified(!!token);
+  };
 
   const jobRoles = [
     { value: "Finance", label: t("jobRole.label1") },
@@ -497,15 +503,18 @@ const ConnectForm = () => {
                 </label>
                 <ErrorMessage name="terms" component="div" className="error" />
               </div>
-
               <button
                 type="submit"
                 className="main-button"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !isCaptchaVerified}
               >
                 {t("formFields.submit")}
                 <ButtonArrow />
               </button>
+              <ReCaptcha 
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={handleCaptchaVerify}
+              />
             </Form>
           )}
         </Formik>
