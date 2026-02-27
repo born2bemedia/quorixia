@@ -53,7 +53,6 @@ const BlogInner = async ({ params }) => {
         <div className="policy-inner__body">
           <div className="policy-title">
             <h1>{page.title}</h1>
-            <p>Last Updated: 20 September, 2024</p>
           </div>
           <ReactMarkdown>{page.content}</ReactMarkdown>
         </div>
